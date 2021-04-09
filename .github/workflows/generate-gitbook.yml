@@ -5,7 +5,7 @@ on:
     - main
 
 jobs:
-  main-to-pages:
+  main-page:
     runs-on: ubuntu-latest
         
     steps:                          
@@ -31,7 +31,7 @@ jobs:
                 
     - name: push _book to branch page 
       env:
-        TOKEN: ${{ secrets.TOKEN }}
+        TOKEN: ${{ secrets.GITBOOK }}
         REF: github.com/${{github.repository}}
         MYEMAIL: 610087273@qq.com              
         MYNAME: ${{github.repository_owner}}          
@@ -40,7 +40,7 @@ jobs:
         git config --global user.email "${MYEMAIL}"
         git config --global user.name "${MYNAME}"
         git init
-        git remote add origin https://github.com/shuxnhs/Mastering-ServiceMesh
+        git remote add origin https://${REF}
         git add . 
         git commit -m "Updated By Github Actions With Build ${{github.run_number}} of ${{github.workflow}} For Github Pages"
         git branch -M main
