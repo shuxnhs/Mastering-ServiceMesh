@@ -1,11 +1,11 @@
 name: auto-generate-gitbook
-on:                                 #在main分支上进行push时触发  
+on:
   push:
     branches:
     - main
 
 jobs:
-  main-to-gh-pages:
+  main-to-pages:
     runs-on: ubuntu-latest
         
     steps:                          
