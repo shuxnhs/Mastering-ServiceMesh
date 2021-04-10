@@ -1,0 +1,9 @@
+{
+  "title": "Mastering-ServiceMesh",
+  "description": "深入浅出服务网格",
+  "author" : "hexiaohong",
+  "github": {
+    "url": "https://github.com/shuxnhs/Mastering-ServiceMesh"
+  },
+  "plugins":["expandable-chapters"]
+}
