@@ -21,13 +21,7 @@ jobs:
       run: |
         npm install -g gitbook-cli          
         gitbook install
-        npm install -g gitbook-summary
-                
-    - name: generate _book folder
-      run: |
-        book sm
         gitbook build
-        cp SUMMARY.md _book
                 
     - name: push _book to branch page 
       env:
