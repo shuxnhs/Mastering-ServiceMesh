@@ -5,6 +5,7 @@
 * [Concepts & 概述]()
 
 * [Istio Concepts & Istio概念]()
+    * [Install & 安装与命令相关](istio-concepts/install.md)
     * [Istio CRD](istio-concepts/crd/ReadFirst.md)
         * [VirtualService](istio-concepts/crd/VirtualService.md)
         * [DestinationRule](istio-concepts/crd/DestinationRule.md)
