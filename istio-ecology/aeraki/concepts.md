@@ -35,7 +35,7 @@ Aeraki是控制面的一个独立组件，会自动生成协议相关的缺省�
 2. 如果已经有了Istio环境，只想安装aeraki插件，将将install-demo换成下面脚本
 
    ```
-   BASEDIR=$(dirname "$0")/..
+   BASEDIR=$(dirname "$0")
    
    SCRIPTS_DIR=$BASEDIR/test/e2e/scripts
    COMMON_DIR=$BASEDIR/test/e2e/common
