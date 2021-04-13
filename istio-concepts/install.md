@@ -112,6 +112,45 @@ Istio安装需要特定版本的`Kubernetes`,比如Istio1.9版本兼容的版本
    $ kubectl exec xx-pod-name -c istio-proxy -- curl -XPOST -s -o /dev/null http://localhost:15000/logging?level=debug
    ```
 
+3. 查看proxy的信息
+   ```shell
+   # 查看某个po的envoy
+   $ istioctl d envoy sample-pod-name
+   http://localhost:15000
+   
+   # admin的相关命令
+   admin commands are:
+   /: Admin home page
+   /certs: print certs on machine
+   /clusters: upstream cluster status
+   /config_dump: dump current Envoy configs (experimental)
+   /contention: dump current Envoy mutex contention stats (if enabled)
+   /cpuprofiler: enable/disable the CPU profiler
+   /drain_listeners: drain listeners
+   /healthcheck/fail: cause the server to fail health checks
+   /healthcheck/ok: cause the server to pass health checks
+   /heapprofiler: enable/disable the heap profiler
+   /help: print out list of admin commands
+   /hot_restart_version: print the hot restart compatibility version
+   /init_dump: dump current Envoy init manager information (experimental)
+   /listeners: print listener info
+   /logging: query/change logging levels
+   /memory: print current allocation/heap usage
+   /quitquitquit: exit the server
+   /ready: print server state, return 200 if LIVE, otherwise return 503
+   /reopen_logs: reopen access logs
+   /reset_counters: reset all counters to zero
+   /runtime: print runtime values
+   /runtime_modify: modify runtime values
+   /server_info: print server version/status information
+   /stats: print server stats
+   /stats/prometheus: print server stats in prometheus format
+   /stats/recentlookups: Show recent stat-name lookups
+   /stats/recentlookups/clear: clear list of stat-name lookups and counter
+   /stats/recentlookups/disable: disable recording of reset stat-name lookup names
+   /stats/recentlookups/enable: enable recording of reset stat-name lookup names
+   
+   ```
 
 
 

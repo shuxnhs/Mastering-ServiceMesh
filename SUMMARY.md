@@ -10,7 +10,8 @@
         * [VirtualService](istio-concepts/crd/VirtualService.md)
         * [DestinationRule](istio-concepts/crd/DestinationRule.md)
         * [ServiceEntry](istio-concepts/crd/ServiceEntry.md)
-        * [EnvoyFilter]()
+        * [EnvoyFilter](istio-concepts/crd/EnvoyFilter.md)
+    * [pilot]()
 
 * [Istio Code Analysis & Istio源码分析]()
     
@@ -21,6 +22,7 @@
         * [Aeraki Case Sample & Aeraki应用示例](./istio-ecology/aeraki/case.md)
 
 * [Envoy Concepts & Envoy概念]()
+    * [XDS](./envoy-concepts/xds.md)
 
 * [Case Analysis & 案例分析]()
     * [Simple Dubbo Mesh](case-analysis/simple-Dubbo-Mesh.md)
