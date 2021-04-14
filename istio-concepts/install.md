@@ -47,6 +47,9 @@ Istio安装需要特定版本的`Kubernetes`,比如Istio1.9版本兼容的版本
        openshift
        preview
        remote
+   
+   # 查看配置的内容
+   $ istioctl profile dump default/demo/preview/remote
    ```
 
    >不同的profiles安装的组建不同，我们可以在官网查看：https://istio.io/latest/docs/setup/additional-setup/config-profiles/，我们也可以定制自己的profile
@@ -55,6 +58,8 @@ Istio安装需要特定版本的`Kubernetes`,比如Istio1.9版本兼容的版本
 
    ```shell
    $ istioctl install --set profile=demo -y
+   
+   $ istioctl manifest apply --set profile=demo
    ```
 
    部署成功后我们可以通过`kubectl get po -n istio-system`去查看运行起来的po
@@ -76,6 +81,40 @@ Istio安装需要特定版本的`Kubernetes`,比如Istio1.9版本兼容的版本
    # 获取端口
    $ kubectl -n istio-system get service kiali -o jsonpath='{.spec.ports[?(@.name=="http")].nodePort}'
    ```
+
+## 调整参数
+1. istio的配置参数很多，istio的配置参数都保存在configmap，查看istio的配置
+   ```shell
+   # kubectl -n istio-system get configmap
+   NAME                                   DATA   AGE
+   aeraki-controller                      0      8d
+   grafana                                3      21d
+   istio                                  2      21d
+   istio-ca-root-cert                     1      22d
+   istio-grafana-dashboards               2      21d
+   istio-leader                           0      22d
+   istio-namespace-controller-election    0      22d
+   istio-services-grafana-dashboards      4      21d
+   istio-sidecar-injector                 2      21d
+   istio-validation-controller-election   0      22d
+   kiali                                  1      21d
+   kube-root-ca.crt                       1      22d
+   prometheus                             5      21d
+   ```
+   
+2. 使用istioctl 修改配置项，配置项参考[传送门](https://istio.io/latest/docs/reference/config/istio.mesh.v1alpha1/)
+
+   ```shell
+     # Enable Tracing
+     istioctl install --set meshConfig.enableTracing=true
+   
+     # To override a setting that includes dots, escape them with a backslash (\).  Your shell may require enclosing quotes.
+     istioctl install --set "values.sidecarInjectorWebhook.injectedAnnotations.container\.apparmor\.security\.beta\.kubernetes\.io/istio-proxy=runtime/default"
+   ```
+
+   
+
+
 
 
 
