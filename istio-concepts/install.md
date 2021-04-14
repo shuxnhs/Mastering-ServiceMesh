@@ -150,6 +150,14 @@ Istio安装需要特定版本的`Kubernetes`,比如Istio1.9版本兼容的版本
    /stats/recentlookups/disable: disable recording of reset stat-name lookup names
    /stats/recentlookups/enable: enable recording of reset stat-name lookup names
    
+   # 或者通过命令直接获取
+   kubectl exec sample-pod-name -c istio-proxy -- pilot-agent request GET stats
+   kubectl exec sample-pod-name -c istio-proxy -- pilot-agent request GET server_info
+   ```
+   
+4. 查看熔断情况
+   ```shell
+   kubectl exec sample-pod-name -c istio-proxy -- pilot-agent request GET stats | grep pending | grep sample-service
    ```
 
 
