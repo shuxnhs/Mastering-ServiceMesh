@@ -83,7 +83,7 @@ xDS 协议是 “X Discovery Service”的简写，这里的 “X” 表示它�
 
 ### data-plane-api
 
-[github传送门]，定义了envoy 的 REST API 和配置下发时使用的通信协议 [xDS REST and gRPC protocol](https://www.envoyproxy.io/docs/envoy/latest/api-docs/xds_protocol)
+[github传送门](https://github.com/envoyproxy/data-plane-api/)，定义了envoy 的 REST API 和配置下发时使用的通信协议 [xDS REST and gRPC protocol](https://www.envoyproxy.io/docs/envoy/latest/api-docs/xds_protocol)
 
 
 
