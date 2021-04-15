@@ -12,6 +12,7 @@
         * [ServiceEntry](istio-concepts/crd/ServiceEntry.md)
         * [EnvoyFilter](istio-concepts/crd/EnvoyFilter.md)
     * [pilot]()
+        * [Debug](istio-concepts/pilot/debug.md)
 
 * [Istio Code Analysis & Istio源码分析]()
     
@@ -22,6 +23,7 @@
         * [Aeraki Case Sample & Aeraki应用示例](./istio-ecology/aeraki/case.md)
 
 * [Envoy Concepts & Envoy概念]()
+    * [Concepts](./envoy-concepts/concepts.md)
     * [XDS](./envoy-concepts/xds.md)
 
 * [Case Analysis & 案例分析]()
