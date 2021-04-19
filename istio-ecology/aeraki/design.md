@@ -17,39 +17,39 @@
 
 ```shell
 .
-├── README.md										# README文档
+├── README.md						# README文档
 ├── cmd
-│   └── aeraki									# main函数入口
-├── common-protos								# 一些pb相关的
-├── demo												# aeraki提供的服务样例yaml文件
-│   ├── aeraki-demo.json			  # grafana导出的配置
-│   ├── dubbo										# dubbo服务的yaml，包括dubbo的deployment，destinationRule，virtualService，serviceEntry
-│   ├── gateway									# kiali,prometheus,grafana的一些gateway，service
-│   ├── install-demo.sh					# 安装aeraki脚本(包括istio、kiali、prometheus、grafana、dubbo、thrift、kafka等)
-│   ├── kafka										# kafka相关脚本
-│   ├── thrift									# thrift相关yaml
-│   └── uninstall-demo.sh				# 卸载脚本
+│   └── aeraki						# main函数入口
+├── common-protos					# 一些pb相关的
+├── demo							# aeraki提供的服务样例yaml文件
+│   ├── aeraki-demo.json			# grafana导出的配置
+│   ├── dubbo						# dubbo服务的yaml，包括dubbo的deployment，destinationRule，virtualService，serviceEntry
+│   ├── gateway						# kiali,prometheus,grafana的一些gateway，service
+│   ├── install-demo.sh				# 安装aeraki脚本(包括istio、kiali、prometheus、grafana、dubbo、thrift、kafka等)
+│   ├── kafka						# kafka相关脚本
+│   ├── thrift						# thrift相关yaml
+│   └── uninstall-demo.sh			# 卸载脚本
 ├── docker
-│   └── Dockerfile							# aeraki的dockerfile
-├── docs												# 文档
+│   └── Dockerfile					# aeraki的dockerfile
+├── docs							# 文档
 ├── go.mod
 ├── go.sum
 ├── k8s
-│   └── aeraki.yaml							# aeraki的yaml文件
-├── pkg													# aeraki的核心代码
-│   ├── bootstrap								# aeraki的server代码
-│   ├── config									# configController 监听Istio config xDS server的配置变更
-│   ├── envoyfilter							# envoyFilterController 生成对应的envoyFilter
-│   ├── kube										#	与k8s的apiserve的交互
-│   └── model										# 一些定义还有协议的识别（根据PortName）
-├── plugin											# 各个协议插件对应的Generator实例实现
+│   └── aeraki.yaml					# aeraki的yaml文件
+├── pkg								# aeraki的核心代码
+│   ├── bootstrap					# aeraki的server代码
+│   ├── config						# configController 监听Istio config xDS server的配置变更
+│   ├── envoyfilter					# envoyFilterController 生成对应的envoyFilter
+│   ├── kube						#	与k8s的apiserve的交互
+│   └── model						# 一些定义还有协议的识别（根据PortName）
+├── plugin							# 各个协议插件对应的Generator实例实现
 │   ├── dubbo
 │   ├── kafka
 │   ├── redis
 │   ├── thrift
 │   └── zookeeper
-├── test 												# 一些yaml文件与脚本
-└── vendor											# vendor
+├── test 							# 一些yaml文件与脚本
+└── vendor						    # vendor
 ```
 
 
@@ -100,9 +100,9 @@ aeraki的server结构主要包括了本身运行的一些配置args还有就是�
 //------------------source: aeraki/pkg/bootstrap/server.go-----------------------//
 type Server struct {
 	args                  *AerakiArgs
-	configController      *config.Controller					// configController监听istio配置变更
+	configController      *config.Controller				// configController监听istio配置变更
 	envoyFilterController *envoyfilter.Controller			// 生成envoyfilter的controller
-	crdController         manager.Manager							// k8s的crdcontroller
+	crdController         manager.Manager					// k8s的crdcontroller
 	stopCRDController     func()	
 }
 
@@ -119,11 +119,11 @@ type AerakiArgs struct {
 
 // 新建server实例，初始化各个controller
 func NewServer(args *AerakiArgs) *Server {
-  // configController实例化
+    // configController实例化
 	configController := config.NewController(args.IstiodAddr)			
-  // envoyFilterController实例化
+    // envoyFilterController实例化
 	envoyFilterController := envoyfilter.NewController(configController.Store, args.Protocols)
-  // crdController实例化
+    // crdController实例化
 	crdController := controller.NewManager(args.Namespace, args.ElectionID, func() error {
 		envoyFilterController.ConfigUpdate(model.EventUpdate)
 		return nil
@@ -132,7 +132,7 @@ func NewServer(args *AerakiArgs) *Server {
 	cfg := crdController.GetConfig()
 	args.Protocols[protocol.Redis] = redis.New(cfg, configController.Store)
 
-  // configController事件处理handler，如果有配置添加/更新/删除则交给envoyFilterController去对应处理
+    // configController事件处理handler，如果有配置添加/更新/删除则交给envoyFilterController去对应处理
 	configController.RegisterEventHandler(args.Protocols, func(_, curr istioconfig.Config, event model.Event) {
 		envoyFilterController.ConfigUpdate(event
 	})
@@ -181,14 +181,14 @@ configController主要就是监听istio的配置ServiceEntry、VirtualService、
 // Controller watches Istio config xDS server and notifies the listeners when config changes.
 type Controller struct {
 	configServerAddr string
-	Store            istiomodel.ConfigStore			  	// istiomodel => istio.io/istio/pilot/pkg/model
+	Store            istiomodel.ConfigStore			  // istiomodel => istio.io/istio/pilot/pkg/model
 	controller       istiomodel.ConfigStoreCache	  // 监控ConfigStore
 }
 
 func (c *Controller) Run(stop <-chan struct{}) {
 	go func() {
 		for {
-      // 拿到istio的xdsMCP
+			// 拿到istio的xdsMCP
 			xdsMCP, err := adsc.New(c.configServerAddr, &adsc.Config{
 				Meta: istiomodel.NodeMetadata{
 					Generator: "api",
@@ -263,7 +263,7 @@ func (m *configstoreMonitor) Run(stop <-chan struct{}) {
 			return
 		case ce, ok := <-m.eventCh:
 			if ok {
-        // eventChannel的event处理
+                // eventChannel的event处理
 				m.processConfigEvent(ce)
 			}
 		}
@@ -303,19 +303,19 @@ func (c *Controller) RegisterEventHandler(protocols map[protocol.Instance]envoyf
 				return
 			}
       
-      // 通过portName来识别对应的协议，必须以tcp-protocol-serviceXXX命名
+            // 通过portName来识别对应的协议，必须以tcp-protocol-serviceXXX命名
 			for _, port := range service.Ports {
 				if !strings.HasPrefix(port.Name, "tcp") {
 					continue
 				}
 				if _, ok := protocols[protocol.GetLayer7ProtocolFromPortName(port.Name)]; ok {
 					controllerLog.Infof("Matched protocol :%s %s %s", protocol.GetLayer7ProtocolFromPortName(port.Name), event.String(), curr.Name)
-          // 执行对应的handler
+                    // 执行对应的handler
 					handler(prev, curr, event)
 				}
 			}
 		} else if curr.GroupVersionKind == collections.IstioNetworkingV1Alpha3Virtualservices.Resource().GroupVersionKind() {
-      // VirtualService有变动
+			// VirtualService有变动
 			controllerLog.Infof("Virtual Service changed: %s %s", event.String(), curr.Name)
 			vs, ok := curr.Spec.(*networking.VirtualService)
 			if !ok {
@@ -323,7 +323,7 @@ func (c *Controller) RegisterEventHandler(protocols map[protocol.Instance]envoyf
 				controllerLog.Errorf("Failed in getting a virtual service: %v", event.String(), curr.Name)
 				return
 			}
-      // 获取所有的serviceEntries
+            // 获取所有的serviceEntries
 			serviceEntries, err := c.Store.List(collections.IstioNetworkingV1Alpha3Serviceentries.Resource().GroupVersionKind(), "")
 			if err != nil {
 				controllerLog.Errorf("Failed to list configs: %v", err)
@@ -338,7 +338,7 @@ func (c *Controller) RegisterEventHandler(protocols map[protocol.Instance]envoyf
 				}
 				if len(service.Hosts) > 0 {
 					for _, host := range service.Hosts {
-            // 与virtualService中的host匹配上了，执行对应的handler
+                        // 与virtualService中的host匹配上了，执行对应的handler
 						if host == vs.Hosts[0] {
 							for _, port := range service.Ports {
 								if _, ok := protocols[protocol.GetLayer7ProtocolFromPortName(port.Name)]; ok {
@@ -354,7 +354,7 @@ func (c *Controller) RegisterEventHandler(protocols map[protocol.Instance]envoyf
 
 	schemas := configCollection.All()
 	for _, schema := range schemas {
-    // 在event处理过程中注入handlerWrapper
+        // 在event处理过程中注入handlerWrapper
 		c.controller.RegisterEventHandler(schema.Resource().GroupVersionKind(), handlerWrapper)
 	}
 }
