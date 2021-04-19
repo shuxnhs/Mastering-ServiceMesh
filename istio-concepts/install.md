@@ -217,4 +217,40 @@ Istio安装需要特定版本的`Kubernetes`,比如Istio1.9版本兼容的版本
     kubectl label namespace default istio-injection-
    ```
 
+## 离线安装
+
+> 以`Istio`1.9.1为例
+
+1. 下载istio工具包：
+   ```shell
+   $ https://github.com/istio/istio/releases/download/1.9.1/istio-1.9.1-linux-amd64.tar.gz
+   ```
+
+2. 下载istio使用的组建对应镜像版本保存
+   ```shell
+   docker pull quay.io/kiali/kiali:v1.29
+   docker save quay.io/kiali/kiali:v1.29 -o quay.io/kiali/kiali:v1.29.tar
    
+   docker pull docker.io/jaegertracing/all-in-one:1.20
+   docker save docker.io/jaegertracing/all-in-one:1.20 -o docker.io/jaegertracing/all-in-one:1.20.tar
+   
+   docker pull prom/prometheus:v2.21.0
+   docker save prom/prometheus:v2.21.0 -o prometheus:v2.21.0.tar
+   
+   docker pull grafana/grafana:7.2.1
+   docker save grafana/grafana:7.2.1 -o grafana/grafana:7.2.1.tar
+   
+   docker pull openzipkin/zipkin-slim:2.21.0
+   docker save openzipkin/zipkin-slim:2.21.0 -o openzipkin/zipkin-slim:2.21.0.tar
+   
+   docker pull istio/pilot:1.9.1
+   docker save istio/pilot:1.9.1 -o istio/pilot:1.9.1.tar
+   
+   docker pull docker.io/istio/proxyv2:1.9.1
+   docker save docker.io/istio/proxyv2:1.9.1 -o docker.io/istio/proxyv2:1.9.1.tar
+   
+   docker pull aeraki/aeraki:latest
+   docker save aeraki/aeraki:latest -o aeraki/aeraki:latest.tar
+   ```
+  
+3. 将对应的工具包和镜像包上传到k8s的master上执行docker load后按照上面的[安装](#%E5%AE%89%E8%A3%85)即可 

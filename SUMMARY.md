@@ -12,8 +12,8 @@
         * [ServiceEntry](istio-concepts/crd/ServiceEntry.md)
         * [EnvoyFilter](istio-concepts/crd/EnvoyFilter.md)
     * [pilot]()
-        * [Debug](istio-concepts/pilot/debug.md)
-
+    * [Debug](istio-concepts/debug.md)
+    
 * [Istio Code Analysis & Istio源码分析]()
     
 * [Istio Ecology]()
