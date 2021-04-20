@@ -54,6 +54,11 @@
 
 
 
+## 整体流程
+
+![](../../static/img/istio-ecology/aeraki/code-architecture.png)
+
+
 ### 核心代码
 
 #### 初始化
@@ -125,6 +130,7 @@ func NewServer(args *AerakiArgs) *Server {
 	envoyFilterController := envoyfilter.NewController(configController.Store, args.Protocols)
     // crdController实例化
 	crdController := controller.NewManager(args.Namespace, args.ElectionID, func() error {
+        // 自定义的CRD资源由更新也会交给envoyFilterController去对应处理
 		envoyFilterController.ConfigUpdate(model.EventUpdate)
 		return nil
 	})
@@ -134,7 +140,8 @@ func NewServer(args *AerakiArgs) *Server {
 
     // configController事件处理handler，如果有配置添加/更新/删除则交给envoyFilterController去对应处理
 	configController.RegisterEventHandler(args.Protocols, func(_, curr istioconfig.Config, event model.Event) {
-		envoyFilterController.ConfigUpdate(event
+		// 往envoyFilterController的pushChannel写入event
+        envoyFilterController.ConfigUpdate(event)
 	})
 
 	return &Server{
@@ -364,17 +371,454 @@ func (c *Controller) RegisterEventHandler(protocols map[protocol.Instance]envoyf
 
 #### envoyFilterController
 
+envoyFilter的结构包含了istio的ConfigStore，主要是用来获取istio的crd配置去生成envotFilter；generators则是各个协议插件的实现；pushchannel为event的channel，server启动后configController监听到配置变更后会往其中写入event。
 
+```go
+//------------------source: aeraki/pkg/envoyfilter/controller.go-----------------------//
+
+// Controller contains the runtime configuration for the envoyFilter controller.
+type Controller struct {
+	configStore istiomodel.ConfigStore
+	generators  map[protocol.Instance]Generator
+	// server的RegisterEventHandler会往channel中写入event
+	pushChannel chan istiomodel.Event
+}
+
+func (s *Controller) Run(stop <-chan struct{}) {
+	go func() {
+		s.mainLoop(stop)
+	}()
+}
+
+const (
+	// debounceAfter is the delay added to events to wait after a registry event for debouncing.
+	// This will delay the push by at least this interval, plus the time getting subsequent events.
+	// If no change is detected the push will happen, otherwise we'll keep delaying until things settle.
+	debounceAfter = 500 * time.Millisecond
+
+	// debounceMax is the maximum time to wait for events while debouncing.
+	// Defaults to 10 seconds. If events keep showing up with no break for this time, we'll trigger a push.
+	debounceMax = 10 * time.Second
+)
+
+
+func (s *Controller) mainLoop(stop <-chan struct{}) {
+	var timeChan <-chan time.Time
+	var startDebounce time.Time
+	var lastResourceUpdateTime time.Time
+	pushCounter := 0
+	debouncedEvents := 0
+  
+	for {
+		select {
+		case <-stop:
+			break
+		case e := <-s.pushChannel:
+			controllerLog.Debugf("Receive event from push chanel : %v", e)
+			lastResourceUpdateTime = time.Now()
+			if debouncedEvents == 0 {
+				controllerLog.Debugf("This is the first debounced event")
+				startDebounce = lastResourceUpdateTime
+			}
+			timeChan = time.After(debounceAfter)
+			debouncedEvents++
+		case <-timeChan:
+			controllerLog.Debugf("Receive event from time chanel")
+			eventDelay := time.Since(startDebounce)
+			quietTime := time.Since(lastResourceUpdateTime)
+			// it has been too long since the first debounced event or quiet enough since the last debounced event
+			if eventDelay >= debounceMax || quietTime >= debounceAfter {
+				if debouncedEvents > 0 {
+					pushCounter++
+					controllerLog.Infof("Push debounce stable[%d] %d: %v since last change, %v since last push",
+						pushCounter, debouncedEvents, quietTime, eventDelay)
+					// 推送envoyFilter到k8s的apiserver
+					err := s.pushEnvoyFilters2APIServer()
+					if err != nil {
+                        // 有错误重新加到push-Channel重试
+						controllerLog.Errorf("%v", err)
+						// Retry if failed to push envoyFilters to APIServer
+						s.ConfigUpdate(istiomodel.EventUpdate)
+					}
+					debouncedEvents = 0
+				}
+			} else {
+				timeChan = time.After(debounceAfter - quietTime)
+			}
+		}
+	}
+}
+```
+
+
+
+生成envoyFilter和推送到k8s的apiserver核心代码：
+
+```go
+//------------------source: aeraki/pkg/envoyfilter/controller.go-----------------------//
+// 生成envoyFilter
+func (s *Controller) generateEnvoyFilters() (map[string]*model.EnvoyFilterWrapper, error) {
+  
+	envoyFilters := make(map[string]*model.EnvoyFilterWrapper)
+    // 获取serviceEntries
+	serviceEntries, err := s.configStore.List(collections.IstioNetworkingV1Alpha3Serviceentries.Resource().GroupVersionKind(), "")
+	if err != nil {
+		return envoyFilters, fmt.Errorf("failed to list configs: %v", err)
+	}
+
+	for _, config := range serviceEntries {
+		service, ok := config.Spec.(*networking.ServiceEntry)
+		if !ok { // should never happen
+			return envoyFilters, fmt.Errorf("failed in getting a service entry: %s: %v", config.Labels, err)
+		}
+
+		if len(service.Hosts) == 0 {
+			controllerLog.Errorf("host should not be empty: %s", config.Name)
+			// We can't retry in this scenario
+			return envoyFilters, nil
+		}
+		if len(service.Hosts) > 1 {
+			controllerLog.Warnf("multiple hosts found for service: %s, only the first one will be processed", config.Name)
+		}
+
+        // 也是根据host去找到相关的VirtualService
+		relatedVs, err := s.findRelatedVirtualService(service)
+		if err != nil {
+			return envoyFilters, fmt.Errorf("failed in finding the related virtual service : %s: %v", config.Name, err)
+		}
+    
+		// 开始生成EnvoyFilter
+		context := &model.EnvoyFilterContext{
+			ServiceEntry: &model.ServiceEntryWrapper{
+				Meta: config.Meta,
+				Spec: service,
+			},
+			VirtualService: relatedVs,
+		}
+    
+		for _, port := range service.Ports {
+			instance := protocol.GetLayer7ProtocolFromPortName(port.Name)
+			if generator, ok := s.generators[instance]; ok {
+                // 由各个协议的generator去处理
+				envoyFilterWrappers := generator.Generate(context)
+				for _, wrapper := range envoyFilterWrappers {
+					envoyFilters[wrapper.Name] = wrapper
+				}
+				break
+			}
+		}
+	}
+	return envoyFilters, nil
+}
+
+// 推送到APIserver
+func (s *Controller) pushEnvoyFilters2APIServer() error {
+	generatedEnvoyFilters, err := s.generateEnvoyFilters()
+	if err != nil {
+		return fmt.Errorf("failed to generate EnvoyFilter: %v", err)
+	}
+
+	config, err := config.GetConfig()
+	if err != nil {
+		return fmt.Errorf("can not get kubernetes config: %v", err)
+	}
+
+	ic, err := versionedclient.NewForConfig(config)
+	if err != nil {
+		return fmt.Errorf("failed to create istio client: %v", err)
+	}
+
+  	// 获取原先存在的envoyFilter
+	existingEnvoyFilters, _ := ic.NetworkingV1alpha3().EnvoyFilters(configRootNS).List(context.TODO(), v1.ListOptions{
+		LabelSelector: "manager=" + aerakiFieldManager,
+	})
+
+	for _, oldEnvoyFilter := range existingEnvoyFilters.Items {
+        // 删除
+		if newEnvoyFilter, ok := generatedEnvoyFilters[oldEnvoyFilter.Name]; !ok {
+			controllerLog.Infof("Deleting EnvoyFilter: %v", oldEnvoyFilter)
+			err = ic.NetworkingV1alpha3().EnvoyFilters(configRootNS).Delete(context.TODO(), oldEnvoyFilter.Name,
+				v1.DeleteOptions{})
+			if err != nil {
+				err = fmt.Errorf("failed to create istio client: %v", err)
+			}
+		} else {
+            // 更新
+			if !proto.Equal(newEnvoyFilter.Envoyfilter, &oldEnvoyFilter.Spec) {
+				controllerLog.Infof("Updating EnvoyFilter: %v", *newEnvoyFilter.Envoyfilter)
+				_, err = ic.NetworkingV1alpha3().EnvoyFilters(configRootNS).Update(context.TODO(),
+					s.toEnvoyFilterCRD(newEnvoyFilter, &oldEnvoyFilter),
+					v1.UpdateOptions{FieldManager: aerakiFieldManager})
+				if err != nil {
+					err = fmt.Errorf("failed to update EnvoyFilter: %v", err)
+				}
+			} else {
+                 // 无变更
+				controllerLog.Infof("EnvoyFilter: %s unchanged", oldEnvoyFilter.Name)
+			}
+			delete(generatedEnvoyFilters, oldEnvoyFilter.Name)
+		}
+	}
+	// 剩下的是之前不存在的则新增
+	for _, wrapper := range generatedEnvoyFilters {
+		_, err = ic.NetworkingV1alpha3().EnvoyFilters(configRootNS).Create(context.TODO(), s.toEnvoyFilterCRD(wrapper, nil),
+			v1.CreateOptions{FieldManager: aerakiFieldManager})
+		controllerLog.Infof("Creating EnvoyFilter: %v", *wrapper.Envoyfilter)
+		if err != nil {
+			err = fmt.Errorf("failed to create EnvoyFilter: %v", err)
+		}
+	}
+	return err
+}
+
+```
+
+
+
+#### Generators
+
+generator是每个协议生成envoyFilter配置的接口，要适配的协议生成对应的Generate方法即可
+
+```go
+//------------------source: aeraki/pkg/envoyfilter/generator.go-----------------------//
+
+// Generator generates protocol specified envoyfilters
+type Generator interface {
+	Generate(context *model.EnvoyFilterContext) []*model.EnvoyFilterWrapper
+}
+
+
+//------------------source: aeraki/pkg/envoyfilter/network_filter.go-----------------------//
+// network_filter 通用的生成envoyFilter方法
+func generateNetworkFilter(service *networking.ServiceEntry, outboundProxy proto.Message,
+	inboundProxy proto.Message, filterName string, filterType string, operation networking.EnvoyFilter_Patch_Operation) []*model.EnvoyFilterWrapper {
+	var outboundProxyPatch, inboundProxyPatch *networking.EnvoyFilter_EnvoyConfigObjectPatch
+	if outboundProxy != nil {
+		outboundProxyStruct, err := generateValue(outboundProxy, filterName, filterType)
+		if err != nil {
+			//This should not happen
+			generatorLog.Errorf("Failed to generate outbound EnvoyFilter: %v", err)
+			return nil
+		}
+		outboundListenerName := service.GetAddresses()[0] + "_" + strconv.Itoa(int(service.Ports[0].Number))
+		outboundProxyPatch = &networking.EnvoyFilter_EnvoyConfigObjectPatch{
+			ApplyTo: networking.EnvoyFilter_NETWORK_FILTER,
+			Match: &networking.EnvoyFilter_EnvoyConfigObjectMatch{
+				ObjectTypes: &networking.EnvoyFilter_EnvoyConfigObjectMatch_Listener{
+					Listener: &networking.EnvoyFilter_ListenerMatch{
+						Name: outboundListenerName,
+						FilterChain: &networking.EnvoyFilter_ListenerMatch_FilterChainMatch{
+							Filter: &networking.EnvoyFilter_ListenerMatch_FilterMatch{
+								Name: wellknown.TCPProxy,
+							},
+						},
+					},
+				},
+			},
+			Patch: &networking.EnvoyFilter_Patch{
+				Operation: operation,
+				Value:     outboundProxyStruct,
+			},
+		}
+	}
+
+	if inboundProxy != nil {
+		inboundProxyStruct, err := generateValue(inboundProxy, filterName, filterType)
+		if err != nil {
+			//This should not happen
+			generatorLog.Errorf("Failed to generate inbound EnvoyFilter: %v", err)
+			return nil
+		}
+
+		inboundProxyPatch = &networking.EnvoyFilter_EnvoyConfigObjectPatch{
+			ApplyTo: networking.EnvoyFilter_NETWORK_FILTER,
+			Match: &networking.EnvoyFilter_EnvoyConfigObjectMatch{
+				ObjectTypes: &networking.EnvoyFilter_EnvoyConfigObjectMatch_Listener{
+					Listener: &networking.EnvoyFilter_ListenerMatch{
+						Name: "virtualInbound",
+						FilterChain: &networking.EnvoyFilter_ListenerMatch_FilterChainMatch{
+							DestinationPort: service.Ports[0].Number,
+							Filter: &networking.EnvoyFilter_ListenerMatch_FilterMatch{
+								Name: wellknown.TCPProxy,
+							},
+						},
+					},
+				},
+			},
+			Patch: &networking.EnvoyFilter_Patch{
+				Operation: operation,
+				Value:     inboundProxyStruct,
+			},
+		}
+	}
+
+	if outboundProxyPatch != nil && inboundProxyPatch != nil {
+		return []*model.EnvoyFilterWrapper{
+			{
+				Name: outboundEnvoyFilterName(service),
+				Envoyfilter: &networking.EnvoyFilter{
+					ConfigPatches: []*networking.EnvoyFilter_EnvoyConfigObjectPatch{outboundProxyPatch},
+				},
+			},
+			{
+				Name: inboundEnvoyFilterName(service),
+				Envoyfilter: &networking.EnvoyFilter{
+					WorkloadSelector: service.WorkloadSelector,
+					ConfigPatches:    []*networking.EnvoyFilter_EnvoyConfigObjectPatch{inboundProxyPatch},
+				},
+			}}
+	}
+	if outboundProxyPatch != nil {
+		return []*model.EnvoyFilterWrapper{
+			{
+				Name: outboundEnvoyFilterName(service),
+				Envoyfilter: &networking.EnvoyFilter{
+					ConfigPatches: []*networking.EnvoyFilter_EnvoyConfigObjectPatch{outboundProxyPatch},
+				},
+			}}
+	}
+	if inboundProxyPatch != nil {
+		return []*model.EnvoyFilterWrapper{
+			{
+				Name: inboundEnvoyFilterName(service),
+				Envoyfilter: &networking.EnvoyFilter{
+					WorkloadSelector: service.WorkloadSelector,
+					ConfigPatches:    []*networking.EnvoyFilter_EnvoyConfigObjectPatch{inboundProxyPatch},
+				},
+			}}
+	}
+	return nil
+}
+```
+
+各个协议的支持还是要看envoy，以dubbo的generator为例，envoy的dubbo-router文档：https://www.envoyproxy.io/docs/envoy/latest/api-v3/extensions/filters/network/dubbo_proxy/v3/route.proto#envoy-v3-api-msg-extensions-filters-network-dubbo-proxy-v3-routeconfiguration
+
+```go
+// Generate create EnvoyFilters for Dubbo services
+func (*Generator) Generate(context *model.EnvoyFilterContext) []*model.EnvoyFilterWrapper {
+	return envoyfilter.GenerateReplaceNetworkFilter(
+		context.ServiceEntry.Spec,
+		buildOutboundProxy(context),
+		buildInboundProxy(context),
+		"envoy.filters.network.dubbo_proxy",
+		"type.googleapis.com/envoy.extensions.filters.network.dubbo_proxy.v3.DubboProxy")
+}
+
+// 以OutboundProxy为例，生成envoy需要的dubbo路由配置
+func buildOutboundProxy(context *model.EnvoyFilterContext) *dubbo.DubboProxy {
+	route, err := buildOutboundRouteConfig(context)
+	if err != nil {
+		generatorLog.Errorf("Failed to generate Dubbo EnvoyFilter: %v, %v", context.ServiceEntry, err)
+		return nil
+	}
+
+	return &dubbo.DubboProxy{
+		StatPrefix: model.BuildClusterName(model.TrafficDirectionOutbound, "",
+			context.ServiceEntry.Spec.Hosts[0], int(context.ServiceEntry.Spec.Ports[0].Number)),
+		ProtocolType:      dubbo.ProtocolType_Dubbo,
+		SerializationType: dubbo.SerializationType_Hessian2,
+		// we only support one to one mapping of interface and service. If there're multiple interfaces in one process,
+		// these interfaces can be defined in separated services, one service for one interface.
+		RouteConfig: []*dubbo.RouteConfiguration{
+			route,
+		},
+	}
+}
+
+
+func buildOutboundRouteConfig(context *model.EnvoyFilterContext) (*dubbo.RouteConfiguration, error) {
+	// dubbo service interface should be passed in via serviceentry annotation
+	var serviceInterface string
+	var exist bool
+	if serviceInterface, exist = context.ServiceEntry.Annotations["interface"]; !exist {
+		err := fmt.Errorf("no interface annotation")
+		return nil, err
+	}
+
+	var route []*dubbo.Route
+	clusterName := model.BuildClusterName(model.TrafficDirectionOutbound, "", context.ServiceEntry.Spec.Hosts[0], int(context.ServiceEntry.Spec.Ports[0].Number))
+
+	if context.VirtualService == nil {
+		route = []*dubbo.Route{defaultRoute(clusterName)}
+	} else {
+		route = buildRoute(context)
+	}
+
+	return &dubbo.RouteConfiguration{
+		Name:      clusterName,
+		Interface: serviceInterface, // To make this work, Dubbo Interface should have been registered to the Istio service registry as a service
+		Routes:    route,
+	}, nil
+}
+```
+
+其他协议的支持对照envoy需要的配置去生成对应的envoyFilter配置。
 
 
 
 #### crdController
 
+对于redis协议，aeraki是使用了自定义的crd，所以crdController是用来管理crd自定义资源的，并监听crd变化则执行对应的triggerPush（envoyFilterController.ConfigUpdate）
+
+```go
+//------------------source: aeraki/pkg/kube/controller/controller.go-----------------------//
+func NewManager(namespace string, electionID string, triggerPush func() error) manager.Manager {
+	// Get a config to talk to the apiserver
+	cfg, err := config.GetConfig()
+	if err != nil {
+		controllerLog.Fatalf("Could not get apiserver config: %v\n", err)
+		return nil
+	}
+	mgrOpt := manager.Options{
+		MetricsBindAddress:      "0",
+		LeaderElection:          true,
+		LeaderElectionNamespace: namespace,
+		LeaderElectionID:        electionID,
+	}
+	m, err := manager.New(cfg, mgrOpt)
+	if err != nil {
+		controllerLog.Fatalf("Could not create a controller manager: %v", err)
+		return nil
+	}
+
+	err = addRedisServiceController(m, triggerPush)
+	if err != nil {
+		controllerLog.Fatalf("Could not add RedisServiceController: %e", err)
+		return nil
+	}
+	err = addRedisDestinationController(m, triggerPush)
+	if err != nil {
+		controllerLog.Fatalf("Could not add RedisDestinationController: %e", err)
+		return nil
+	}
+	err = scheme.AddToScheme(m.GetScheme())
+	if err != nil {
+		controllerLog.Fatalf("Could not add schema: %e", err)
+	}
+	return m
+}
+
+//------------------source: aeraki/pkg/envoyfilter/redis.go-----------------------//
+// 以redis的destination为例
+func addRedisDestinationController(mgr manager.Manager, triggerPush func() error) error {
+	redisCtrl := &RedisController{triggerPush: triggerPush}
+	c, err := controller.New("aeraki-redis-destination-controller", mgr, controller.Options{Reconciler: redisCtrl})
+	if err != nil {
+		return err
+	}
+	// Watch for changes to primary resource IstioFilter
+	err = c.Watch(&source.Kind{Type: &v1alpha1.RedisDestination{}}, &handler.EnqueueRequestForObject{}, redisPredicates)
+	if err != nil {
+		return err
+	}
+	controllerLog.Infof("RedisDestinationController registered")
+	return nil
+}
+```
 
 
 
 
-#### Generators
 
 
 

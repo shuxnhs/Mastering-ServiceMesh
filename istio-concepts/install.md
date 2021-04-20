@@ -219,14 +219,14 @@ Istio安装需要特定版本的`Kubernetes`,比如Istio1.9版本兼容的版本
 
 ## 离线安装
 
-> 以`Istio`1.9.1为例
+> 以`Istio`1.9.3为例
 
 1. 下载istio工具包：
    ```shell
-   $ https://github.com/istio/istio/releases/download/1.9.1/istio-1.9.1-linux-amd64.tar.gz
+   $ wget https://github.com/istio/istio/releases/download/1.9.3/istio-1.9.3-linux-amd64.tar.gz
    ```
 
-2. 下载istio使用的组建对应镜像版本保存
+2. 下载istio使用的组建对应镜像版本保存上传到自己的镜像仓库，安装的时候指定对应的hub
    ```shell
    docker pull quay.io/kiali/kiali:v1.29
    docker save quay.io/kiali/kiali:v1.29 -o quay.io/kiali/kiali:v1.29.tar
@@ -254,3 +254,9 @@ Istio安装需要特定版本的`Kubernetes`,比如Istio1.9版本兼容的版本
    ```
   
 3. 将对应的工具包和镜像包上传到k8s的master上执行docker load后按照上面的[安装](#%E5%AE%89%E8%A3%85)即可 
+   ```shell
+   $ tar -zxvf istio-1.9.3-linux-amd64.tar.gz
+   $ docker load -i images.tar
+   
+   $ istioctl install --set profile=demo --set meshConfig.defaultConfig.proxyMetadata.ISTIO_META_DNS_CAPTURE='\"true\"' --set hub=foo.hub
+   ```
