@@ -107,7 +107,7 @@ type Server struct {
 	args                  *AerakiArgs
 	configController      *config.Controller				// configController监听istio配置变更
 	envoyFilterController *envoyfilter.Controller			// 生成envoyfilter的controller
-	crdController         manager.Manager					// k8s的crdcontroller
+	crdController         manager.Manager					// 管理自定义crd的controller
 	stopCRDController     func()	
 }
 
