@@ -21,6 +21,7 @@
         * [Aeraki Concepts & Aeraki概念](./istio-ecology/aeraki/concepts.md)
         * [Aeraki Code Design & Aeraki设计](./istio-ecology/aeraki/design.md)
         * [Aeraki Case Sample & Aeraki应用示例](./istio-ecology/aeraki/case.md)
+    * [Istio可视化工具——Kiali](./istio-ecology/kiali/kiali.md)
 
 * [Envoy Concepts & Envoy概念]()
     * [Concepts](./envoy-concepts/concepts.md)
