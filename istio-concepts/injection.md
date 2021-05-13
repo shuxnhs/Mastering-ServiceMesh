@@ -89,9 +89,8 @@
 3. 原理：
     ![](../static/img/istio-concepts/injection.png)
 
-### Resource级别控制
 
-1. 在 pod 模板规范中添加 `sidecar.istio.io/inject` 的值为`true`来覆盖默认值并启用注入; `false`来覆盖默认值并禁用注入。
+4. 在给命名空间打上istio-injection=enabled后，如果要控制pod是否被注入可以 pod 模板规范中添加 `sidecar.istio.io/inject` 的值为`true`来覆盖默认值并启用注入; `false`来覆盖默认值并禁用注入。
 
    ```yaml
    apiVersion: apps/v1
@@ -117,5 +116,37 @@
            command: ["/bin/sleep","infinity"]
    ```
 
-   
+### Resource级别控制
+在istio1.9+版本后，我们可以只通过pod的label来实现对pod注入的控制，[文档传送门](https://preliminary.istio.io/latest/zh/docs/setup/additional-setup/sidecar-injection/#controlling-the-injection-policy)
+
+
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: httpd
+  labels:
+    server: httpd
+    app: web
+    sidecar.istio.io/inject: "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      server: httpd
+      app: web
+  template:
+    metadata:
+      labels:
+        server: httpd
+        app: web
+        sidecar.istio.io/inject: "true"   // true则会注入，false不注入
+    spec:
+      containers:
+      - name: busybox
+        image: busybox
+        imagePullPolicy: IfNotPresent
+        command: ["/bin/sh", "-c", "echo 'this is httpd' > /var/www/index.html; httpd -f -p 8080 -h /var/www"]
+```
 
