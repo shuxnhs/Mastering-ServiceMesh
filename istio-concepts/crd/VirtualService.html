@@ -1,0 +1,918 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>VirtualService · Mastering-ServiceMesh</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="hexiaohong">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="DestinationRule.html" />
+    
+    
+    <link rel="prev" href="ReadFirst.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Concepts & 概述
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Istio Concepts & Istio概念
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../install.html">
+            
+                <a href="../install.html">
+            
+                    
+                    Install & 安装与命令相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../injection.html">
+            
+                <a href="../injection.html">
+            
+                    
+                    Injection & Istio注入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="ReadFirst.html">
+            
+                <a href="ReadFirst.html">
+            
+                    
+                    Istio CRD
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.3.1" data-path="VirtualService.html">
+            
+                <a href="VirtualService.html">
+            
+                    
+                    VirtualService
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="DestinationRule.html">
+            
+                <a href="DestinationRule.html">
+            
+                    
+                    DestinationRule
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="ServiceEntry.html">
+            
+                <a href="ServiceEntry.html">
+            
+                    
+                    ServiceEntry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="EnvoyFilter.html">
+            
+                <a href="EnvoyFilter.html">
+            
+                    
+                    EnvoyFilter
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" >
+            
+                <span>
+            
+                    
+                    pilot
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../debug.html">
+            
+                <a href="../debug.html">
+            
+                    
+                    Debug
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Istio Code Analysis & Istio源码分析
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Istio Ecology
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../istio-ecology/aeraki/aeraki.html">
+            
+                <a href="../../istio-ecology/aeraki/aeraki.html">
+            
+                    
+                    Istio协议拓展增强插件——Aeraki
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../istio-ecology/aeraki/concepts.html">
+            
+                <a href="../../istio-ecology/aeraki/concepts.html">
+            
+                    
+                    Aeraki Concepts & Aeraki概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../../istio-ecology/aeraki/design.html">
+            
+                <a href="../../istio-ecology/aeraki/design.html">
+            
+                    
+                    Aeraki Code Design & Aeraki设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="../../istio-ecology/aeraki/case.html">
+            
+                <a href="../../istio-ecology/aeraki/case.html">
+            
+                    
+                    Aeraki Case Sample & Aeraki应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../istio-ecology/kiali/kiali.html">
+            
+                <a href="../../istio-ecology/kiali/kiali.html">
+            
+                    
+                    Istio可视化工具——Kiali
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    Envoy Concepts & Envoy概念
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../envoy-concepts/concepts.html">
+            
+                <a href="../../envoy-concepts/concepts.html">
+            
+                    
+                    Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" >
+            
+                <span>
+            
+                    
+                    Envoy与istio的交互流程
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../envoy-concepts/xds.html">
+            
+                <a href="../../envoy-concepts/xds.html">
+            
+                    
+                    XDS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    Case Analysis & 案例分析
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../case-analysis/simple-Dubbo-Mesh.html">
+            
+                <a href="../../case-analysis/simple-Dubbo-Mesh.html">
+            
+                    
+                    Simple Dubbo Mesh
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <a target="_blank" href="https://github.com/shuxnhs/Mastering-ServiceMesh">
+            
+                    
+                    Github & 仓库地址
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >VirtualService</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="istio&#x5B66;&#x4E60;&#x4E4B;crd1&#x20E3;&#xFE0F;&#xFF1A;virtualservice">Istio&#x5B66;&#x4E60;&#x4E4B;CRD1&#x20E3;&#xFE0F;&#xFF1A;VirtualService</h1>
+<p>Istio&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x8D44;&#x6E90;&#x6709;&#x4E94;&#x5341;&#x591A;&#x4E2A;&#xFF0C;&#x4ECA;&#x5929;&#x5148;&#x5BF9;Network&#x90E8;&#x5206;&#x7684;VirtualService&#x7684;&#x5B66;&#x4E60;&#x505A;&#x4E2A;&#x8BB0;&#x5F55;&#x3002;</p>
+<h2 id="&#x4ECB;&#x7ECD;">&#x4ECB;&#x7ECD;</h2>
+<ol>
+<li><p>&#x9996;&#x5148;&#x732E;&#x4E0A;&#x5B98;&#x65B9;&#x6587;&#x6863;&#xFF1A;<a href="https://istio.io/latest/zh/docs/reference/config/networking/virtual-service/" target="_blank">https://istio.io/latest/zh/docs/reference/config/networking/virtual-service/</a></p>
+</li>
+<li><p>VirtualService&#x4E3B;&#x8981;&#x662F;&#x5B9A;&#x4E49;&#x4E86;&#x670D;&#x52A1;&#x7684;&#x8DEF;&#x7531;&#x89C4;&#x5219;&#xFF0C;&#x5982;&#x679C;&#x6D41;&#x91CF;&#x6EE1;&#x8DB3;&#x4E86;&#x6211;&#x4EEC;&#x8BBE;&#x5B9A;&#x7684;&#x5339;&#x914D;&#x89C4;&#x5219;&#xFF0C;&#x5219;&#x4F1A;&#x6839;&#x636E;&#x6211;&#x4EEC;&#x7684;&#x8BBE;&#x5B9A;&#x5C06;&#x6D41;&#x91CF;&#x53D1;&#x9001;&#x5230;&#x670D;&#x52A1;&#x6CE8;&#x518C;&#x8868;&#x4E2D;&#x7684;&#x670D;&#x52A1;/&#x7248;&#x672C;</p>
+</li>
+<li><p>&#x6837;&#x4F8B;</p>
+<pre><code class="lang-yaml"><span class="hljs-attr">apiVersion:</span> networking.istio.io/v1alpha3
+<span class="hljs-attr">kind:</span> VirtualService
+<span class="hljs-attr">metadata:</span>
+<span class="hljs-attr">  name:</span> reviews-route
+<span class="hljs-attr">spec:</span>
+    <span class="hljs-comment"># host&#x4E3A;&#x5FC5;&#x8981;&#x5B57;&#x6BB5;&#xFF0C;&#x8868;&#x793A;&#x76EE;&#x6807;&#x4E3B;&#x673A;&#xFF0C;&#x5C3D;&#x91CF;&#x4F7F;&#x7528;FQDN&#x6765;&#x8FDB;&#x884C;&#x670D;&#x52A1;&#x5F15;&#x7528;&#xFF0C;&#x540C;&#x4E2A;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x670D;&#x52A1;&#x7684;&#x77ED;&#x540D;&#x79F0;</span>
+<span class="hljs-attr">  hosts:</span>
+<span class="hljs-bullet">  -</span> reviews.prod.svc.cluster.local
+  <span class="hljs-comment"># HTTP&#x7684;&#x6709;&#x5E8F;&#x8DEF;&#x7531;&#x89C4;&#x5219;&#x5217;&#x8868;&#xFF0C;&#x5BF9;httpx&#xFF0C;http2x&#xFF0C;grpc&#xFF0C;&#x90FD;&#x662F;&#x6709;&#x6548;&#x7684;&#xFF0C;&#x5339;&#x914D;&#x89C4;&#x5219;&#x4ECE;&#x4E0A;&#x5F80;&#x4E0B;</span>
+<span class="hljs-attr">  http:</span>
+<span class="hljs-attr">  - name:</span> <span class="hljs-string">&quot;reviews-v2-routes&quot;</span>
+      <span class="hljs-comment"># &#x5339;&#x914D;&#x89C4;&#x5219;&#xFF0C;&#x6709;&#x6839;&#x636E;uri&#xFF0C;header&#xFF0C;host&#xFF0C;port&#xFF0C;queryParams&#xFF0C;scheme&#x7B49;</span>
+      <span class="hljs-comment"># &#x5339;&#x914D;&#x89C4;&#x5219;&#x6709;&#xFF1A;exact&#x7CBE;&#x51C6;&#x5339;&#x914D;&#xFF0C;prefix&#x524D;&#x7F00;&#x5339;&#x914D;&#xFF0C;regex&#x6B63;&#x5219;&#x5339;&#x914D;</span>
+<span class="hljs-attr">    match:</span>
+<span class="hljs-attr">    - uri:</span>
+<span class="hljs-attr">        exact:</span> <span class="hljs-string">&quot;/wpcatalog&quot;</span>
+<span class="hljs-attr">    - uri:</span>
+<span class="hljs-attr">        prefix:</span> <span class="hljs-string">&quot;/consumercatalog&quot;</span>
+    <span class="hljs-comment"># &#x91CD;&#x5199;HTTP URI&#x548C;Authority&#x6807;&#x5934;&#x3002;&#x91CD;&#x5199;&#x5C06;&#x5728;&#x8F6C;&#x53D1;&#x4E4B;&#x524D;&#x6267;&#x884C;&#x3002;</span>
+<span class="hljs-attr">    rewrite:</span>
+<span class="hljs-attr">      uri:</span> <span class="hljs-string">&quot;/newcatalog&quot;</span>
+    <span class="hljs-comment"># &#x91CD;&#x5B9A;&#x5411;&#xFF0C;&#x91CD;&#x5B9A;&#x5411;&#x4E0D;&#x80FD;&#x4E0E;&#x91CD;&#x5199;&#x4E00;&#x8D77;&#x4F7F;&#x7528;</span>
+<span class="hljs-attr">    redirect:</span>
+<span class="hljs-attr">      uri:</span> /v1/bookRatings
+<span class="hljs-attr">      authority:</span> newratings.default.svc.cluster.local
+<span class="hljs-attr">    route:</span>
+<span class="hljs-attr">    - destination:</span>
+<span class="hljs-attr">        host:</span> reviews.prod.svc.cluster.local
+<span class="hljs-attr">        subset:</span> v2
+      <span class="hljs-comment"># &#x6743;&#x91CD;</span>
+<span class="hljs-attr">      weight:</span> <span class="hljs-number">80</span>
+<span class="hljs-attr">  - name:</span> <span class="hljs-string">&quot;reviews-v1-route&quot;</span>
+<span class="hljs-attr">    route:</span>
+<span class="hljs-attr">    - destination:</span>
+<span class="hljs-attr">        host:</span> reviews.prod.svc.cluster.local
+<span class="hljs-attr">        subset:</span> v1
+    <span class="hljs-comment"># cors</span>
+<span class="hljs-attr">    corsPolicy:</span>
+<span class="hljs-attr">      allowOrigin:</span>
+<span class="hljs-bullet">      -</span> example.com
+<span class="hljs-attr">      allowMethods:</span>
+<span class="hljs-bullet">      -</span> POST
+<span class="hljs-bullet">      -</span> GET
+<span class="hljs-attr">      allowCredentials:</span> <span class="hljs-literal">false</span>
+<span class="hljs-attr">      allowHeaders:</span>
+<span class="hljs-bullet">      -</span> X-Foo-Bar
+<span class="hljs-attr">      maxAge:</span> <span class="hljs-string">&quot;24h&quot;</span>
+
+  <span class="hljs-comment"># &#x5E94;&#x7528;&#x5230;&#x8DEF;&#x7531;&#x7684;&#x7F51;&#x5173;&#xFF0C;&#x5FFD;&#x7565;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x7F51;&#x5173;</span>
+<span class="hljs-attr">  gateways:</span>
+<span class="hljs-bullet">  -</span> mygateway
+
+  <span class="hljs-comment"># &#x900F;&#x4F20;TLS&#x548C;HTTPS&#x7684;&#x6D41;&#x91CF;&#x7684;&#x8DEF;&#x7531;&#x89C4;&#x5219;&#x5217;&#x8868;</span>
+<span class="hljs-attr">  tls:</span>
+<span class="hljs-attr">  - match:</span>
+<span class="hljs-attr">    - port:</span> <span class="hljs-number">443</span>
+<span class="hljs-attr">      sniHosts:</span>
+<span class="hljs-bullet">      -</span> login.bookinfo.com
+<span class="hljs-attr">    route:</span>
+<span class="hljs-attr">    - destination:</span>
+<span class="hljs-attr">        host:</span> login.prod.svc.cluster.local  
+
+  <span class="hljs-comment"># &#x900F;&#x4F20;tcp&#x6D41;&#x91CF;&#x7684;&#x6709;&#x5E8F;&#x8DEF;&#x7531;&#x89C4;&#x5219;&#x5217;&#x8868;&#xFF0C;&#x5BF9;&#x6240;&#x6709;HTTP&#x548C;TLS&#x4E4B;&#x5916;&#x7684;&#x7AEF;&#x53E3;&#x751F;&#x6548;      </span>
+<span class="hljs-attr">  tcp:</span>
+<span class="hljs-attr">  - match:</span>
+<span class="hljs-attr">    - port:</span> <span class="hljs-number">27017</span>
+<span class="hljs-attr">    route:</span>
+<span class="hljs-attr">    - destination:</span>
+<span class="hljs-attr">        host:</span> mongo.backup.svc.cluster.local
+<span class="hljs-attr">        port:</span>
+<span class="hljs-attr">          number:</span> <span class="hljs-number">5555</span>
+</code></pre>
+</li>
+</ol>
+<h2 id="&#x6F14;&#x793A;">&#x6F14;&#x793A;</h2>
+<h3 id="&#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x5BF9;&#x5E94;&#x7684;http-server">&#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x5BF9;&#x5E94;&#x7684;http server</h3>
+<ol>
+<li><p>httpd&#xFF1A;</p>
+<pre><code class="lang-yaml"><span class="hljs-attr">apiVersion:</span> apps/v1
+<span class="hljs-attr">kind:</span> Deployment
+<span class="hljs-attr">metadata:</span>
+<span class="hljs-attr">  name:</span> httpd
+<span class="hljs-attr">  labels:</span>
+<span class="hljs-attr">    server:</span> httpd
+<span class="hljs-attr">    app:</span> web
+<span class="hljs-attr">spec:</span>
+<span class="hljs-attr">  replicas:</span> <span class="hljs-number">1</span>
+<span class="hljs-attr">  selector:</span>
+<span class="hljs-attr">    matchLabels:</span>
+<span class="hljs-attr">      server:</span> httpd
+<span class="hljs-attr">      app:</span> web
+<span class="hljs-attr">  template:</span>
+<span class="hljs-attr">    metadata:</span>
+<span class="hljs-attr">      labels:</span>
+<span class="hljs-attr">        server:</span> httpd
+<span class="hljs-attr">        app:</span> web
+<span class="hljs-attr">    spec:</span>
+<span class="hljs-attr">      containers:</span>
+<span class="hljs-attr">      - name:</span> busybox
+<span class="hljs-attr">        image:</span> busybox
+<span class="hljs-attr">        imagePullPolicy:</span> IfNotPresent
+<span class="hljs-attr">        command:</span> [<span class="hljs-string">&quot;/bin/sh&quot;</span>, <span class="hljs-string">&quot;-c&quot;</span>, <span class="hljs-string">&quot;echo &apos;this is httpd&apos; &gt; /var/www/index.html; httpd -f -p 8080 -h /var/www&quot;</span>]
+
+<span class="hljs-meta">---</span>
+<span class="hljs-attr">apiVersion:</span> v1
+<span class="hljs-attr">kind:</span> Service
+<span class="hljs-attr">metadata:</span>
+<span class="hljs-attr">  name:</span> httpd-svc
+<span class="hljs-attr">spec:</span>
+<span class="hljs-attr">  selector:</span>
+<span class="hljs-attr">    server:</span> httpd
+<span class="hljs-attr">  ports:</span>
+<span class="hljs-attr">  - name:</span> http
+<span class="hljs-attr">    port:</span> <span class="hljs-number">8080</span>
+<span class="hljs-attr">    targetPort:</span> <span class="hljs-number">8080</span>
+<span class="hljs-attr">    protocol:</span> TCP
+</code></pre>
+</li>
+<li><p>tomcat</p>
+<pre><code class="lang-yaml"><span class="hljs-attr">apiVersion:</span> apps/v1
+<span class="hljs-attr">kind:</span> Deployment
+<span class="hljs-attr">metadata:</span>
+<span class="hljs-attr">  name:</span> tomcat
+<span class="hljs-attr">  labels:</span>
+    server&#xFF1A; tomcat
+<span class="hljs-attr">    app:</span> web
+<span class="hljs-attr">spec:</span>
+<span class="hljs-attr">  replicas:</span> <span class="hljs-number">1</span>
+<span class="hljs-attr">  selector:</span>
+<span class="hljs-attr">    matchLabels:</span>
+<span class="hljs-attr">      server:</span> tomcat
+<span class="hljs-attr">      app:</span> web
+<span class="hljs-attr">  template:</span>
+<span class="hljs-attr">    metadata:</span>
+<span class="hljs-attr">      labels:</span>
+<span class="hljs-attr">        server:</span> tomcat
+<span class="hljs-attr">        app:</span> web
+<span class="hljs-attr">    spec:</span>
+<span class="hljs-attr">      containers:</span>
+<span class="hljs-attr">      - name:</span> tomcat
+<span class="hljs-attr">        image:</span> docker.io/kubeguide/tomcat-app:v1
+<span class="hljs-attr">        imagePullPolicy:</span> IfNotPresent
+
+<span class="hljs-bullet">-</span>-- 
+<span class="hljs-attr">apiVersion:</span> v1
+<span class="hljs-attr">kind:</span> Service
+<span class="hljs-attr">metadata:</span>
+<span class="hljs-attr">  name:</span> tomcat-svc
+<span class="hljs-attr">spec:</span>
+<span class="hljs-attr">  selector:</span>
+<span class="hljs-attr">    server:</span> tomcat
+<span class="hljs-attr">  ports:</span>
+<span class="hljs-attr">  - name:</span> http
+<span class="hljs-attr">    port:</span> <span class="hljs-number">8080</span>
+<span class="hljs-attr">    targetPort:</span> <span class="hljs-number">8080</span>
+<span class="hljs-attr">    protocol:</span> TCP
+</code></pre>
+</li>
+<li><p>Busy box&#x8FDB;&#x5165;&#x5BB9;&#x5668;&#x4E2D;&#x6D4B;&#x8BD5;
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hexiaohong-client
+spec:
+  replicas: 1
+  selector:</p>
+<pre><code>matchLabels:
+  app: hexiaohong-client
+</code></pre><p>  template:</p>
+<pre><code>metadata:
+  labels:
+    app: hexiaohong-client
+spec:
+  containers:
+  - name: busybox
+    image: busybox
+    imagePullPolicy: IfNotPresent
+    command: [&quot;/bin/sh&quot;, &quot;-c&quot;, &quot;sleep 3600&quot;]    
+</code></pre></li>
+</ol>
+<hr>
+<p>   apiVersion: v1
+   kind: Service
+   metadata:
+     name: web-svc
+   spec:
+     selector:
+       app: hexiaohong-client
+     ports:</p>
+<pre><code> - name: http
+   port: 8080
+   targetPort: 8080
+   protocol: TCP
+</code></pre><pre><code>
+
+### &#x8FDB;&#x5165;busybox&#x6D4B;&#x8BD5;
+
+1. httpd
+![&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;](http://cd7.yesapi.net/89E670FD80BA98E7F7D7E81688123F32_20210325235333_dd5afe6e7d3ed76a63272e9608b35254.png)
+
+
+2. tomcat
+![&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;](http://cd7.yesapi.net/89E670FD80BA98E7F7D7E81688123F32_20210325235443_6f227be075b7fef2dfecb3842a4e87b9.png)
+
+
+
+
+
+
+### &#x521B;&#x5EFA;VirtualService&#x5B9E;&#x73B0;&#x6D41;&#x63A7;
+
+1. &#x521B;&#x5EFA;VirtualService
+
+   ```yaml
+   apiVersion: networking.istio.io/v1alpha3
+   kind: VirtualService
+   metadata:
+     name: web-svc-vs
+   spec:
+     hosts:
+     - web-svc.default.svc.cluster.local
+     http:
+     - route:
+       - destination:
+           host: httpd-svc
+         weight: 80
+       - destination:
+           host: tomcat-svc
+         weight: 20
+</code></pre><ol>
+<li>&#x67E5;&#x770B;VirtualService&#xFF1A;</li>
+</ol>
+<pre><code>   # kubectl get virtualservices.networking.istio.io
+
+   NAME         GATEWAYS               HOSTS                                   AGE
+   bookinfo     [&quot;bookinfo-gateway&quot;]   [&quot;*&quot;]                                   31h
+   web-svc-vs                          [&quot;web-svc.default.svc.cluster.local&quot;]   43s
+</code></pre><ol>
+<li>80%&#x6D41;&#x91CF;&#x5230;httpd&#xFF0C;20%&#x5230;tomcat
+<img src="http://cd7.yesapi.net/89E670FD80BA98E7F7D7E81688123F32_20210325235944_3d6268903d866d8a91c1a74bab6e7247.png" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></li>
+</ol>
+<h3 id="&#x521B;&#x5EFA;virtualservice&#x5B9E;&#x73B0;&#x8DEF;&#x7531;">&#x521B;&#x5EFA;VirtualService&#x5B9E;&#x73B0;&#x8DEF;&#x7531;</h3>
+<ol>
+<li><p>&#x521B;&#x5EFA;&#x5E26;&#x5339;&#x914D;&#x6761;&#x4EF6;&#x7684;VirtualService</p>
+<pre><code class="lang-yaml"><span class="hljs-attr">apiVersion:</span> networking.istio.io/v1alpha3
+<span class="hljs-attr">kind:</span> VirtualService
+<span class="hljs-attr">metadata:</span>
+<span class="hljs-attr">name:</span> web-svc-vs
+<span class="hljs-attr">spec:</span>
+<span class="hljs-attr">hosts:</span>
+<span class="hljs-bullet">-</span> web-svc.default.svc.cluster.local
+<span class="hljs-attr">http:</span>
+<span class="hljs-attr">- match:</span>
+<span class="hljs-attr">   - headers:</span>
+<span class="hljs-attr">         to:</span>
+<span class="hljs-attr">             exact:</span> httpd
+<span class="hljs-attr">   route:</span>
+<span class="hljs-attr"> - destination:</span>
+<span class="hljs-attr">     host:</span> httpd-svc
+<span class="hljs-attr">- route:</span>
+<span class="hljs-attr"> - destination:</span>
+<span class="hljs-attr">     host:</span> tomcat-svc
+</code></pre>
+</li>
+</ol>
+<ol>
+<li>&#x643A;&#x5E26;header:&apos;to: httpd&apos;&#x5C06;&#x6D41;&#x91CF;&#x5BFC;&#x5165;httpd&#xFF0C;&#x5426;&#x5219;&#x5219;&#x5230;tomcat <img src="http://cd7.yesapi.net/89E670FD80BA98E7F7D7E81688123F32_20210326000014_1d5dd1eedcfb0ba65bb1c1e452de2d16.png" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></li>
+</ol>
+<blockquote>
+<p>&#x6837;&#x4F8B;&#x6765;&#x81EA;&#x5B66;&#x4E60;&#x4E5D;&#x6790;&#x5927;&#x4F6C;&#x7684;&#x6559;&#x7A0B;</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ReadFirst.html" class="navigation navigation-prev " aria-label="Previous page: Istio CRD">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="DestinationRule.html" class="navigation navigation-next " aria-label="Next page: DestinationRule">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"VirtualService","level":"1.3.3.1","depth":3,"next":{"title":"DestinationRule","level":"1.3.3.2","depth":3,"path":"istio-concepts/crd/DestinationRule.md","ref":"istio-concepts/crd/DestinationRule.md","articles":[]},"previous":{"title":"Istio CRD","level":"1.3.3","depth":2,"path":"istio-concepts/crd/ReadFirst.md","ref":"istio-concepts/crd/ReadFirst.md","articles":[{"title":"VirtualService","level":"1.3.3.1","depth":3,"path":"istio-concepts/crd/VirtualService.md","ref":"istio-concepts/crd/VirtualService.md","articles":[]},{"title":"DestinationRule","level":"1.3.3.2","depth":3,"path":"istio-concepts/crd/DestinationRule.md","ref":"istio-concepts/crd/DestinationRule.md","articles":[]},{"title":"ServiceEntry","level":"1.3.3.3","depth":3,"path":"istio-concepts/crd/ServiceEntry.md","ref":"istio-concepts/crd/ServiceEntry.md","articles":[]},{"title":"EnvoyFilter","level":"1.3.3.4","depth":3,"path":"istio-concepts/crd/EnvoyFilter.md","ref":"istio-concepts/crd/EnvoyFilter.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","page-toc-button","pageview-count","hide-element","splitter","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/shuxnhs/Mastering-ServiceMesh"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{},"pageview-count":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"github":{"url":"https://github.com/shuxnhs/Mastering-ServiceMesh"},"theme":"default","author":"hexiaohong","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Mastering-ServiceMesh","gitbook":"*","description":"深入浅出服务网格"},"file":{"path":"istio-concepts/crd/VirtualService.md","mtime":"2021-05-13T15:14:32.103Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-13T15:15:20.955Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

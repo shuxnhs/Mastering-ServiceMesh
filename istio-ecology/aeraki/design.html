@@ -1,0 +1,1388 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Aeraki Code Design & Aeraki设计 · Mastering-ServiceMesh</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="hexiaohong">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="case.html" />
+    
+    
+    <link rel="prev" href="concepts.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Concepts & 概述
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Istio Concepts & Istio概念
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../istio-concepts/install.html">
+            
+                <a href="../../istio-concepts/install.html">
+            
+                    
+                    Install & 安装与命令相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../istio-concepts/injection.html">
+            
+                <a href="../../istio-concepts/injection.html">
+            
+                    
+                    Injection & Istio注入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../istio-concepts/crd/ReadFirst.html">
+            
+                <a href="../../istio-concepts/crd/ReadFirst.html">
+            
+                    
+                    Istio CRD
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../../istio-concepts/crd/VirtualService.html">
+            
+                <a href="../../istio-concepts/crd/VirtualService.html">
+            
+                    
+                    VirtualService
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../../istio-concepts/crd/DestinationRule.html">
+            
+                <a href="../../istio-concepts/crd/DestinationRule.html">
+            
+                    
+                    DestinationRule
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../../istio-concepts/crd/ServiceEntry.html">
+            
+                <a href="../../istio-concepts/crd/ServiceEntry.html">
+            
+                    
+                    ServiceEntry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../../istio-concepts/crd/EnvoyFilter.html">
+            
+                <a href="../../istio-concepts/crd/EnvoyFilter.html">
+            
+                    
+                    EnvoyFilter
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" >
+            
+                <span>
+            
+                    
+                    pilot
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../istio-concepts/debug.html">
+            
+                <a href="../../istio-concepts/debug.html">
+            
+                    
+                    Debug
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Istio Code Analysis & Istio源码分析
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Istio Ecology
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="aeraki.html">
+            
+                <a href="aeraki.html">
+            
+                    
+                    Istio协议拓展增强插件——Aeraki
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="concepts.html">
+            
+                <a href="concepts.html">
+            
+                    
+                    Aeraki Concepts & Aeraki概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.1.2" data-path="design.html">
+            
+                <a href="design.html">
+            
+                    
+                    Aeraki Code Design & Aeraki设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="case.html">
+            
+                <a href="case.html">
+            
+                    
+                    Aeraki Case Sample & Aeraki应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../kiali/kiali.html">
+            
+                <a href="../kiali/kiali.html">
+            
+                    
+                    Istio可视化工具——Kiali
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    Envoy Concepts & Envoy概念
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../envoy-concepts/concepts.html">
+            
+                <a href="../../envoy-concepts/concepts.html">
+            
+                    
+                    Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" >
+            
+                <span>
+            
+                    
+                    Envoy与istio的交互流程
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../envoy-concepts/xds.html">
+            
+                <a href="../../envoy-concepts/xds.html">
+            
+                    
+                    XDS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    Case Analysis & 案例分析
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../case-analysis/simple-Dubbo-Mesh.html">
+            
+                <a href="../../case-analysis/simple-Dubbo-Mesh.html">
+            
+                    
+                    Simple Dubbo Mesh
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <a target="_blank" href="https://github.com/shuxnhs/Mastering-ServiceMesh">
+            
+                    
+                    Github & 仓库地址
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Aeraki Code Design & Aeraki设计</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="aeraki&#x5206;&#x6790;">Aeraki&#x5206;&#x6790;</h1>
+<h2 id="&#x6574;&#x4F53;&#x67B6;&#x6784;">&#x6574;&#x4F53;&#x67B6;&#x6784;</h2>
+<p><img src="../../static/img/istio-ecology/aeraki/architecture.png" alt=""></p>
+<p>&#x7B80;&#x5355;&#x6765;&#x8BB2;&#xFF0C;<code>Aeraki</code> &#x5C31;&#x662F;&#x6765;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x53BB;&#x751F;&#x6210;<a href="../../istio-concepts/crd/EnvoyFilter.html">envoyfilter</a>&#xFF0C;&#x5373;EnvoyFilter&#x7684;&#x6A21;&#x7248;&#x751F;&#x6210;&#x3001;&#x8F6C;&#x6362;&#x3001;&#x7BA1;&#x7406;&#x63D2;&#x4EF6;&#x3002;&#x5BF9;&#x4E8E;<code>Thrift</code> &#x548C; <code>Dubbo</code> &#x8FD9;&#x6837;&#x7684; RPC &#x534F;&#x8BAE;&#xFF08;&#x8BED;&#x4E49;&#x548C; HTTP &#x7C7B;&#x4F3C;&#xFF09;&#xFF0C;<code>Aeraki</code>&#x6CBF;&#x7528;&#x5176;&#x539F;&#x751F;&#x7684;CRD &#xFF1A; <a href="../../istio-concepts/crd/VirtualService.html">VirtualService</a> &#x548C; <a href="../../istio-concepts/crd/DestinationRule.html">DestinationRule</a>&#xFF0C;&#x5E76;&#x6839;&#x636E;CRD&#x5B9A;&#x4E49;&#x7684;&#x8DEF;&#x7531;&#x89C4;&#x5219;&#x548C;&#x6D41;&#x91CF;&#x89C4;&#x5219;&#x53BB;&#x751F;&#x6210;&#x5BF9;&#x5E94;&#x7684;EnvoyFilter&#xFF1B;&#x5BF9;&#x4E8E;&#x975E; RPC &#x534F;&#x8BAE;&#xFF0C;<code>Aeraki</code> &#x5219;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E9B;&#x65B0;&#x7684; CRD &#x6765;&#x8FDB;&#x884C;&#x7BA1;&#x7406;&#xFF0C;&#x4F8B;&#x5982;&#x9488;&#x5BF9;redis&#x670D;&#x52A1;&#x5B9A;&#x4E49;&#x4E86; RedisService &#x548C; RedisDestination&#x5E76;&#x6839;&#x636E;&#x91CC;&#x9762;&#x7684;&#x5B9A;&#x4E49;&#x53BB;&#x751F;&#x6210;&#x5BF9;&#x5E94;&#x7684;EnvoyFilter&#x3002;</p>
+<h2 id="&#x4EE3;&#x7801;&#x8BBE;&#x8BA1;">&#x4EE3;&#x7801;&#x8BBE;&#x8BA1;</h2>
+<h3 id="&#x4EE3;&#x7801;&#x76EE;&#x5F55;">&#x4EE3;&#x7801;&#x76EE;&#x5F55;</h3>
+<pre><code class="lang-shell">.
+&#x251C;&#x2500;&#x2500; README.md                        # README&#x6587;&#x6863;
+&#x251C;&#x2500;&#x2500; cmd
+&#x2502;   &#x2514;&#x2500;&#x2500; aeraki                        # main&#x51FD;&#x6570;&#x5165;&#x53E3;
+&#x251C;&#x2500;&#x2500; common-protos                    # &#x4E00;&#x4E9B;pb&#x76F8;&#x5173;&#x7684;
+&#x251C;&#x2500;&#x2500; demo                            # aeraki&#x63D0;&#x4F9B;&#x7684;&#x670D;&#x52A1;&#x6837;&#x4F8B;yaml&#x6587;&#x4EF6;
+&#x2502;   &#x251C;&#x2500;&#x2500; aeraki-demo.json            # grafana&#x5BFC;&#x51FA;&#x7684;&#x914D;&#x7F6E;
+&#x2502;   &#x251C;&#x2500;&#x2500; dubbo                        # dubbo&#x670D;&#x52A1;&#x7684;yaml&#xFF0C;&#x5305;&#x62EC;dubbo&#x7684;deployment&#xFF0C;destinationRule&#xFF0C;virtualService&#xFF0C;serviceEntry
+&#x2502;   &#x251C;&#x2500;&#x2500; gateway                        # kiali,prometheus,grafana&#x7684;&#x4E00;&#x4E9B;gateway&#xFF0C;service
+&#x2502;   &#x251C;&#x2500;&#x2500; install-demo.sh                # &#x5B89;&#x88C5;aeraki&#x811A;&#x672C;(&#x5305;&#x62EC;istio&#x3001;kiali&#x3001;prometheus&#x3001;grafana&#x3001;dubbo&#x3001;thrift&#x3001;kafka&#x7B49;)
+&#x2502;   &#x251C;&#x2500;&#x2500; kafka                        # kafka&#x76F8;&#x5173;&#x811A;&#x672C;
+&#x2502;   &#x251C;&#x2500;&#x2500; thrift                        # thrift&#x76F8;&#x5173;yaml
+&#x2502;   &#x2514;&#x2500;&#x2500; uninstall-demo.sh            # &#x5378;&#x8F7D;&#x811A;&#x672C;
+&#x251C;&#x2500;&#x2500; docker
+&#x2502;   &#x2514;&#x2500;&#x2500; Dockerfile                    # aeraki&#x7684;dockerfile
+&#x251C;&#x2500;&#x2500; docs                            # &#x6587;&#x6863;
+&#x251C;&#x2500;&#x2500; go.mod
+&#x251C;&#x2500;&#x2500; go.sum
+&#x251C;&#x2500;&#x2500; k8s
+&#x2502;   &#x2514;&#x2500;&#x2500; aeraki.yaml                    # aeraki&#x7684;yaml&#x6587;&#x4EF6;
+&#x251C;&#x2500;&#x2500; pkg                                # aeraki&#x7684;&#x6838;&#x5FC3;&#x4EE3;&#x7801;
+&#x2502;   &#x251C;&#x2500;&#x2500; bootstrap                    # aeraki&#x7684;server&#x4EE3;&#x7801;
+&#x2502;   &#x251C;&#x2500;&#x2500; config                        # configController &#x76D1;&#x542C;Istio config xDS server&#x7684;&#x914D;&#x7F6E;&#x53D8;&#x66F4;
+&#x2502;   &#x251C;&#x2500;&#x2500; envoyfilter                    # envoyFilterController &#x751F;&#x6210;&#x5BF9;&#x5E94;&#x7684;envoyFilter
+&#x2502;   &#x251C;&#x2500;&#x2500; kube                        #    &#x4E0E;k8s&#x7684;apiserve&#x7684;&#x4EA4;&#x4E92;
+&#x2502;   &#x2514;&#x2500;&#x2500; model                        # &#x4E00;&#x4E9B;&#x5B9A;&#x4E49;&#x8FD8;&#x6709;&#x534F;&#x8BAE;&#x7684;&#x8BC6;&#x522B;&#xFF08;&#x6839;&#x636E;PortName&#xFF09;
+&#x251C;&#x2500;&#x2500; plugin                            # &#x5404;&#x4E2A;&#x534F;&#x8BAE;&#x63D2;&#x4EF6;&#x5BF9;&#x5E94;&#x7684;Generator&#x5B9E;&#x4F8B;&#x5B9E;&#x73B0;
+&#x2502;   &#x251C;&#x2500;&#x2500; dubbo
+&#x2502;   &#x251C;&#x2500;&#x2500; kafka
+&#x2502;   &#x251C;&#x2500;&#x2500; redis
+&#x2502;   &#x251C;&#x2500;&#x2500; thrift
+&#x2502;   &#x2514;&#x2500;&#x2500; zookeeper
+&#x251C;&#x2500;&#x2500; test                             # &#x4E00;&#x4E9B;yaml&#x6587;&#x4EF6;&#x4E0E;&#x811A;&#x672C;
+&#x2514;&#x2500;&#x2500; vendor                            # vendor
+</code></pre>
+<h2 id="&#x6574;&#x4F53;&#x6D41;&#x7A0B;">&#x6574;&#x4F53;&#x6D41;&#x7A0B;</h2>
+<p><img src="../../static/img/istio-ecology/aeraki/code-architecture.png" alt=""></p>
+<h3 id="&#x6838;&#x5FC3;&#x4EE3;&#x7801;">&#x6838;&#x5FC3;&#x4EE3;&#x7801;</h3>
+<h4 id="&#x521D;&#x59CB;&#x5316;">&#x521D;&#x59CB;&#x5316;</h4>
+<p>&#x670D;&#x52A1;&#x7684;main&#x51FD;&#x6570;&#x603B;&#x5165;&#x53E3;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x53BB;&#x52A0;&#x8F7D;&#x5404;&#x4E2A;&#x534F;&#x8BAE;&#x7684;Generators&#x8FD8;&#x6709;&#x505A;&#x4E00;&#x4E9B;&#x65E5;&#x5FD7;&#x7684;&#x521D;&#x59CB;&#x5316;&#x5DE5;&#x4F5C;&#xFF0C;&#x5F00;&#x542F;aeraki&#x7684;server&#x7AEF;&#x3002;</p>
+<pre><code class="lang-go"><span class="hljs-comment">//------------------source: aeraki/cmd/aeraki/main.go-------------------------//</span>
+<span class="hljs-keyword">func</span> main() {
+   args := bootstrap.NewAerakiArgs()
+   args.IstiodAddr = *flag.String(<span class="hljs-string">&quot;istiodaddr&quot;</span>, defaultIstiodAddr, <span class="hljs-string">&quot;Istiod xds server address&quot;</span>)
+   args.Namespace = *flag.String(<span class="hljs-string">&quot;namespace&quot;</span>, defaultNamespace, <span class="hljs-string">&quot;Current namespace&quot;</span>)
+   args.ElectionID = *flag.String(<span class="hljs-string">&quot;electionID&quot;</span>, defaultElectionID, <span class="hljs-string">&quot;ElectionID to elect master controller&quot;</span>)
+   args.LogLevel = *flag.String(<span class="hljs-string">&quot;logLevel&quot;</span>, defaultLogLevel, <span class="hljs-string">&quot;Component log level&quot;</span>)
+   flag.Parse()
+   setLogLevels(args.LogLevel)
+   <span class="hljs-comment">// Create the stop channel for all of the servers.</span>
+   stopChan := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan</span> <span class="hljs-keyword">struct</span>{}, <span class="hljs-number">1</span>)
+   args.Protocols = initGenerators()
+   server := bootstrap.NewServer(args)
+   server.Start(stopChan)
+
+   signalChan := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan</span> os.Signal, <span class="hljs-number">1</span>)
+   signal.Notify(signalChan, syscall.SIGINT, syscall.SIGTERM)
+   &lt;-signalChan
+   stopChan &lt;- <span class="hljs-keyword">struct</span>{}{}
+}
+
+<span class="hljs-keyword">func</span> initGenerators() <span class="hljs-keyword">map</span>[protocol.Instance]envoyfilter.Generator {
+   <span class="hljs-keyword">return</span> <span class="hljs-keyword">map</span>[protocol.Instance]envoyfilter.Generator{
+      protocol.Dubbo:     dubbo.NewGenerator(),
+      protocol.Thrift:    thrift.NewGenerator(),
+      protocol.Kafka:     kafka.NewGenerator(),
+      protocol.Zookeeper: zookeeper.NewGenerator(),
+   }
+}
+</code></pre>
+<h4 id="bootstrap">bootstrap</h4>
+<p>aeraki&#x7684;server&#x7ED3;&#x6784;&#x4E3B;&#x8981;&#x5305;&#x62EC;&#x4E86;&#x672C;&#x8EAB;&#x8FD0;&#x884C;&#x7684;&#x4E00;&#x4E9B;&#x914D;&#x7F6E;args&#x8FD8;&#x6709;&#x5C31;&#x662F;&#x51E0;&#x4E2A;controller&#x3002;</p>
+<pre><code class="lang-go"><span class="hljs-comment">//------------------source: aeraki/pkg/bootstrap/server.go-----------------------//</span>
+<span class="hljs-keyword">type</span> Server <span class="hljs-keyword">struct</span> {
+    args                  *AerakiArgs
+    configController      *config.Controller                <span class="hljs-comment">// configController&#x76D1;&#x542C;istio&#x914D;&#x7F6E;&#x53D8;&#x66F4;</span>
+    envoyFilterController *envoyfilter.Controller            <span class="hljs-comment">// &#x751F;&#x6210;envoyfilter&#x7684;controller</span>
+    crdController         manager.Manager                    <span class="hljs-comment">// &#x7BA1;&#x7406;&#x81EA;&#x5B9A;&#x4E49;crd&#x7684;controller</span>
+    stopCRDController     <span class="hljs-keyword">func</span>()    
+}
+
+<span class="hljs-comment">// Aeraki&#x8FD0;&#x884C;&#x9700;&#x8981;&#x7684;&#x53C2;&#x6570;</span>
+<span class="hljs-keyword">type</span> AerakiArgs <span class="hljs-keyword">struct</span> {
+    IstiodAddr <span class="hljs-keyword">string</span>        
+    ListenAddr <span class="hljs-keyword">string</span>
+    Namespace  <span class="hljs-keyword">string</span>
+    ElectionID <span class="hljs-keyword">string</span>
+    LogLevel   <span class="hljs-keyword">string</span>
+    Protocols  <span class="hljs-keyword">map</span>[protocol.Instance]envoyfilter.Generator
+}
+
+
+<span class="hljs-comment">// &#x65B0;&#x5EFA;server&#x5B9E;&#x4F8B;&#xFF0C;&#x521D;&#x59CB;&#x5316;&#x5404;&#x4E2A;controller</span>
+<span class="hljs-keyword">func</span> NewServer(args *AerakiArgs) *Server {
+    <span class="hljs-comment">// configController&#x5B9E;&#x4F8B;&#x5316;</span>
+    configController := config.NewController(args.IstiodAddr)            
+    <span class="hljs-comment">// envoyFilterController&#x5B9E;&#x4F8B;&#x5316;</span>
+    envoyFilterController := envoyfilter.NewController(configController.Store, args.Protocols)
+    <span class="hljs-comment">// crdController&#x5B9E;&#x4F8B;&#x5316;</span>
+    crdController := controller.NewManager(args.Namespace, args.ElectionID, <span class="hljs-keyword">func</span>() error {
+        <span class="hljs-comment">// &#x81EA;&#x5B9A;&#x4E49;&#x7684;CRD&#x8D44;&#x6E90;&#x7531;&#x66F4;&#x65B0;&#x4E5F;&#x4F1A;&#x4EA4;&#x7ED9;envoyFilterController&#x53BB;&#x5BF9;&#x5E94;&#x5904;&#x7406;</span>
+        envoyFilterController.ConfigUpdate(model.EventUpdate)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>
+    })
+
+    cfg := crdController.GetConfig()
+    args.Protocols[protocol.Redis] = redis.New(cfg, configController.Store)
+
+    <span class="hljs-comment">// configController&#x4E8B;&#x4EF6;&#x5904;&#x7406;handler&#xFF0C;&#x5982;&#x679C;&#x6709;&#x914D;&#x7F6E;&#x6DFB;&#x52A0;/&#x66F4;&#x65B0;/&#x5220;&#x9664;&#x5219;&#x4EA4;&#x7ED9;envoyFilterController&#x53BB;&#x5BF9;&#x5E94;&#x5904;&#x7406;</span>
+    configController.RegisterEventHandler(args.Protocols, <span class="hljs-keyword">func</span>(_, curr istioconfig.Config, event model.Event) {
+        <span class="hljs-comment">// &#x5F80;envoyFilterController&#x7684;pushChannel&#x5199;&#x5165;event</span>
+        envoyFilterController.ConfigUpdate(event)
+    })
+
+    <span class="hljs-keyword">return</span> &amp;Server{
+        args:                  args,
+        configController:      configController,
+        envoyFilterController: envoyFilterController,
+        crdController:         crdController,
+    }
+}
+
+<span class="hljs-comment">// Start starts all components of the Aeraki service. Serving can be canceled at any time by closing the provided stop channel.</span>
+<span class="hljs-comment">// This method won&apos;t block</span>
+<span class="hljs-keyword">func</span> (s *Server) Start(stop &lt;-<span class="hljs-keyword">chan</span> <span class="hljs-keyword">struct</span>{}) {
+    aerakiLog.Info(<span class="hljs-string">&quot;Staring Aeraki Server&quot;</span>)
+
+    <span class="hljs-keyword">go</span> <span class="hljs-keyword">func</span>() {
+        aerakiLog.Infof(<span class="hljs-string">&quot;Starting Envoy Filter Controller&quot;</span>)
+        s.envoyFilterController.Run(stop)
+    }()
+
+    <span class="hljs-keyword">go</span> <span class="hljs-keyword">func</span>() {
+        aerakiLog.Infof(<span class="hljs-string">&quot;Watching xDS resource changes at %s&quot;</span>, s.args.IstiodAddr)
+        s.configController.Run(stop)
+    }()
+
+    ctx, cancel := context.WithCancel(context.Background())
+    s.stopCRDController = cancel
+    <span class="hljs-keyword">go</span> <span class="hljs-keyword">func</span>() {
+        _ = s.crdController.Start(ctx)
+    }()
+
+    s.waitForShutdown(stop)
+}
+</code></pre>
+<h4 id="configcontroller">configController</h4>
+<p>configController&#x4E3B;&#x8981;&#x5C31;&#x662F;&#x76D1;&#x542C;istio&#x7684;&#x914D;&#x7F6E;ServiceEntry&#x3001;VirtualService&#x3001;DestinationRule&#x53D8;&#x5316;&#xFF0C;&#x4F9D;&#x8D56;&#x4E86;istio&#x7684;<a href="https://github.com/istio/api/tree/master/mcp" target="_blank">xds-mcp-api</a>.</p>
+<pre><code class="lang-go"><span class="hljs-comment">//------------------source: aeraki/pkg/config/configcontroller.go-----------------------//</span>
+<span class="hljs-comment">// Controller watches Istio config xDS server and notifies the listeners when config changes.</span>
+<span class="hljs-keyword">type</span> Controller <span class="hljs-keyword">struct</span> {
+    configServerAddr <span class="hljs-keyword">string</span>
+    Store            istiomodel.ConfigStore              <span class="hljs-comment">// istiomodel =&gt; istio.io/istio/pilot/pkg/model</span>
+    controller       istiomodel.ConfigStoreCache      <span class="hljs-comment">// &#x76D1;&#x63A7;ConfigStore</span>
+}
+
+<span class="hljs-keyword">func</span> (c *Controller) Run(stop &lt;-<span class="hljs-keyword">chan</span> <span class="hljs-keyword">struct</span>{}) {
+    <span class="hljs-keyword">go</span> <span class="hljs-keyword">func</span>() {
+        <span class="hljs-keyword">for</span> {
+            <span class="hljs-comment">// &#x62FF;&#x5230;istio&#x7684;xdsMCP</span>
+            xdsMCP, err := adsc.New(c.configServerAddr, &amp;adsc.Config{
+                Meta: istiomodel.NodeMetadata{
+                    Generator: <span class="hljs-string">&quot;api&quot;</span>,
+                }.ToStruct(),
+                InitialDiscoveryRequests: c.configInitialRequests(),
+                BackoffPolicy:            backoff.NewConstantBackOff(time.Second),
+            })
+
+            <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+                controllerLog.Errorf(<span class="hljs-string">&quot;failed to dial XDS %s %v&quot;</span>, c.configServerAddr, err)
+                time.Sleep(<span class="hljs-number">5</span> * time.Second)
+                <span class="hljs-keyword">continue</span>
+            }
+
+            xdsMCP.Store = istiomodel.MakeIstioStore(c.controller)
+            <span class="hljs-keyword">if</span> err = xdsMCP.Run(); err != <span class="hljs-literal">nil</span> {
+                controllerLog.Errorf(<span class="hljs-string">&quot;adsc: failed running %v&quot;</span>, err)
+                time.Sleep(<span class="hljs-number">5</span> * time.Second)
+                <span class="hljs-keyword">continue</span>
+            }
+            c.controller.Run(stop)
+            <span class="hljs-keyword">return</span>
+        }
+    }()
+}
+</code></pre>
+<p>configController&#x4E2D;&#x7684;controller&#x5C31;&#x662F;&#x76D1;&#x63A7;istio-ConfigStore&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x6709;&#x66F4;&#x65B0;&#x5219;&#x4F1A;&#x901A;&#x8FC7;eventChanel&#x901A;&#x77E5;</p>
+<pre><code class="lang-go"><span class="hljs-comment">//------------------source: istio.io/istio/pilot/pkg/config/memory/controller.go---------------//</span>
+<span class="hljs-keyword">type</span> controller <span class="hljs-keyword">struct</span> {
+    monitor     Monitor
+    configStore model.ConfigStore
+}
+
+<span class="hljs-comment">// NewController return an implementation of model.ConfigStoreCache</span>
+<span class="hljs-comment">// This is a client-side monitor that dispatches events as the changes are being</span>
+<span class="hljs-comment">// made on the client.</span>
+<span class="hljs-keyword">func</span> NewController(cs model.ConfigStore) model.ConfigStoreCache {
+    out := &amp;controller{
+        configStore: cs,
+        monitor:     NewMonitor(cs),
+    }
+    <span class="hljs-keyword">return</span> out
+}
+
+<span class="hljs-keyword">func</span> (c *controller) Run(stop &lt;-<span class="hljs-keyword">chan</span> <span class="hljs-keyword">struct</span>{}) {
+    c.monitor.Run(stop)
+}
+
+<span class="hljs-comment">//------------------source: istio.io/istio/pilot/pkg/config/memory/monitor.go---------------------//</span>
+<span class="hljs-comment">// Monitor provides methods of manipulating changes in the config store</span>
+<span class="hljs-keyword">type</span> Monitor <span class="hljs-keyword">interface</span> {
+    Run(&lt;-<span class="hljs-keyword">chan</span> <span class="hljs-keyword">struct</span>{})
+    AppendEventHandler(config2.GroupVersionKind, Handler)
+    ScheduleProcessEvent(ConfigEvent)
+}
+
+<span class="hljs-keyword">func</span> NewMonitor(store model.ConfigStore) Monitor {
+    <span class="hljs-keyword">return</span> newBufferedMonitor(store, BufferSize, <span class="hljs-literal">false</span>)
+}
+
+<span class="hljs-keyword">func</span> (m *configstoreMonitor) Run(stop &lt;-<span class="hljs-keyword">chan</span> <span class="hljs-keyword">struct</span>{}) {
+    <span class="hljs-keyword">if</span> m.sync {
+        &lt;-stop
+        <span class="hljs-keyword">return</span>
+    }
+    <span class="hljs-keyword">for</span> {
+        <span class="hljs-keyword">select</span> {
+        <span class="hljs-keyword">case</span> &lt;-stop:
+            <span class="hljs-keyword">return</span>
+        <span class="hljs-keyword">case</span> ce, ok := &lt;-m.eventCh:
+            <span class="hljs-keyword">if</span> ok {
+                <span class="hljs-comment">// eventChannel&#x7684;event&#x5904;&#x7406;</span>
+                m.processConfigEvent(ce)
+            }
+        }
+    }
+}
+
+<span class="hljs-keyword">func</span> (m *configstoreMonitor) processConfigEvent(ce ConfigEvent) {
+    <span class="hljs-keyword">if</span> _, exists := m.handlers[ce.config.GroupVersionKind]; !exists {
+        log.Warnf(<span class="hljs-string">&quot;Config GroupVersionKind %s does not exist in config store&quot;</span>, ce.config.GroupVersionKind)
+        <span class="hljs-keyword">return</span>
+    }
+    m.applyHandlers(ce.old, ce.config, ce.event)
+}
+</code></pre>
+<p>configController&#x5904;&#x7406;event&#x7684;handler</p>
+<pre><code class="lang-go"><span class="hljs-comment">//------------------source: aeraki/pkg/config/configcontroller.go-----------------------//</span>
+
+<span class="hljs-comment">// RegisterEventHandler adds a handler to receive config update events for a configuration type</span>
+<span class="hljs-keyword">func</span> (c *Controller) RegisterEventHandler(protocols <span class="hljs-keyword">map</span>[protocol.Instance]envoyfilter.Generator, 
+                                          handler   <span class="hljs-keyword">func</span>(istioconfig.Config, istioconfig.Config, istiomodel.Event)) {
+
+
+    handlerWrapper := <span class="hljs-keyword">func</span>(prev istioconfig.Config, curr istioconfig.Config, event istiomodel.Event) {
+        <span class="hljs-keyword">if</span> event == istiomodel.EventUpdate &amp;&amp; reflect.DeepEqual(prev.Spec, curr.Spec) {
+            <span class="hljs-keyword">return</span>
+        }
+
+        <span class="hljs-comment">// ServiceEntry&#x6709;&#x53D8;&#x52A8;</span>
+        <span class="hljs-keyword">if</span> curr.GroupVersionKind == collections.IstioNetworkingV1Alpha3Serviceentries.Resource().GroupVersionKind() {
+            service, ok := curr.Spec.(*networking.ServiceEntry)
+            <span class="hljs-keyword">if</span> !ok {
+                <span class="hljs-comment">// This should never happen&#xFF0C;&#x65AD;&#x8A00;&#x4E3A;ServiceEntry&#x5931;&#x8D25;&#xFF0C;&#x4E0D;&#x53EF;&#x80FD;&#x53D1;&#x751F;</span>
+                controllerLog.Errorf(<span class="hljs-string">&quot;Failed in getting a virtual service: %v&quot;</span>, curr.Name)
+                <span class="hljs-keyword">return</span>
+            }
+
+            <span class="hljs-comment">// &#x901A;&#x8FC7;portName&#x6765;&#x8BC6;&#x522B;&#x5BF9;&#x5E94;&#x7684;&#x534F;&#x8BAE;&#xFF0C;&#x5FC5;&#x987B;&#x4EE5;tcp-protocol-serviceXXX&#x547D;&#x540D;</span>
+            <span class="hljs-keyword">for</span> _, port := <span class="hljs-keyword">range</span> service.Ports {
+                <span class="hljs-keyword">if</span> !strings.HasPrefix(port.Name, <span class="hljs-string">&quot;tcp&quot;</span>) {
+                    <span class="hljs-keyword">continue</span>
+                }
+                <span class="hljs-keyword">if</span> _, ok := protocols[protocol.GetLayer7ProtocolFromPortName(port.Name)]; ok {
+                    controllerLog.Infof(<span class="hljs-string">&quot;Matched protocol :%s %s %s&quot;</span>, protocol.GetLayer7ProtocolFromPortName(port.Name), event.String(), curr.Name)
+                    <span class="hljs-comment">// &#x6267;&#x884C;&#x5BF9;&#x5E94;&#x7684;handler</span>
+                    handler(prev, curr, event)
+                }
+            }
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> curr.GroupVersionKind == collections.IstioNetworkingV1Alpha3Virtualservices.Resource().GroupVersionKind() {
+            <span class="hljs-comment">// VirtualService&#x6709;&#x53D8;&#x52A8;</span>
+            controllerLog.Infof(<span class="hljs-string">&quot;Virtual Service changed: %s %s&quot;</span>, event.String(), curr.Name)
+            vs, ok := curr.Spec.(*networking.VirtualService)
+            <span class="hljs-keyword">if</span> !ok {
+                <span class="hljs-comment">// This should never happen</span>
+                controllerLog.Errorf(<span class="hljs-string">&quot;Failed in getting a virtual service: %v&quot;</span>, event.String(), curr.Name)
+                <span class="hljs-keyword">return</span>
+            }
+            <span class="hljs-comment">// &#x83B7;&#x53D6;&#x6240;&#x6709;&#x7684;serviceEntries</span>
+            serviceEntries, err := c.Store.List(collections.IstioNetworkingV1Alpha3Serviceentries.Resource().GroupVersionKind(), <span class="hljs-string">&quot;&quot;</span>)
+            <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+                controllerLog.Errorf(<span class="hljs-string">&quot;Failed to list configs: %v&quot;</span>, err)
+                <span class="hljs-keyword">return</span>
+            }
+            <span class="hljs-keyword">for</span> _, config := <span class="hljs-keyword">range</span> serviceEntries {
+                service, ok := config.Spec.(*networking.ServiceEntry)
+
+                <span class="hljs-keyword">if</span> !ok { <span class="hljs-comment">// should never happen</span>
+                    controllerLog.Errorf(<span class="hljs-string">&quot;failed in getting a service entry: %s: %v&quot;</span>, config.Labels, err)
+                    <span class="hljs-keyword">return</span>
+                }
+                <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(service.Hosts) &gt; <span class="hljs-number">0</span> {
+                    <span class="hljs-keyword">for</span> _, host := <span class="hljs-keyword">range</span> service.Hosts {
+                        <span class="hljs-comment">// &#x4E0E;virtualService&#x4E2D;&#x7684;host&#x5339;&#x914D;&#x4E0A;&#x4E86;&#xFF0C;&#x6267;&#x884C;&#x5BF9;&#x5E94;&#x7684;handler</span>
+                        <span class="hljs-keyword">if</span> host == vs.Hosts[<span class="hljs-number">0</span>] {
+                            <span class="hljs-keyword">for</span> _, port := <span class="hljs-keyword">range</span> service.Ports {
+                                <span class="hljs-keyword">if</span> _, ok := protocols[protocol.GetLayer7ProtocolFromPortName(port.Name)]; ok {
+                                    handler(prev, curr, event)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    schemas := configCollection.All()
+    <span class="hljs-keyword">for</span> _, schema := <span class="hljs-keyword">range</span> schemas {
+        <span class="hljs-comment">// &#x5728;event&#x5904;&#x7406;&#x8FC7;&#x7A0B;&#x4E2D;&#x6CE8;&#x5165;handlerWrapper</span>
+        c.controller.RegisterEventHandler(schema.Resource().GroupVersionKind(), handlerWrapper)
+    }
+}
+</code></pre>
+<h4 id="envoyfiltercontroller">envoyFilterController</h4>
+<p>envoyFilter&#x7684;&#x7ED3;&#x6784;&#x5305;&#x542B;&#x4E86;istio&#x7684;ConfigStore&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x7528;&#x6765;&#x83B7;&#x53D6;istio&#x7684;crd&#x914D;&#x7F6E;&#x53BB;&#x751F;&#x6210;envotFilter&#xFF1B;generators&#x5219;&#x662F;&#x5404;&#x4E2A;&#x534F;&#x8BAE;&#x63D2;&#x4EF6;&#x7684;&#x5B9E;&#x73B0;&#xFF1B;pushchannel&#x4E3A;event&#x7684;channel&#xFF0C;server&#x542F;&#x52A8;&#x540E;configController&#x76D1;&#x542C;&#x5230;&#x914D;&#x7F6E;&#x53D8;&#x66F4;&#x540E;&#x4F1A;&#x5F80;&#x5176;&#x4E2D;&#x5199;&#x5165;event&#x3002;</p>
+<pre><code class="lang-go"><span class="hljs-comment">//------------------source: aeraki/pkg/envoyfilter/controller.go-----------------------//</span>
+
+<span class="hljs-comment">// Controller contains the runtime configuration for the envoyFilter controller.</span>
+<span class="hljs-keyword">type</span> Controller <span class="hljs-keyword">struct</span> {
+    configStore istiomodel.ConfigStore
+    generators  <span class="hljs-keyword">map</span>[protocol.Instance]Generator
+    <span class="hljs-comment">// server&#x7684;RegisterEventHandler&#x4F1A;&#x5F80;channel&#x4E2D;&#x5199;&#x5165;event</span>
+    pushChannel <span class="hljs-keyword">chan</span> istiomodel.Event
+}
+
+<span class="hljs-keyword">func</span> (s *Controller) Run(stop &lt;-<span class="hljs-keyword">chan</span> <span class="hljs-keyword">struct</span>{}) {
+    <span class="hljs-keyword">go</span> <span class="hljs-keyword">func</span>() {
+        s.mainLoop(stop)
+    }()
+}
+
+<span class="hljs-keyword">const</span> (
+    <span class="hljs-comment">// debounceAfter is the delay added to events to wait after a registry event for debouncing.</span>
+    <span class="hljs-comment">// This will delay the push by at least this interval, plus the time getting subsequent events.</span>
+    <span class="hljs-comment">// If no change is detected the push will happen, otherwise we&apos;ll keep delaying until things settle.</span>
+    debounceAfter = <span class="hljs-number">500</span> * time.Millisecond
+
+    <span class="hljs-comment">// debounceMax is the maximum time to wait for events while debouncing.</span>
+    <span class="hljs-comment">// Defaults to 10 seconds. If events keep showing up with no break for this time, we&apos;ll trigger a push.</span>
+    debounceMax = <span class="hljs-number">10</span> * time.Second
+)
+
+
+<span class="hljs-keyword">func</span> (s *Controller) mainLoop(stop &lt;-<span class="hljs-keyword">chan</span> <span class="hljs-keyword">struct</span>{}) {
+    <span class="hljs-keyword">var</span> timeChan &lt;-<span class="hljs-keyword">chan</span> time.Time
+    <span class="hljs-keyword">var</span> startDebounce time.Time
+    <span class="hljs-keyword">var</span> lastResourceUpdateTime time.Time
+    pushCounter := <span class="hljs-number">0</span>
+    debouncedEvents := <span class="hljs-number">0</span>
+
+    <span class="hljs-keyword">for</span> {
+        <span class="hljs-keyword">select</span> {
+        <span class="hljs-keyword">case</span> &lt;-stop:
+            <span class="hljs-keyword">break</span>
+        <span class="hljs-keyword">case</span> e := &lt;-s.pushChannel:
+            controllerLog.Debugf(<span class="hljs-string">&quot;Receive event from push chanel : %v&quot;</span>, e)
+            lastResourceUpdateTime = time.Now()
+            <span class="hljs-keyword">if</span> debouncedEvents == <span class="hljs-number">0</span> {
+                controllerLog.Debugf(<span class="hljs-string">&quot;This is the first debounced event&quot;</span>)
+                startDebounce = lastResourceUpdateTime
+            }
+            timeChan = time.After(debounceAfter)
+            debouncedEvents++
+        <span class="hljs-keyword">case</span> &lt;-timeChan:
+            controllerLog.Debugf(<span class="hljs-string">&quot;Receive event from time chanel&quot;</span>)
+            eventDelay := time.Since(startDebounce)
+            quietTime := time.Since(lastResourceUpdateTime)
+            <span class="hljs-comment">// it has been too long since the first debounced event or quiet enough since the last debounced event</span>
+            <span class="hljs-keyword">if</span> eventDelay &gt;= debounceMax || quietTime &gt;= debounceAfter {
+                <span class="hljs-keyword">if</span> debouncedEvents &gt; <span class="hljs-number">0</span> {
+                    pushCounter++
+                    controllerLog.Infof(<span class="hljs-string">&quot;Push debounce stable[%d] %d: %v since last change, %v since last push&quot;</span>,
+                        pushCounter, debouncedEvents, quietTime, eventDelay)
+                    <span class="hljs-comment">// &#x63A8;&#x9001;envoyFilter&#x5230;k8s&#x7684;apiserver</span>
+                    err := s.pushEnvoyFilters2APIServer()
+                    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+                        <span class="hljs-comment">// &#x6709;&#x9519;&#x8BEF;&#x91CD;&#x65B0;&#x52A0;&#x5230;push-Channel&#x91CD;&#x8BD5;</span>
+                        controllerLog.Errorf(<span class="hljs-string">&quot;%v&quot;</span>, err)
+                        <span class="hljs-comment">// Retry if failed to push envoyFilters to APIServer</span>
+                        s.ConfigUpdate(istiomodel.EventUpdate)
+                    }
+                    debouncedEvents = <span class="hljs-number">0</span>
+                }
+            } <span class="hljs-keyword">else</span> {
+                timeChan = time.After(debounceAfter - quietTime)
+            }
+        }
+    }
+}
+</code></pre>
+<p>&#x751F;&#x6210;envoyFilter&#x548C;&#x63A8;&#x9001;&#x5230;k8s&#x7684;apiserver&#x6838;&#x5FC3;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-go"><span class="hljs-comment">//------------------source: aeraki/pkg/envoyfilter/controller.go-----------------------//</span>
+<span class="hljs-comment">// &#x751F;&#x6210;envoyFilter</span>
+<span class="hljs-keyword">func</span> (s *Controller) generateEnvoyFilters() (<span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>]*model.EnvoyFilterWrapper, error) {
+
+    envoyFilters := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>]*model.EnvoyFilterWrapper)
+    <span class="hljs-comment">// &#x83B7;&#x53D6;serviceEntries</span>
+    serviceEntries, err := s.configStore.List(collections.IstioNetworkingV1Alpha3Serviceentries.Resource().GroupVersionKind(), <span class="hljs-string">&quot;&quot;</span>)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        <span class="hljs-keyword">return</span> envoyFilters, fmt.Errorf(<span class="hljs-string">&quot;failed to list configs: %v&quot;</span>, err)
+    }
+
+    <span class="hljs-keyword">for</span> _, config := <span class="hljs-keyword">range</span> serviceEntries {
+        service, ok := config.Spec.(*networking.ServiceEntry)
+        <span class="hljs-keyword">if</span> !ok { <span class="hljs-comment">// should never happen</span>
+            <span class="hljs-keyword">return</span> envoyFilters, fmt.Errorf(<span class="hljs-string">&quot;failed in getting a service entry: %s: %v&quot;</span>, config.Labels, err)
+        }
+
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(service.Hosts) == <span class="hljs-number">0</span> {
+            controllerLog.Errorf(<span class="hljs-string">&quot;host should not be empty: %s&quot;</span>, config.Name)
+            <span class="hljs-comment">// We can&apos;t retry in this scenario</span>
+            <span class="hljs-keyword">return</span> envoyFilters, <span class="hljs-literal">nil</span>
+        }
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(service.Hosts) &gt; <span class="hljs-number">1</span> {
+            controllerLog.Warnf(<span class="hljs-string">&quot;multiple hosts found for service: %s, only the first one will be processed&quot;</span>, config.Name)
+        }
+
+        <span class="hljs-comment">// &#x4E5F;&#x662F;&#x6839;&#x636E;host&#x53BB;&#x627E;&#x5230;&#x76F8;&#x5173;&#x7684;VirtualService</span>
+        relatedVs, err := s.findRelatedVirtualService(service)
+        <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+            <span class="hljs-keyword">return</span> envoyFilters, fmt.Errorf(<span class="hljs-string">&quot;failed in finding the related virtual service : %s: %v&quot;</span>, config.Name, err)
+        }
+
+        <span class="hljs-comment">// &#x5F00;&#x59CB;&#x751F;&#x6210;EnvoyFilter</span>
+        context := &amp;model.EnvoyFilterContext{
+            ServiceEntry: &amp;model.ServiceEntryWrapper{
+                Meta: config.Meta,
+                Spec: service,
+            },
+            VirtualService: relatedVs,
+        }
+
+        <span class="hljs-keyword">for</span> _, port := <span class="hljs-keyword">range</span> service.Ports {
+            instance := protocol.GetLayer7ProtocolFromPortName(port.Name)
+            <span class="hljs-keyword">if</span> generator, ok := s.generators[instance]; ok {
+                <span class="hljs-comment">// &#x7531;&#x5404;&#x4E2A;&#x534F;&#x8BAE;&#x7684;generator&#x53BB;&#x5904;&#x7406;</span>
+                envoyFilterWrappers := generator.Generate(context)
+                <span class="hljs-keyword">for</span> _, wrapper := <span class="hljs-keyword">range</span> envoyFilterWrappers {
+                    envoyFilters[wrapper.Name] = wrapper
+                }
+                <span class="hljs-keyword">break</span>
+            }
+        }
+    }
+    <span class="hljs-keyword">return</span> envoyFilters, <span class="hljs-literal">nil</span>
+}
+
+<span class="hljs-comment">// &#x63A8;&#x9001;&#x5230;APIserver</span>
+<span class="hljs-keyword">func</span> (s *Controller) pushEnvoyFilters2APIServer() error {
+    generatedEnvoyFilters, err := s.generateEnvoyFilters()
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        <span class="hljs-keyword">return</span> fmt.Errorf(<span class="hljs-string">&quot;failed to generate EnvoyFilter: %v&quot;</span>, err)
+    }
+
+    config, err := config.GetConfig()
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        <span class="hljs-keyword">return</span> fmt.Errorf(<span class="hljs-string">&quot;can not get kubernetes config: %v&quot;</span>, err)
+    }
+
+    ic, err := versionedclient.NewForConfig(config)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        <span class="hljs-keyword">return</span> fmt.Errorf(<span class="hljs-string">&quot;failed to create istio client: %v&quot;</span>, err)
+    }
+
+      <span class="hljs-comment">// &#x83B7;&#x53D6;&#x539F;&#x5148;&#x5B58;&#x5728;&#x7684;envoyFilter</span>
+    existingEnvoyFilters, _ := ic.NetworkingV1alpha3().EnvoyFilters(configRootNS).List(context.TODO(), v1.ListOptions{
+        LabelSelector: <span class="hljs-string">&quot;manager=&quot;</span> + aerakiFieldManager,
+    })
+
+    <span class="hljs-keyword">for</span> _, oldEnvoyFilter := <span class="hljs-keyword">range</span> existingEnvoyFilters.Items {
+        <span class="hljs-comment">// &#x5220;&#x9664;</span>
+        <span class="hljs-keyword">if</span> newEnvoyFilter, ok := generatedEnvoyFilters[oldEnvoyFilter.Name]; !ok {
+            controllerLog.Infof(<span class="hljs-string">&quot;Deleting EnvoyFilter: %v&quot;</span>, oldEnvoyFilter)
+            err = ic.NetworkingV1alpha3().EnvoyFilters(configRootNS).Delete(context.TODO(), oldEnvoyFilter.Name,
+                v1.DeleteOptions{})
+            <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+                err = fmt.Errorf(<span class="hljs-string">&quot;failed to create istio client: %v&quot;</span>, err)
+            }
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-comment">// &#x66F4;&#x65B0;</span>
+            <span class="hljs-keyword">if</span> !proto.Equal(newEnvoyFilter.Envoyfilter, &amp;oldEnvoyFilter.Spec) {
+                controllerLog.Infof(<span class="hljs-string">&quot;Updating EnvoyFilter: %v&quot;</span>, *newEnvoyFilter.Envoyfilter)
+                _, err = ic.NetworkingV1alpha3().EnvoyFilters(configRootNS).Update(context.TODO(),
+                    s.toEnvoyFilterCRD(newEnvoyFilter, &amp;oldEnvoyFilter),
+                    v1.UpdateOptions{FieldManager: aerakiFieldManager})
+                <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+                    err = fmt.Errorf(<span class="hljs-string">&quot;failed to update EnvoyFilter: %v&quot;</span>, err)
+                }
+            } <span class="hljs-keyword">else</span> {
+                 <span class="hljs-comment">// &#x65E0;&#x53D8;&#x66F4;</span>
+                controllerLog.Infof(<span class="hljs-string">&quot;EnvoyFilter: %s unchanged&quot;</span>, oldEnvoyFilter.Name)
+            }
+            <span class="hljs-built_in">delete</span>(generatedEnvoyFilters, oldEnvoyFilter.Name)
+        }
+    }
+    <span class="hljs-comment">// &#x5269;&#x4E0B;&#x7684;&#x662F;&#x4E4B;&#x524D;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x5219;&#x65B0;&#x589E;</span>
+    <span class="hljs-keyword">for</span> _, wrapper := <span class="hljs-keyword">range</span> generatedEnvoyFilters {
+        _, err = ic.NetworkingV1alpha3().EnvoyFilters(configRootNS).Create(context.TODO(), s.toEnvoyFilterCRD(wrapper, <span class="hljs-literal">nil</span>),
+            v1.CreateOptions{FieldManager: aerakiFieldManager})
+        controllerLog.Infof(<span class="hljs-string">&quot;Creating EnvoyFilter: %v&quot;</span>, *wrapper.Envoyfilter)
+        <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+            err = fmt.Errorf(<span class="hljs-string">&quot;failed to create EnvoyFilter: %v&quot;</span>, err)
+        }
+    }
+    <span class="hljs-keyword">return</span> err
+}
+</code></pre>
+<h4 id="generators">Generators</h4>
+<p>generator&#x662F;&#x6BCF;&#x4E2A;&#x534F;&#x8BAE;&#x751F;&#x6210;envoyFilter&#x914D;&#x7F6E;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x8981;&#x9002;&#x914D;&#x7684;&#x534F;&#x8BAE;&#x751F;&#x6210;&#x5BF9;&#x5E94;&#x7684;Generate&#x65B9;&#x6CD5;&#x5373;&#x53EF;</p>
+<pre><code class="lang-go"><span class="hljs-comment">//------------------source: aeraki/pkg/envoyfilter/generator.go-----------------------//</span>
+
+<span class="hljs-comment">// Generator generates protocol specified envoyfilters</span>
+<span class="hljs-keyword">type</span> Generator <span class="hljs-keyword">interface</span> {
+    Generate(context *model.EnvoyFilterContext) []*model.EnvoyFilterWrapper
+}
+
+
+<span class="hljs-comment">//------------------source: aeraki/pkg/envoyfilter/network_filter.go-----------------------//</span>
+<span class="hljs-comment">// network_filter &#x901A;&#x7528;&#x7684;&#x751F;&#x6210;envoyFilter&#x65B9;&#x6CD5;</span>
+<span class="hljs-keyword">func</span> generateNetworkFilter(service *networking.ServiceEntry, outboundProxy proto.Message,
+    inboundProxy proto.Message, filterName <span class="hljs-keyword">string</span>, filterType <span class="hljs-keyword">string</span>, operation networking.EnvoyFilter_Patch_Operation) []*model.EnvoyFilterWrapper {
+    <span class="hljs-keyword">var</span> outboundProxyPatch, inboundProxyPatch *networking.EnvoyFilter_EnvoyConfigObjectPatch
+    <span class="hljs-keyword">if</span> outboundProxy != <span class="hljs-literal">nil</span> {
+        outboundProxyStruct, err := generateValue(outboundProxy, filterName, filterType)
+        <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+            <span class="hljs-comment">//This should not happen</span>
+            generatorLog.Errorf(<span class="hljs-string">&quot;Failed to generate outbound EnvoyFilter: %v&quot;</span>, err)
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>
+        }
+        outboundListenerName := service.GetAddresses()[<span class="hljs-number">0</span>] + <span class="hljs-string">&quot;_&quot;</span> + strconv.Itoa(<span class="hljs-keyword">int</span>(service.Ports[<span class="hljs-number">0</span>].Number))
+        outboundProxyPatch = &amp;networking.EnvoyFilter_EnvoyConfigObjectPatch{
+            ApplyTo: networking.EnvoyFilter_NETWORK_FILTER,
+            Match: &amp;networking.EnvoyFilter_EnvoyConfigObjectMatch{
+                ObjectTypes: &amp;networking.EnvoyFilter_EnvoyConfigObjectMatch_Listener{
+                    Listener: &amp;networking.EnvoyFilter_ListenerMatch{
+                        Name: outboundListenerName,
+                        FilterChain: &amp;networking.EnvoyFilter_ListenerMatch_FilterChainMatch{
+                            Filter: &amp;networking.EnvoyFilter_ListenerMatch_FilterMatch{
+                                Name: wellknown.TCPProxy,
+                            },
+                        },
+                    },
+                },
+            },
+            Patch: &amp;networking.EnvoyFilter_Patch{
+                Operation: operation,
+                Value:     outboundProxyStruct,
+            },
+        }
+    }
+
+    <span class="hljs-keyword">if</span> inboundProxy != <span class="hljs-literal">nil</span> {
+        inboundProxyStruct, err := generateValue(inboundProxy, filterName, filterType)
+        <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+            <span class="hljs-comment">//This should not happen</span>
+            generatorLog.Errorf(<span class="hljs-string">&quot;Failed to generate inbound EnvoyFilter: %v&quot;</span>, err)
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>
+        }
+
+        inboundProxyPatch = &amp;networking.EnvoyFilter_EnvoyConfigObjectPatch{
+            ApplyTo: networking.EnvoyFilter_NETWORK_FILTER,
+            Match: &amp;networking.EnvoyFilter_EnvoyConfigObjectMatch{
+                ObjectTypes: &amp;networking.EnvoyFilter_EnvoyConfigObjectMatch_Listener{
+                    Listener: &amp;networking.EnvoyFilter_ListenerMatch{
+                        Name: <span class="hljs-string">&quot;virtualInbound&quot;</span>,
+                        FilterChain: &amp;networking.EnvoyFilter_ListenerMatch_FilterChainMatch{
+                            DestinationPort: service.Ports[<span class="hljs-number">0</span>].Number,
+                            Filter: &amp;networking.EnvoyFilter_ListenerMatch_FilterMatch{
+                                Name: wellknown.TCPProxy,
+                            },
+                        },
+                    },
+                },
+            },
+            Patch: &amp;networking.EnvoyFilter_Patch{
+                Operation: operation,
+                Value:     inboundProxyStruct,
+            },
+        }
+    }
+
+    <span class="hljs-keyword">if</span> outboundProxyPatch != <span class="hljs-literal">nil</span> &amp;&amp; inboundProxyPatch != <span class="hljs-literal">nil</span> {
+        <span class="hljs-keyword">return</span> []*model.EnvoyFilterWrapper{
+            {
+                Name: outboundEnvoyFilterName(service),
+                Envoyfilter: &amp;networking.EnvoyFilter{
+                    ConfigPatches: []*networking.EnvoyFilter_EnvoyConfigObjectPatch{outboundProxyPatch},
+                },
+            },
+            {
+                Name: inboundEnvoyFilterName(service),
+                Envoyfilter: &amp;networking.EnvoyFilter{
+                    WorkloadSelector: service.WorkloadSelector,
+                    ConfigPatches:    []*networking.EnvoyFilter_EnvoyConfigObjectPatch{inboundProxyPatch},
+                },
+            }}
+    }
+    <span class="hljs-keyword">if</span> outboundProxyPatch != <span class="hljs-literal">nil</span> {
+        <span class="hljs-keyword">return</span> []*model.EnvoyFilterWrapper{
+            {
+                Name: outboundEnvoyFilterName(service),
+                Envoyfilter: &amp;networking.EnvoyFilter{
+                    ConfigPatches: []*networking.EnvoyFilter_EnvoyConfigObjectPatch{outboundProxyPatch},
+                },
+            }}
+    }
+    <span class="hljs-keyword">if</span> inboundProxyPatch != <span class="hljs-literal">nil</span> {
+        <span class="hljs-keyword">return</span> []*model.EnvoyFilterWrapper{
+            {
+                Name: inboundEnvoyFilterName(service),
+                Envoyfilter: &amp;networking.EnvoyFilter{
+                    WorkloadSelector: service.WorkloadSelector,
+                    ConfigPatches:    []*networking.EnvoyFilter_EnvoyConfigObjectPatch{inboundProxyPatch},
+                },
+            }}
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>
+}
+</code></pre>
+<p>&#x5404;&#x4E2A;&#x534F;&#x8BAE;&#x7684;&#x652F;&#x6301;&#x8FD8;&#x662F;&#x8981;&#x770B;envoy&#xFF0C;&#x4EE5;dubbo&#x7684;generator&#x4E3A;&#x4F8B;&#xFF0C;envoy&#x7684;dubbo-router&#x6587;&#x6863;&#xFF1A;<a href="https://www.envoyproxy.io/docs/envoy/latest/api-v3/extensions/filters/network/dubbo_proxy/v3/route.proto#envoy-v3-api-msg-extensions-filters-network-dubbo-proxy-v3-routeconfiguration" target="_blank">https://www.envoyproxy.io/docs/envoy/latest/api-v3/extensions/filters/network/dubbo_proxy/v3/route.proto#envoy-v3-api-msg-extensions-filters-network-dubbo-proxy-v3-routeconfiguration</a></p>
+<pre><code class="lang-go"><span class="hljs-comment">// Generate create EnvoyFilters for Dubbo services</span>
+<span class="hljs-keyword">func</span> (*Generator) Generate(context *model.EnvoyFilterContext) []*model.EnvoyFilterWrapper {
+    <span class="hljs-keyword">return</span> envoyfilter.GenerateReplaceNetworkFilter(
+        context.ServiceEntry.Spec,
+        buildOutboundProxy(context),
+        buildInboundProxy(context),
+        <span class="hljs-string">&quot;envoy.filters.network.dubbo_proxy&quot;</span>,
+        <span class="hljs-string">&quot;type.googleapis.com/envoy.extensions.filters.network.dubbo_proxy.v3.DubboProxy&quot;</span>)
+}
+
+<span class="hljs-comment">// &#x4EE5;OutboundProxy&#x4E3A;&#x4F8B;&#xFF0C;&#x751F;&#x6210;envoy&#x9700;&#x8981;&#x7684;dubbo&#x8DEF;&#x7531;&#x914D;&#x7F6E;</span>
+<span class="hljs-keyword">func</span> buildOutboundProxy(context *model.EnvoyFilterContext) *dubbo.DubboProxy {
+    route, err := buildOutboundRouteConfig(context)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        generatorLog.Errorf(<span class="hljs-string">&quot;Failed to generate Dubbo EnvoyFilter: %v, %v&quot;</span>, context.ServiceEntry, err)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>
+    }
+
+    <span class="hljs-keyword">return</span> &amp;dubbo.DubboProxy{
+        StatPrefix: model.BuildClusterName(model.TrafficDirectionOutbound, <span class="hljs-string">&quot;&quot;</span>,
+            context.ServiceEntry.Spec.Hosts[<span class="hljs-number">0</span>], <span class="hljs-keyword">int</span>(context.ServiceEntry.Spec.Ports[<span class="hljs-number">0</span>].Number)),
+        ProtocolType:      dubbo.ProtocolType_Dubbo,
+        SerializationType: dubbo.SerializationType_Hessian2,
+        <span class="hljs-comment">// we only support one to one mapping of interface and service. If there&apos;re multiple interfaces in one process,</span>
+        <span class="hljs-comment">// these interfaces can be defined in separated services, one service for one interface.</span>
+        RouteConfig: []*dubbo.RouteConfiguration{
+            route,
+        },
+    }
+}
+
+
+<span class="hljs-keyword">func</span> buildOutboundRouteConfig(context *model.EnvoyFilterContext) (*dubbo.RouteConfiguration, error) {
+    <span class="hljs-comment">// dubbo service interface should be passed in via serviceentry annotation</span>
+    <span class="hljs-keyword">var</span> serviceInterface <span class="hljs-keyword">string</span>
+    <span class="hljs-keyword">var</span> exist <span class="hljs-keyword">bool</span>
+    <span class="hljs-keyword">if</span> serviceInterface, exist = context.ServiceEntry.Annotations[<span class="hljs-string">&quot;interface&quot;</span>]; !exist {
+        err := fmt.Errorf(<span class="hljs-string">&quot;no interface annotation&quot;</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>, err
+    }
+
+    <span class="hljs-keyword">var</span> route []*dubbo.Route
+    clusterName := model.BuildClusterName(model.TrafficDirectionOutbound, <span class="hljs-string">&quot;&quot;</span>, context.ServiceEntry.Spec.Hosts[<span class="hljs-number">0</span>], <span class="hljs-keyword">int</span>(context.ServiceEntry.Spec.Ports[<span class="hljs-number">0</span>].Number))
+
+    <span class="hljs-keyword">if</span> context.VirtualService == <span class="hljs-literal">nil</span> {
+        route = []*dubbo.Route{defaultRoute(clusterName)}
+    } <span class="hljs-keyword">else</span> {
+        route = buildRoute(context)
+    }
+
+    <span class="hljs-keyword">return</span> &amp;dubbo.RouteConfiguration{
+        Name:      clusterName,
+        Interface: serviceInterface, <span class="hljs-comment">// To make this work, Dubbo Interface should have been registered to the Istio service registry as a service</span>
+        Routes:    route,
+    }, <span class="hljs-literal">nil</span>
+}
+</code></pre>
+<p>&#x5176;&#x4ED6;&#x534F;&#x8BAE;&#x7684;&#x652F;&#x6301;&#x5BF9;&#x7167;envoy&#x9700;&#x8981;&#x7684;&#x914D;&#x7F6E;&#x53BB;&#x751F;&#x6210;&#x5BF9;&#x5E94;&#x7684;envoyFilter&#x914D;&#x7F6E;&#x3002;</p>
+<h4 id="crdcontroller">crdController</h4>
+<p>&#x5BF9;&#x4E8E;redis&#x534F;&#x8BAE;&#xFF0C;aeraki&#x662F;&#x4F7F;&#x7528;&#x4E86;&#x81EA;&#x5B9A;&#x4E49;&#x7684;crd&#xFF0C;&#x6240;&#x4EE5;crdController&#x662F;&#x7528;&#x6765;&#x7BA1;&#x7406;crd&#x81EA;&#x5B9A;&#x4E49;&#x8D44;&#x6E90;&#x7684;&#xFF0C;&#x5E76;&#x76D1;&#x542C;crd&#x53D8;&#x5316;&#x5219;&#x6267;&#x884C;&#x5BF9;&#x5E94;&#x7684;triggerPush&#xFF08;envoyFilterController.ConfigUpdate&#xFF09;</p>
+<pre><code class="lang-go"><span class="hljs-comment">//------------------source: aeraki/pkg/kube/controller/controller.go-----------------------//</span>
+<span class="hljs-keyword">func</span> NewManager(namespace <span class="hljs-keyword">string</span>, electionID <span class="hljs-keyword">string</span>, triggerPush <span class="hljs-keyword">func</span>() error) manager.Manager {
+    <span class="hljs-comment">// Get a config to talk to the apiserver</span>
+    cfg, err := config.GetConfig()
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        controllerLog.Fatalf(<span class="hljs-string">&quot;Could not get apiserver config: %v\n&quot;</span>, err)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>
+    }
+    mgrOpt := manager.Options{
+        MetricsBindAddress:      <span class="hljs-string">&quot;0&quot;</span>,
+        LeaderElection:          <span class="hljs-literal">true</span>,
+        LeaderElectionNamespace: namespace,
+        LeaderElectionID:        electionID,
+    }
+    m, err := manager.New(cfg, mgrOpt)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        controllerLog.Fatalf(<span class="hljs-string">&quot;Could not create a controller manager: %v&quot;</span>, err)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>
+    }
+
+    err = addRedisServiceController(m, triggerPush)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        controllerLog.Fatalf(<span class="hljs-string">&quot;Could not add RedisServiceController: %e&quot;</span>, err)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>
+    }
+    err = addRedisDestinationController(m, triggerPush)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        controllerLog.Fatalf(<span class="hljs-string">&quot;Could not add RedisDestinationController: %e&quot;</span>, err)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>
+    }
+    err = scheme.AddToScheme(m.GetScheme())
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        controllerLog.Fatalf(<span class="hljs-string">&quot;Could not add schema: %e&quot;</span>, err)
+    }
+    <span class="hljs-keyword">return</span> m
+}
+
+<span class="hljs-comment">//------------------source: aeraki/pkg/envoyfilter/redis.go-----------------------//</span>
+<span class="hljs-comment">// &#x4EE5;redis&#x7684;destination&#x4E3A;&#x4F8B;</span>
+<span class="hljs-keyword">func</span> addRedisDestinationController(mgr manager.Manager, triggerPush <span class="hljs-keyword">func</span>() error) error {
+    redisCtrl := &amp;RedisController{triggerPush: triggerPush}
+    c, err := controller.New(<span class="hljs-string">&quot;aeraki-redis-destination-controller&quot;</span>, mgr, controller.Options{Reconciler: redisCtrl})
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        <span class="hljs-keyword">return</span> err
+    }
+    <span class="hljs-comment">// Watch for changes to primary resource IstioFilter</span>
+    err = c.Watch(&amp;source.Kind{Type: &amp;v1alpha1.RedisDestination{}}, &amp;handler.EnqueueRequestForObject{}, redisPredicates)
+    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+        <span class="hljs-keyword">return</span> err
+    }
+    controllerLog.Infof(<span class="hljs-string">&quot;RedisDestinationController registered&quot;</span>)
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="concepts.html" class="navigation navigation-prev " aria-label="Previous page: Aeraki Concepts & Aeraki概念">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="case.html" class="navigation navigation-next " aria-label="Next page: Aeraki Case Sample & Aeraki应用示例">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Aeraki Code Design & Aeraki设计","level":"1.5.1.2","depth":3,"next":{"title":"Aeraki Case Sample & Aeraki应用示例","level":"1.5.1.3","depth":3,"path":"istio-ecology/aeraki/case.md","ref":"./istio-ecology/aeraki/case.md","articles":[]},"previous":{"title":"Aeraki Concepts & Aeraki概念","level":"1.5.1.1","depth":3,"path":"istio-ecology/aeraki/concepts.md","ref":"./istio-ecology/aeraki/concepts.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","page-toc-button","pageview-count","hide-element","splitter","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/shuxnhs/Mastering-ServiceMesh"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{},"pageview-count":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"github":{"url":"https://github.com/shuxnhs/Mastering-ServiceMesh"},"theme":"default","author":"hexiaohong","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Mastering-ServiceMesh","gitbook":"*","description":"深入浅出服务网格"},"file":{"path":"istio-ecology/aeraki/design.md","mtime":"2021-05-13T15:14:32.103Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-13T15:15:20.955Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

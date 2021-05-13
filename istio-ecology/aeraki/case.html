@@ -1,0 +1,1350 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Aeraki Case Sample & Aeraki应用示例 · Mastering-ServiceMesh</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="hexiaohong">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../kiali/kiali.html" />
+    
+    
+    <link rel="prev" href="design.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Concepts & 概述
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Istio Concepts & Istio概念
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../istio-concepts/install.html">
+            
+                <a href="../../istio-concepts/install.html">
+            
+                    
+                    Install & 安装与命令相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../istio-concepts/injection.html">
+            
+                <a href="../../istio-concepts/injection.html">
+            
+                    
+                    Injection & Istio注入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../istio-concepts/crd/ReadFirst.html">
+            
+                <a href="../../istio-concepts/crd/ReadFirst.html">
+            
+                    
+                    Istio CRD
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../../istio-concepts/crd/VirtualService.html">
+            
+                <a href="../../istio-concepts/crd/VirtualService.html">
+            
+                    
+                    VirtualService
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../../istio-concepts/crd/DestinationRule.html">
+            
+                <a href="../../istio-concepts/crd/DestinationRule.html">
+            
+                    
+                    DestinationRule
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../../istio-concepts/crd/ServiceEntry.html">
+            
+                <a href="../../istio-concepts/crd/ServiceEntry.html">
+            
+                    
+                    ServiceEntry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../../istio-concepts/crd/EnvoyFilter.html">
+            
+                <a href="../../istio-concepts/crd/EnvoyFilter.html">
+            
+                    
+                    EnvoyFilter
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" >
+            
+                <span>
+            
+                    
+                    pilot
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../istio-concepts/debug.html">
+            
+                <a href="../../istio-concepts/debug.html">
+            
+                    
+                    Debug
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Istio Code Analysis & Istio源码分析
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Istio Ecology
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="aeraki.html">
+            
+                <a href="aeraki.html">
+            
+                    
+                    Istio协议拓展增强插件——Aeraki
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="concepts.html">
+            
+                <a href="concepts.html">
+            
+                    
+                    Aeraki Concepts & Aeraki概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="design.html">
+            
+                <a href="design.html">
+            
+                    
+                    Aeraki Code Design & Aeraki设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.1.3" data-path="case.html">
+            
+                <a href="case.html">
+            
+                    
+                    Aeraki Case Sample & Aeraki应用示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../kiali/kiali.html">
+            
+                <a href="../kiali/kiali.html">
+            
+                    
+                    Istio可视化工具——Kiali
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    Envoy Concepts & Envoy概念
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../envoy-concepts/concepts.html">
+            
+                <a href="../../envoy-concepts/concepts.html">
+            
+                    
+                    Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" >
+            
+                <span>
+            
+                    
+                    Envoy与istio的交互流程
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../envoy-concepts/xds.html">
+            
+                <a href="../../envoy-concepts/xds.html">
+            
+                    
+                    XDS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    Case Analysis & 案例分析
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../case-analysis/simple-Dubbo-Mesh.html">
+            
+                <a href="../../case-analysis/simple-Dubbo-Mesh.html">
+            
+                    
+                    Simple Dubbo Mesh
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <a target="_blank" href="https://github.com/shuxnhs/Mastering-ServiceMesh">
+            
+                    
+                    Github & 仓库地址
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Aeraki Case Sample & Aeraki应用示例</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x6837;&#x4F8B;&#x5C55;&#x793A;&#x2014;&#x2014;&#x4EE5;dubbo&#x4E3A;&#x4F8B;">&#x6837;&#x4F8B;&#x5C55;&#x793A;&#x2014;&#x2014;&#x4EE5;dubbo&#x4E3A;&#x4F8B;</h1>
+<p>&#x6309;&#x7167;aeraki&#x5B98;&#x65B9;&#x63D0;&#x4F9B;&#x7684;yaml&#x90E8;&#x7F72;dubbo&#x6837;&#x4F8B;&#xFF0C;&#x6765;&#x9A8C;&#x8BC1;&#x5176;&#x4ED6;&#x534F;&#x8BAE;&#x5728;istio&#x7684;&#x6D41;&#x91CF;&#x7BA1;&#x7406;&#xFF0C;&#x53EF;&#x89C2;&#x6D4B;&#x6027;&#x7B49;&#x7279;&#x6027;&#x3002;</p>
+<ul>
+<li><p>dubbo</p>
+<pre><code class="lang-yaml"><span class="hljs-bullet"> -</span>--
+<span class="hljs-attr"> apiVersion:</span> apps/v1
+<span class="hljs-attr"> kind:</span> Deployment
+<span class="hljs-attr"> metadata:</span>
+<span class="hljs-attr">   name:</span> dubbo-sample-provider-v1
+<span class="hljs-attr">   labels:</span>
+<span class="hljs-attr">     app:</span> dubbo-sample-provider
+<span class="hljs-attr"> spec:</span>
+<span class="hljs-attr">   selector:</span>
+<span class="hljs-attr">     matchLabels:</span>
+<span class="hljs-attr">       app:</span> dubbo-sample-provider
+<span class="hljs-attr">   replicas:</span> <span class="hljs-number">1</span>
+<span class="hljs-attr">   template:</span>
+<span class="hljs-attr">     metadata:</span>
+<span class="hljs-attr">       labels:</span>
+<span class="hljs-attr">         app:</span> dubbo-sample-provider
+<span class="hljs-attr">         version:</span> v1
+<span class="hljs-attr">     spec:</span>
+<span class="hljs-attr">       containers:</span>
+<span class="hljs-attr">         - name:</span> dubbo-sample-provider
+<span class="hljs-attr">           image:</span> aeraki/dubbo-sample-provider
+<span class="hljs-attr">           ports:</span>
+<span class="hljs-attr">             - containerPort:</span> <span class="hljs-number">20880</span>
+<span class="hljs-bullet"> -</span>--
+<span class="hljs-attr"> apiVersion:</span> apps/v1
+<span class="hljs-attr"> kind:</span> Deployment
+<span class="hljs-attr"> metadata:</span>
+<span class="hljs-attr">   name:</span> dubbo-sample-provider-v2
+<span class="hljs-attr">   labels:</span>
+<span class="hljs-attr">     app:</span> dubbo-sample-provider
+<span class="hljs-attr"> spec:</span>
+<span class="hljs-attr">   selector:</span>
+<span class="hljs-attr">     matchLabels:</span>
+<span class="hljs-attr">       app:</span> dubbo-sample-provider
+<span class="hljs-attr">   replicas:</span> <span class="hljs-number">1</span>
+<span class="hljs-attr">   template:</span>
+<span class="hljs-attr">     metadata:</span>
+<span class="hljs-attr">       labels:</span>
+<span class="hljs-attr">         app:</span> dubbo-sample-provider
+<span class="hljs-attr">         version:</span> v2
+<span class="hljs-attr">     spec:</span>
+<span class="hljs-attr">       containers:</span>
+<span class="hljs-attr">         - name:</span> dubbo-sample-provider
+<span class="hljs-attr">           image:</span> aeraki/dubbo-sample-provider
+<span class="hljs-attr">           ports:</span>
+<span class="hljs-attr">             - containerPort:</span> <span class="hljs-number">20880</span>
+<span class="hljs-bullet"> -</span>--
+<span class="hljs-attr"> apiVersion:</span> apps/v1
+<span class="hljs-attr"> kind:</span> Deployment
+<span class="hljs-attr"> metadata:</span>
+<span class="hljs-attr">   name:</span> dubbo-sample-consumer
+<span class="hljs-attr">   labels:</span>
+<span class="hljs-attr">     app:</span> dubbo-sample-consumer
+<span class="hljs-attr"> spec:</span>
+<span class="hljs-attr">   selector:</span>
+<span class="hljs-attr">     matchLabels:</span>
+<span class="hljs-attr">       app:</span> dubbo-sample-consumer
+<span class="hljs-attr">   replicas:</span> <span class="hljs-number">8</span>
+<span class="hljs-attr">   template:</span>
+<span class="hljs-attr">     metadata:</span>
+<span class="hljs-attr">       labels:</span>
+<span class="hljs-attr">         app:</span> dubbo-sample-consumer
+<span class="hljs-attr">     spec:</span>
+<span class="hljs-attr">       containers:</span>
+<span class="hljs-attr">         - name:</span> dubbo-sample-consumer
+<span class="hljs-attr">           image:</span> aeraki/dubbo-sample-consumer
+<span class="hljs-attr">           env:</span>
+<span class="hljs-attr">             - name:</span> mode
+<span class="hljs-attr">               value:</span> demo
+<span class="hljs-attr">           ports:</span>
+<span class="hljs-attr">             - containerPort:</span> <span class="hljs-number">9009</span>
+</code></pre>
+</li>
+<li><p>ServiceEntry</p>
+<pre><code class="lang-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">apiVersion:</span> networking.istio.io/v1alpha3
+<span class="hljs-attr">kind:</span> ServiceEntry
+<span class="hljs-attr">metadata:</span>
+<span class="hljs-attr">  name:</span> test-dubbo-service
+<span class="hljs-attr">  annotations:</span>
+<span class="hljs-attr">    interface:</span> org.apache.dubbo.samples.basic.api.DemoService
+<span class="hljs-attr">spec:</span>
+<span class="hljs-attr">  hosts:</span>
+<span class="hljs-bullet">    -</span> org.apache.dubbo.samples.basic.api.demoservice
+<span class="hljs-attr">  addresses:</span>
+<span class="hljs-bullet">    -</span> <span class="hljs-number">193.193</span><span class="hljs-number">.192</span><span class="hljs-number">.192</span>
+<span class="hljs-attr">  ports:</span>
+<span class="hljs-attr">    - number:</span> <span class="hljs-number">20880</span>
+        <span class="hljs-comment"># aeraki&#x4E5F;&#x662F;&#x901A;&#x8FC7;port-name&#x6765;&#x8BC6;&#x522B;&#x7684;&#xFF0C; &#x6240;&#x4EE5;&#x547D;&#x540D;&#x4E3A;&#xFF1A;tcp-protocol-xxxx&#x3002; &#x6BD4;&#x5982;tcp-dubbo-sv&#xFF0C;tcp-thrift-sv</span>
+<span class="hljs-attr">      name:</span> tcp-dubbo
+<span class="hljs-attr">      protocol:</span> TCP
+<span class="hljs-attr">  workloadSelector:</span>
+<span class="hljs-attr">    labels:</span>
+<span class="hljs-attr">      app:</span> dubbo-sample-provider
+<span class="hljs-attr">  resolution:</span> STATIC
+</code></pre>
+</li>
+<li><p>DestinctiomRule &amp; VirtualService</p>
+<pre><code class="lang-yaml"><span class="hljs-attr">apiVersion:</span> networking.istio.io/v1alpha3
+<span class="hljs-attr">kind:</span> DestinationRule
+<span class="hljs-attr">metadata:</span>
+<span class="hljs-attr">  name:</span> dubbo-sample-provider
+<span class="hljs-attr">spec:</span>
+<span class="hljs-attr">  host:</span> org.apache.dubbo.samples.basic.api.demoservice
+<span class="hljs-attr">  subsets:</span>
+<span class="hljs-attr">  - name:</span> v1
+<span class="hljs-attr">    labels:</span>
+<span class="hljs-attr">      version:</span> v1
+<span class="hljs-attr">  - name:</span> v2
+<span class="hljs-attr">    labels:</span>
+<span class="hljs-attr">      version:</span> v2
+
+<span class="hljs-meta">---</span>
+<span class="hljs-attr">apiVersion:</span> networking.istio.io/v1alpha3
+<span class="hljs-attr">kind:</span> VirtualService
+<span class="hljs-attr">metadata:</span>
+<span class="hljs-attr">  name:</span> test-dubbo-route
+<span class="hljs-attr">spec:</span>
+<span class="hljs-attr">  hosts:</span>
+<span class="hljs-bullet">    -</span> org.apache.dubbo.samples.basic.api.demoservice
+<span class="hljs-attr">  http:</span>
+<span class="hljs-attr">    - name:</span> <span class="hljs-string">&quot;reviews-traffic-splitting&quot;</span>
+<span class="hljs-attr">      route:</span>
+<span class="hljs-attr">        - destination:</span>
+<span class="hljs-attr">            host:</span> org.apache.dubbo.samples.basic.api.demoservice
+<span class="hljs-attr">            subset:</span> v1
+<span class="hljs-attr">          weight:</span> <span class="hljs-number">20</span>
+<span class="hljs-attr">        - destination:</span>
+<span class="hljs-attr">            host:</span> org.apache.dubbo.samples.basic.api.demoservice
+<span class="hljs-attr">            subset:</span> v2
+<span class="hljs-attr">          weight:</span> <span class="hljs-number">80</span>
+</code></pre>
+</li>
+</ul>
+<p>&#x200B;    &#x5982;&#x679C;&#x8FD0;&#x884C;&#x6B63;&#x5E38;&#x7684;&#x8BDD;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x770B;&#x5230;dubbo&#x7684;consumer&#x548C;provider&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x7684;running&#xFF0C;&#x800C;&#x4E14;&#x6253;&#x5370;&#x51FA;consumer&#x7684;&#x65E5;&#x5FD7;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;consumer&#x6B63;&#x5E38;&#x7684;&#x8BF7;&#x6C42;provider&#x7684;&#x670D;&#x52A1;&#x3002;</p>
+<pre><code class="lang-shell"># kubectl get po -n dubbo
+NAME                                        READY   STATUS    RESTARTS   AGE
+dubbo-sample-consumer-855455bdb7-2wksm      2/2     Running   0          6h51m
+dubbo-sample-consumer-855455bdb7-b6tqx      2/2     Running   0          6h42m
+dubbo-sample-consumer-855455bdb7-fghdk      2/2     Running   0          6h42m
+dubbo-sample-consumer-855455bdb7-jrzfw      2/2     Running   0          6h42m
+dubbo-sample-consumer-855455bdb7-ljgcs      2/2     Running   0          6h51m
+dubbo-sample-consumer-855455bdb7-nmtwb      2/2     Running   0          6h42m
+dubbo-sample-consumer-855455bdb7-wm84t      2/2     Running   0          6h42m
+dubbo-sample-consumer-855455bdb7-z8dwd      2/2     Running   0          6h42m
+dubbo-sample-provider-v1-5b769968f7-4bmlw   2/2     Running   0          8h
+dubbo-sample-provider-v2-5cb59df666-bph2b   2/2     Running   0          8h
+
+#  kubectl logs -f  dubbo-sample-consumer-855455bdb7-2wksm -n dubbo
+Hello Aeraki, response from dubbo-sample-provider-v1-5b769968f7-4bmlw/10.100.130.250
+Hello Aeraki, response from dubbo-sample-provider-v2-5cb59df666-bph2b/10.100.37.33
+Hello Aeraki, response from dubbo-sample-provider-v1-5b769968f7-4bmlw/10.100.130.250
+Hello Aeraki, response from dubbo-sample-provider-v1-5b769968f7-4bmlw/10.100.130.250
+Hello Aeraki, response from dubbo-sample-provider-v1-5b769968f7-4bmlw/10.100.130.250
+Hello Aeraki, response from dubbo-sample-provider-v1-5b769968f7-4bmlw/10.100.130.250
+</code></pre>
+<p>&#x5982;&#x679C;&#x67E5;&#x770B;aeraki&#x7684;&#x65E5;&#x5FD7;&#x7684;&#x8BDD;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;aeraki&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E86;&#x5BF9;&#x5E94;&#x7684;envoyfilter</p>
+<pre><code class="lang-shell">2021-04-13T14:26:16.984626Z    info    adsc    Received istiod.istio-system:15010 type networking.istio.io/v1alpha3/ServiceEntry cnt=36 nonce=7x0NcyWvgxw=73e52952-4bfb-4f39-a5c2-613286f50455
+
+2021-04-13T14:26:16.985237Z    info    config-controller    Matched protocol :Dubbo add test-dubbo-service
+
+2021-04-13T14:26:16.985409Z    info    adsc    Received istiod.istio-system:15010 type networking.istio.io/v1alpha3/VirtualService cnt=2 nonce=7x0NcyWvgxw=a20515eb-5bfb-4bd9-b169-a48ba21072fa
+
+2021-04-13T14:26:16.985507Z    info    adsc    Received istiod.istio-system:15010 type networking.istio.io/v1alpha3/DestinationRule cnt=2 nonce=7x0NcyWvgxw=a38f9509-9998-4524-bdf2-38a8c03780de
+
+2021-04-13T14:26:17.485474Z    info    envoyfilter-controller    Push debounce stable[29] 1: 500.118976ms since last change, 500.118769ms since last push
+
+2021-04-13T14:26:17.522352Z    info    envoyfilter-controller    Creating EnvoyFilter: {&lt;nil&gt; [apply_to:NETWORK_FILTER match:&lt;listener:&lt;filter_chain:&lt;filter:&lt;name:&quot;envoy.filters.network.tcp_proxy&quot; &gt; &gt; name:&quot;193.193.192.192_20880&quot; &gt; &gt; patch:&lt;operation:REPLACE value:&lt;fields:&lt;key:&quot;name&quot; value:&lt;string_value:&quot;envoy.filters.network.dubbo_proxy&quot; &gt; &gt; fields:&lt;key:&quot;typed_config&quot; value:&lt;struct_value:&lt;fields:&lt;key:&quot;@type&quot; value:&lt;string_value:&quot;type.googleapis.com/envoy.extensions.filters.network.dubbo_proxy.v3.DubboProxy&quot; &gt; &gt; fields:&lt;key:&quot;routeConfig&quot; value:&lt;list_value:&lt;values:&lt;struct_value:&lt;fields:&lt;key:&quot;interface&quot; value:&lt;string_value:&quot;org.apache.dubbo.samples.basic.api.DemoService&quot; &gt; &gt; fields:&lt;key:&quot;name&quot; value:&lt;string_value:&quot;outbound|20880||org.apache.dubbo.samples.basic.api.demoservice&quot; &gt; &gt; fields:&lt;key:&quot;routes&quot; value:&lt;list_value:&lt;values:&lt;struct_value:&lt;fields:&lt;key:&quot;match&quot; value:&lt;struct_value:&lt;fields:&lt;key:&quot;method&quot; value:&lt;struct_value:&lt;fields:&lt;key:&quot;name&quot; value:&lt;struct_value:&lt;fields:&lt;key:&quot;safeRegex&quot; value:&lt;struct_value:&lt;fields:&lt;key:&quot;googleRe2&quot; value:&lt;struct_value:&lt;&gt; &gt; &gt; fields:&lt;key:&quot;regex&quot; value:&lt;string_value:&quot;.*&quot; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; fields:&lt;key:&quot;route&quot; value:&lt;struct_value:&lt;fields:&lt;key:&quot;cluster&quot; value:&lt;string_value:&quot;outbound|20880||org.apache.dubbo.samples.basic.api.demoservice&quot; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; fields:&lt;key:&quot;statPrefix&quot; value:&lt;string_value:&quot;outbound|20880||org.apache.dubbo.samples.basic.api.demoservice&quot; &gt; &gt; &gt; &gt; &gt; &gt; &gt; ] {} [] 0}
+
+2021-04-13T14:26:17.534377Z    info    envoyfilter-controller    Creating EnvoyFilter: {labels:&lt;key:&quot;app&quot; value:&quot;dubbo-sample-provider&quot; &gt;  [apply_to:NETWORK_FILTER match:&lt;listener:&lt;filter_chain:&lt;filter:&lt;name:&quot;envoy.filters.network.tcp_proxy&quot; &gt; destination_port:20880 &gt; name:&quot;virtualInbound&quot; &gt; &gt; patch:&lt;operation:REPLACE value:&lt;fields:&lt;key:&quot;name&quot; value:&lt;string_value:&quot;envoy.filters.network.dubbo_proxy&quot; &gt; &gt; fields:&lt;key:&quot;typed_config&quot; value:&lt;struct_value:&lt;fields:&lt;key:&quot;@type&quot; value:&lt;string_value:&quot;type.googleapis.com/envoy.extensions.filters.network.dubbo_proxy.v3.DubboProxy&quot; &gt; &gt; fields:&lt;key:&quot;routeConfig&quot; value:&lt;list_value:&lt;values:&lt;struct_value:&lt;fields:&lt;key:&quot;interface&quot; value:&lt;string_value:&quot;org.apache.dubbo.samples.basic.api.DemoService&quot; &gt; &gt; fields:&lt;key:&quot;name&quot; value:&lt;string_value:&quot;inbound|20880||&quot; &gt; &gt; fields:&lt;key:&quot;routes&quot; value:&lt;list_value:&lt;values:&lt;struct_value:&lt;fields:&lt;key:&quot;match&quot; value:&lt;struct_value:&lt;fields:&lt;key:&quot;method&quot; value:&lt;struct_value:&lt;fields:&lt;key:&quot;name&quot; value:&lt;struct_value:&lt;fields:&lt;key:&quot;safeRegex&quot; value:&lt;struct_value:&lt;fields:&lt;key:&quot;googleRe2&quot; value:&lt;struct_value:&lt;&gt; &gt; &gt; fields:&lt;key:&quot;regex&quot; value:&lt;string_value:&quot;.*&quot; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; fields:&lt;key:&quot;route&quot; value:&lt;struct_value:&lt;fields:&lt;key:&quot;cluster&quot; value:&lt;string_value:&quot;inbound|20880||&quot; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; fields:&lt;key:&quot;statPrefix&quot; value:&lt;string_value:&quot;inbound|20880||&quot; &gt; &gt; &gt; &gt; &gt; &gt; &gt; ] {} [] 0}
+
+2021-04-13T14:26:17.690614Z    info    config-controller    Virtual Service changed: add test-dubbo-route
+</code></pre>
+<h2 id="&#x6D41;&#x91CF;&#x63A7;&#x5236;&#x6F14;&#x793A;">&#x6D41;&#x91CF;&#x63A7;&#x5236;&#x6F14;&#x793A;</h2>
+<h3 id="&#x7070;&#x5EA6;&#x53D1;&#x5E03;&#x91D1;&#x4E1D;&#x96C0;&#x53D1;&#x5E03;">&#x7070;&#x5EA6;&#x53D1;&#x5E03;/&#x91D1;&#x4E1D;&#x96C0;&#x53D1;&#x5E03;</h3>
+<p>&#x91D1;&#x4E1D;&#x96C0;&#x53D1;&#x5E03;&#x4E5F;&#x88AB;&#x79F0;&#x4E3A;&#x7070;&#x5EA6;&#x53D1;&#x5E03;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x5C06;&#x6D41;&#x91CF;&#x5207;&#x5206;&#xFF0C;&#x5C11;&#x91CF;&#x7684;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x7684;&#x6D41;&#x91CF;&#x5BFC;&#x5165;&#x5230;&#x7EBF;&#x4E0A;&#x670D;&#x52A1;&#x7684;&#x65B0;&#x7248;&#x672C;&#x6765;&#x9A8C;&#x8BC1;&#x65B0;&#x7248;&#x672C;&#x7684;&#x51C6;&#x786E;&#x6027;&#x548C;&#x7A33;&#x5B9A;&#x6027;&#xFF0C;&#x786E;&#x8BA4;&#x6CA1;&#x6709;&#x5F02;&#x5E38;&#x4E4B;&#x540E;&#x518D;&#x5C06;&#x5269;&#x4F59;&#x7684;&#x670D;&#x52A1;&#x6D41;&#x91CF;&#x5BFC;&#x5165;&#x5230;&#x65B0;&#x7684;&#x7248;&#x672C;&#x3002;</p>
+<blockquote>
+<p>&#x4EE5;&#x524D;&#xFF0C;&#x65F7;&#x5DE5;&#x5728;&#x4E0B;&#x77FF;&#x6D1E;&#x662F;&#x9762;&#x4E34;&#x7684;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x5371;&#x9669;&#x662F;&#x77FF;&#x4E95;&#x4E2D;&#x7684;&#x6BD2;&#x6C14;&#xFF0C;&#x4ED6;&#x4EEC;&#x60F3;&#x5230;&#x4E00;&#x4E2A;&#x529E;&#x6CD5;&#x6765;&#x8FA8;&#x522B;&#x77FF;&#x4E95;&#x4E2D;&#x662F;&#x5426;&#x6709;&#x6BD2;&#x6C14;&#xFF0C;&#x77FF;&#x5DE5;&#x4EEC;<strong>&#x968F;&#x8EAB;&#x643A;&#x5E26;</strong>&#x4E00;&#x53EA;&#x91D1;&#x4E1D;&#x96C0;&#x4E0B;&#x77FF;&#x4E95;&#xFF0C;&#x91D1;&#x4E1D;&#x96C0;&#x5BF9;&#x6BD2;&#x6C14;&#x7684;&#x62B5;&#x6297;&#x80FD;&#x529B;&#x6BD4;&#x4EBA;&#x7C7B;&#x8981;&#x5F31;&#xFF0C;&#x5728;&#x6BD2;&#x6C14;&#x73AF;&#x5883;&#x4E0B;&#x4F1A;&#x5148;&#x6302;&#x6389;&#x8D77;&#x5230;&#x9884;&#x8B66;&#x7684;&#x4F5C;&#x7528;&#x3002;</p>
+</blockquote>
+<p><img src="../../static/img/istio-ecology/aeraki/canary-release.png" alt=""></p>
+<p>Istio&#x53EF;&#x4EE5;&#x901A;&#x8FC7;envoy&#x5F3A;&#x5927;&#x7684;&#x8DEF;&#x7531;&#x80FD;&#x529B;&#x7075;&#x6D3B;&#x63A7;&#x5236;&#x7248;&#x672C;&#x7684;&#x6D41;&#x91CF;&#x767E;&#x5206;&#x6BD4;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x6765;&#x9A8C;&#x8BC1;&#x4E00;&#x4E0B;&#x4F7F;&#x7528;&#x4E86;aeraki&#x80FD;&#x5426;&#x5BF9;&#x6211;&#x4EEC;&#x7684;dubbo&#x670D;&#x52A1;&#x8FDB;&#x884C;&#x7070;&#x5EA6;&#x53D1;&#x5E03;&#x7684;&#x6A21;&#x62DF;&#x3002;&#x5728;&#x6211;&#x4EEC;&#x6B63;&#x5E38;&#x7684;running&#x8D77;&#x6765;&#x4E86;dubbo&#x7684;&#x670D;&#x52A1;&#x4E4B;&#x540E;&#xFF0C;&#x7531;&#x4E8E;&#x521B;&#x5EFA;&#x4E86;VirtualService&#xFF08;aeraki&#x5BF9;&#x4E8E;dubbo&#x8FD9;&#x79CD;grpc&#x7684;&#x5E94;&#x7528;&#x8FD8;&#x662F;&#x6CBF;&#x7528;&#x4E86;VirtualService&#x540C;&#x4E2A;CRD&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;istio&#x5BF9;&#x4E8E;dubbo&#x7684;consumer&#x5DF2;&#x7ECF;&#x5BF9;provider&#x7684;&#x8BF7;&#x6C42;&#x6D41;&#x91CF;&#x8FDB;&#x884C;&#x4E86;&#x5206;&#x6D41;&#xFF0C;&#x767E;&#x5206;&#x4E4B;&#x516B;&#x5341;&#x7684;&#x6D41;&#x91CF;&#x4F1A;&#x8BF7;&#x6C42;&#x5230;&#x4E86;v1&#x7248;&#x672C;&#xFF0C;&#x767E;&#x5206;&#x4E4B;&#x4E8C;&#x5341;&#x7684;&#x6D41;&#x91CF;&#x5219;&#x662F;&#x5230;&#x4E86;v2&#x7248;&#x672C;&#x3002;&#x901A;&#x8FC7;kiali&#x7684;request rate&#x6D41;&#x91CF;&#x56FE;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x6765;</p>
+<p><img src="../../static/img/istio-ecology/aeraki/kiali-dubbo-request-rate-1.png" alt=""></p>
+<p>&#x901A;&#x8FC7;&#x89C2;&#x5BDF;consumer&#x7684;&#x65E5;&#x5FD7;&#x4E5F;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;consumer&#x5927;&#x6982;&#x6709;&#x767E;&#x5206;&#x4E4B;&#x516B;&#x5341;&#x7684;&#x6D41;&#x91CF;&#x8BF7;&#x6C42;&#x5230;&#x4E86;v1&#xFF0C;&#x767E;&#x5206;&#x4E4B;&#x4E8C;&#x5341;&#x7684;&#x6D41;&#x91CF;&#x8BF7;&#x6C42;&#x5230;&#x4E86;v2&#x3002;</p>
+<pre><code class="lang-shell">Hello Aeraki, response from dubbo-sample-provider-v1-5b769968f7-59s9h/10.100.37.40
+Hello Aeraki, response from dubbo-sample-provider-v1-5b769968f7-59s9h/10.100.37.40
+Hello Aeraki, response from dubbo-sample-provider-v1-5b769968f7-59s9h/10.100.37.40
+Hello Aeraki, response from dubbo-sample-provider-v2-5cb59df666-v7zdq/10.100.245.62
+Hello Aeraki, response from dubbo-sample-provider-v2-5cb59df666-v7zdq/10.100.245.62
+Hello Aeraki, response from dubbo-sample-provider-v1-5b769968f7-59s9h/10.100.37.40
+Hello Aeraki, response from dubbo-sample-provider-v1-5b769968f7-59s9h/10.100.37.40
+Hello Aeraki, response from dubbo-sample-provider-v1-5b769968f7-59s9h/10.100.37.40
+Hello Aeraki, response from dubbo-sample-provider-v2-5cb59df666-v7zdq/10.100.245.62
+Hello Aeraki, response from dubbo-sample-provider-v1-5b769968f7-59s9h/10.100.37.40
+Hello Aeraki, response from dubbo-sample-provider-v1-5b769968f7-59s9h/10.100.37.40
+Hello Aeraki, response from dubbo-sample-provider-v1-5b769968f7-59s9h/10.100.37.40
+</code></pre>
+<p>&#x8FD9;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x4FEE;&#x6539;VirtualService&#x7684;&#x8DEF;&#x7531;&#x89C4;&#x5219;&#xFF0C;&#x7528;&#x6765;&#x6A21;&#x62DF;&#x57FA;&#x4E8E;&#x6309;&#x6D41;&#x91CF;&#x6BD4;&#x4F8B;&#x5206;&#x6D41;&#x7684;&#x7070;&#x5EA6;&#x53D1;&#x5E03;&#xFF0C;&#x5C06;&#x767E;&#x5206;&#x4E4B;&#x4E94;&#x5341;&#x5E73;&#x5747;&#x5206;&#x914D;&#x5230;&#x5230;v1&#x548C;v2&#x7248;&#x672C;&#xFF0C;&#x4FEE;&#x6539;&#x540E;&#x7684;virtualService&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-yaml"><span class="hljs-attr">  apiVersion:</span> networking.istio.io/v1alpha3
+<span class="hljs-attr">  kind:</span> VirtualService
+<span class="hljs-attr">  metadata:</span>
+<span class="hljs-attr">    name:</span> test-dubbo-route
+<span class="hljs-attr">  spec:</span>
+<span class="hljs-attr">    hosts:</span>
+<span class="hljs-bullet">      -</span> org.apache.dubbo.samples.basic.api.demoservice
+<span class="hljs-attr">    http:</span>
+<span class="hljs-attr">      - name:</span> <span class="hljs-string">&quot;reviews-traffic-splitting&quot;</span>
+<span class="hljs-attr">        route:</span>
+<span class="hljs-attr">          - destination:</span>
+<span class="hljs-attr">              host:</span> org.apache.dubbo.samples.basic.api.demoservice
+<span class="hljs-attr">              subset:</span> v1
+<span class="hljs-attr">            weight:</span> <span class="hljs-number">20</span>
+<span class="hljs-attr">          - destination:</span>
+<span class="hljs-attr">              host:</span> org.apache.dubbo.samples.basic.api.demoservice
+<span class="hljs-attr">              subset:</span> v2
+<span class="hljs-attr">            weight:</span> <span class="hljs-number">80</span>
+</code></pre>
+<p>&#x8FD9;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x67E5;&#x770B;kiali&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6D41;&#x91CF;&#x5DF2;&#x7ECF;&#x5E73;&#x5747;&#x5206;&#x914D;&#x5230;&#x4E86;v1&#x548C;v2&#x7248;&#x672C;</p>
+<p><img src="../../static/img/istio-ecology/aeraki/kiali-dubbo-request-rate-2.png" alt=""></p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;istio+aeraki&#x7075;&#x6D3B;&#x7CBE;&#x51C6;&#x7684;&#x63A7;&#x5236;&#x4E86;&#x4E0D;&#x540C;&#x7248;&#x672C;&#x7684;dubbo&#x6D41;&#x91CF;&#x6BD4;&#x4F8B;&#x3002;&#x968F;&#x7740;v2&#x7248;&#x672C;&#x7684;&#x6D41;&#x91CF;&#x4E0D;&#x65AD;&#x589E;&#x5927;&#x6700;&#x7EC8;&#x5F7B;&#x5E95;&#x66FF;&#x4EE3;v1&#x7248;&#x672C;&#x79F0;&#x4E3A;&#x7EBF;&#x4E0A;&#x7248;&#x672C;&#xFF0C;&#x6574;&#x4E2A;&#x91D1;&#x4E1D;&#x96C0;&#x53D1;&#x5E03;&#x4E5F;&#x5C31;&#x7ED3;&#x675F;&#x4E86;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;aeraki&#x8FDB;&#x884C;&#x6D41;&#x91CF;&#x5207;&#x6362;&#x7684;&#x65F6;&#x5019;&#xFF0C;dubbo&#x7684;&#x670D;&#x52A1;&#x4F1A;&#x4E2D;&#x65AD;&#x4E00;&#x4F1A;&#xFF0C;&#x5BF9;&#x4E8E;&#x670D;&#x52A1;&#x7684;&#x6D88;&#x8D39;&#x8005;&#x6765;&#x8BF4;&#x4E0D;&#x662F;&#x5F88;&#x53CB;&#x597D;&#xFF0C;&#x540E;&#x7EED;&#x4F1A;&#x5C1D;&#x8BD5;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x6539;&#x8FDB;&#x3002;</p>
+<pre><code class="lang-shell">  Hello Aeraki, response from dubbo-sample-provider-v1-5b769968f7-59s9h/10.100.37.40
+  Hello Aeraki, response from dubbo-sample-provider-v1-5b769968f7-59s9h/10.100.37.40
+
+  [13/04/21 02:54:04:004 UTC] NettyClientWorker-1-1  INFO netty4.NettyClientHandler:  [DUBBO] The connection of /10.100.245.0:34708 -&gt; org.apache.dubbo.samples.basic.api.demoservice/193.193.192.192:20880 is disconnected., dubbo version: 1.0-SNAPSHOT, current host: 10.100.245.0
+  org.apache.dubbo.rpc.RpcException: Failed to invoke remote method: sayHello, provider: dubbo://org.apache.dubbo.samples.basic.api.demoservice:20880/org.apache.dubbo.samples.basic.api.DemoService?application=demo-consumer&amp;check=true&amp;init=false&amp;interface=org.apache.dubbo.samples.basic.api.DemoService&amp;pid=1&amp;register.ip=10.100.245.0&amp;remote.application=&amp;revision=1.0-SNAPSHOT&amp;side=consumer&amp;sticky=false&amp;timeout=3000, cause: message can not send, because channel is closed . url:dubbo://org.apache.dubbo.samples.basic.api.demoservice:20880/org.apache.dubbo.samples.basic.api.DemoService?application=demo-consumer&amp;check=true&amp;codec=dubbo&amp;heartbeat=60000&amp;init=false&amp;interface=org.apache.dubbo.samples.basic.api.DemoService&amp;pid=1&amp;register.ip=10.100.245.0&amp;remote.application=&amp;revision=1.0-SNAPSHOT&amp;side=consumer&amp;sticky=false&amp;timeout=3000
+      at org.apache.dubbo.rpc.protocol.dubbo.DubboInvoker.doInvoke(DubboInvoker.java:115)
+      at org.apache.dubbo.rpc.protocol.AbstractInvoker.invoke(AbstractInvoker.java:163)
+      at org.apache.dubbo.rpc.protocol.AsyncToSyncInvoker.invoke(AsyncToSyncInvoker.java:52)
+      at org.apache.dubbo.monitor.support.MonitorFilter.invoke(MonitorFilter.java:89)
+      at org.apache.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:81)
+      at org.apache.dubbo.rpc.protocol.dubbo.filter.FutureFilter.invoke(FutureFilter.java:51)
+      at org.apache.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:81)
+      at org.apache.dubbo.rpc.filter.ConsumerContextFilter.invoke(ConsumerContextFilter.java:69)
+      at org.apache.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:81)
+      at org.apache.dubbo.rpc.listener.ListenerInvokerWrapper.invoke(ListenerInvokerWrapper.java:78)
+      at org.apache.dubbo.rpc.proxy.InvokerInvocationHandler.invoke(InvokerInvocationHandler.java:74)
+      at org.apache.dubbo.common.bytecode.proxy0.sayHello(proxy0.java)
+      at org.apache.dubbo.samples.basic.BasicConsumer.main(BasicConsumer.java:45)
+  Caused by: org.apache.dubbo.remoting.RemotingException: message can not send, because channel is closed . url:dubbo://org.apache.dubbo.samples.basic.api.demoservice:20880/org.apache.dubbo.samples.basic.api.DemoService?application=demo-consumer&amp;check=true&amp;codec=dubbo&amp;heartbeat=60000&amp;init=false&amp;interface=org.apache.dubbo.samples.basic.api.DemoService&amp;pid=1&amp;register.ip=10.100.245.0&amp;remote.application=&amp;revision=1.0-SNAPSHOT&amp;side=consumer&amp;sticky=false&amp;timeout=3000
+      at org.apache.dubbo.remoting.transport.AbstractClient.send(AbstractClient.java:176)
+      at org.apache.dubbo.remoting.transport.AbstractPeer.send(AbstractPeer.java:53)
+      at org.apache.dubbo.remoting.exchange.support.header.HeaderExchangeChannel.request(HeaderExchangeChannel.java:135)
+      at org.apache.dubbo.remoting.exchange.support.header.HeaderExchangeClient.request(HeaderExchangeClient.java:95)
+      at org.apache.dubbo.rpc.protocol.dubbo.ReferenceCountExchangeClient.request(ReferenceCountExchangeClient.java:91)
+      at org.apache.dubbo.rpc.protocol.dubbo.DubboInvoker.doInvoke(DubboInvoker.java:105)
+      ... 12 more
+
+  [13/04/21 02:54:23:023 UTC] dubbo-client-idleCheck-thread-1  INFO header.ReconnectTimerTask:  [DUBBO] Initial connection to HeaderExchangeClient [channel=org.apache.dubbo.remoting.transport.netty4.NettyClient [/10.100.245.0:34708 -&gt; org.apache.dubbo.samples.basic.api.demoservice/193.193.192.192:20880]], dubbo version: 1.0-SNAPSHOT, current host: 10.100.245.0
+
+  [13/04/21 02:54:23:023 UTC] dubbo-client-idleCheck-thread-1  INFO netty4.NettyChannel:  [DUBBO] Close netty channel [id: 0x63804caa, L:/10.100.245.0:34708 ! R:org.apache.dubbo.samples.basic.api.demoservice/193.193.192.192:20880], dubbo version: 1.0-SNAPSHOT, current host: 10.100.245.0
+
+  [13/04/21 02:54:23:023 UTC] dubbo-client-idleCheck-thread-1  INFO netty4.NettyClient:  [DUBBO] Close old netty channel [id: 0x63804caa, L:/10.100.245.0:34708 ! R:org.apache.dubbo.samples.basic.api.demoservice/193.193.192.192:20880] on create new netty channel [id: 0xb92ae7fc, L:/10.100.245.0:33370 - R:org.apache.dubbo.samples.basic.api.demoservice/193.193.192.192:20880], dubbo version: 1.0-SNAPSHOT, current host: 10.100.245.0
+
+  [13/04/21 02:54:23:023 UTC] dubbo-client-idleCheck-thread-1  INFO transport.AbstractClient:  [DUBBO] Successed connect to server org.apache.dubbo.samples.basic.api.demoservice/193.193.192.192:20880 from NettyClient 10.100.245.0 using dubbo version 1.0-SNAPSHOT, channel is NettyChannel [channel=[id: 0xb92ae7fc, L:/10.100.245.0:33370 - R:org.apache.dubbo.samples.basic.api.demoservice/193.193.192.192:20880]], dubbo version: 1.0-SNAPSHOT, current host: 10.100.245.0
+
+  [13/04/21 02:54:23:023 UTC] NettyClientWorker-1-2  INFO netty4.NettyClientHandler:  [DUBBO] The connection of /10.100.245.0:33370 -&gt; org.apache.dubbo.samples.basic.api.demoservice/193.193.192.192:20880 is established., dubbo version: 1.0-SNAPSHOT, current host: 10.100.245.0
+
+  Hello Aeraki, response from dubbo-sample-provider-v2-5cb59df666-v7zdq/10.100.245.62
+  Hello Aeraki, response from dubbo-sample-provider-v1-5b769968f7-59s9h/10.100.37.40
+  Hello Aeraki, response from dubbo-sample-provider-v1-5b769968f7-59s9h/10.100.37.40
+  Hello Aeraki, response from dubbo-sample-provider-v2-5cb59df666-v7zdq/10.100.245.62
+</code></pre>
+<p>aeraki&#x4E5F;&#x5B9E;&#x73B0;&#x4E86;&#x57FA;&#x4E8E;&#x4E03;&#x5C42;&#x7684;&#x6D41;&#x91CF;&#x8DEF;&#x7531;&#xFF0C;&#x652F;&#x6301;&#x6839;&#x636E;dubbo&#x7684;&#x670D;&#x52A1;&#x540D;&#x8FDB;&#x884C;&#x8DEF;&#x7531;&#xFF0C;&#x5C06;method&#x7684;&#x6D41;&#x91CF;&#x5BFC;&#x5411;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x652F;&#x6301;method&#x7684;&#x7CBE;&#x51C6;/&#x524D;&#x7F00;/&#x6B63;&#x5219;&#x4E09;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x8DEF;&#x7531;&#x6A21;&#x5F0F;&#x3002;</p>
+<pre><code class="lang-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">apiVersion:</span> networking.istio.io/v1alpha3
+<span class="hljs-attr">kind:</span> VirtualService
+<span class="hljs-attr">metadata:</span>
+<span class="hljs-attr">  name:</span> test-dubbo-route
+<span class="hljs-attr">spec:</span>
+<span class="hljs-attr">  hosts:</span>
+<span class="hljs-bullet">    -</span> org.apache.dubbo.samples.basic.api.demoservice
+<span class="hljs-attr">  http:</span>
+<span class="hljs-attr">    - name:</span> <span class="hljs-string">&quot;reviews-v1-routes&quot;</span>
+<span class="hljs-attr">      match:</span>
+<span class="hljs-attr">        - method:</span>
+<span class="hljs-attr">            exact:</span> <span class="hljs-string">&quot;demoservice&quot;</span>
+<span class="hljs-attr">      route:</span>
+<span class="hljs-attr">        - destination:</span>
+<span class="hljs-attr">            host:</span> org.apache.dubbo.samples.basic.api.demoservice
+<span class="hljs-attr">            subset:</span> v1
+<span class="hljs-attr">    - name:</span> <span class="hljs-string">&quot;reviews-v2-routes&quot;</span>
+<span class="hljs-attr">      match:</span>
+<span class="hljs-attr">        - method:</span>
+<span class="hljs-attr">            prefix:</span> say
+<span class="hljs-attr">      route:</span>
+<span class="hljs-attr">        - destination:</span>
+<span class="hljs-attr">            host:</span> org.apache.dubbo.samples.basic.api.demoservice
+<span class="hljs-attr">            subset:</span> v2
+<span class="hljs-attr">        - name:</span> <span class="hljs-string">&quot;reviews-v3-routes&quot;</span>
+<span class="hljs-attr">      match:</span>
+<span class="hljs-attr">        - method:</span>
+<span class="hljs-attr">            regex:</span> ^s.*o$
+<span class="hljs-attr">      route:</span>
+<span class="hljs-attr">        - destination:</span>
+<span class="hljs-attr">            host:</span> org.apache.dubbo.samples.basic.api.demoservice
+<span class="hljs-attr">            subset:</span> v2
+</code></pre>
+<h2 id="&#x53EF;&#x89C2;&#x6D4B;&#x6027;&#x6F14;&#x793A;">&#x53EF;&#x89C2;&#x6D4B;&#x6027;&#x6F14;&#x793A;</h2>
+<ol>
+<li><p>kiali: kiali&#x7684;&#x89C2;&#x6D4B;&#x6027;&#x5DF2;&#x7ECF;&#x5728;&#x4E0A;&#x9762;&#x7684;&#x6D41;&#x91CF;&#x63A7;&#x5236;&#x53EF;&#x4EE5;&#x89C2;&#x6D4B;&#x5230;&#x4E86;</p>
+</li>
+<li><p>Metrics&#x2014;&#x2014;prometheus+grafana</p>
+</li>
+</ol>
+<p><img src="../../static/img/istio-ecology/aeraki/grafana-dubbo.png" alt=""></p>
+<p>aeraki&#x5DF2;&#x7ECF;&#x652F;&#x6301;&#x7684;metrics&#x7684;&#x534F;&#x8BAE;&#x6709;Dubbo&#x3001;Thrift&#x3001;Kafka&#x3001;ZooKeeper&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x652F;&#x6301;&#x5176;&#x4ED6;&#x534F;&#x8BAE;&#x53EF;&#x4EE5;&#x53BB;&#x5B9E;&#x73B0;&#x5BF9;&#x5E94;&#x534F;&#x8BAE;&#x7684;pluhin&#xFF0C;&#x4EE5;dubbo&#x534F;&#x8BAE;&#x4E3E;&#x4F8B;&#xFF0C;&#x5728;grafana&#x4E2D;&#x5BFC;&#x5165;&#x914D;&#x7F6E;&#x5373;&#x53EF;&#x770B;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x76D1;&#x63A7;&#x6570;&#x636E;</p>
+<pre><code class="lang-json">   {
+     <span class="hljs-string">&quot;__inputs&quot;</span>: [
+       {
+         <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;DS_PROMETHEUS&quot;</span>,
+         <span class="hljs-string">&quot;label&quot;</span>: <span class="hljs-string">&quot;Prometheus&quot;</span>,
+         <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+         <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;datasource&quot;</span>,
+         <span class="hljs-string">&quot;pluginId&quot;</span>: <span class="hljs-string">&quot;prometheus&quot;</span>,
+         <span class="hljs-string">&quot;pluginName&quot;</span>: <span class="hljs-string">&quot;Prometheus&quot;</span>
+       }
+     ],
+     <span class="hljs-string">&quot;__requires&quot;</span>: [
+       {
+         <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;panel&quot;</span>,
+         <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;bargauge&quot;</span>,
+         <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Bar gauge&quot;</span>,
+         <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+       },
+       {
+         <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;panel&quot;</span>,
+         <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;gauge&quot;</span>,
+         <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Gauge&quot;</span>,
+         <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+       },
+       {
+         <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;grafana&quot;</span>,
+         <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;grafana&quot;</span>,
+         <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Grafana&quot;</span>,
+         <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;7.2.1&quot;</span>
+       },
+       {
+         <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;panel&quot;</span>,
+         <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;graph&quot;</span>,
+         <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Graph&quot;</span>,
+         <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+       },
+       {
+         <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;datasource&quot;</span>,
+         <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;prometheus&quot;</span>,
+         <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Prometheus&quot;</span>,
+         <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;1.0.0&quot;</span>
+       }
+     ],
+     <span class="hljs-string">&quot;annotations&quot;</span>: {
+       <span class="hljs-string">&quot;list&quot;</span>: [
+         {
+           <span class="hljs-string">&quot;builtIn&quot;</span>: <span class="hljs-number">1</span>,
+           <span class="hljs-string">&quot;datasource&quot;</span>: <span class="hljs-string">&quot;-- Grafana --&quot;</span>,
+           <span class="hljs-string">&quot;enable&quot;</span>: <span class="hljs-literal">true</span>,
+           <span class="hljs-string">&quot;hide&quot;</span>: <span class="hljs-literal">true</span>,
+           <span class="hljs-string">&quot;iconColor&quot;</span>: <span class="hljs-string">&quot;rgba(0, 211, 255, 1)&quot;</span>,
+           <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Annotations &amp; Alerts&quot;</span>,
+           <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;dashboard&quot;</span>
+         }
+       ]
+     },
+     <span class="hljs-string">&quot;editable&quot;</span>: <span class="hljs-literal">true</span>,
+     <span class="hljs-string">&quot;gnetId&quot;</span>: <span class="hljs-literal">null</span>,
+     <span class="hljs-string">&quot;graphTooltip&quot;</span>: <span class="hljs-number">0</span>,
+     <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-literal">null</span>,
+     <span class="hljs-string">&quot;links&quot;</span>: [],
+     <span class="hljs-string">&quot;panels&quot;</span>: [
+       {
+         <span class="hljs-string">&quot;aliasColors&quot;</span>: {},
+         <span class="hljs-string">&quot;bars&quot;</span>: <span class="hljs-literal">false</span>,
+         <span class="hljs-string">&quot;dashLength&quot;</span>: <span class="hljs-number">10</span>,
+         <span class="hljs-string">&quot;dashes&quot;</span>: <span class="hljs-literal">false</span>,
+         <span class="hljs-string">&quot;datasource&quot;</span>: <span class="hljs-string">&quot;${DS_PROMETHEUS}&quot;</span>,
+         <span class="hljs-string">&quot;fieldConfig&quot;</span>: {
+           <span class="hljs-string">&quot;defaults&quot;</span>: {
+             <span class="hljs-string">&quot;custom&quot;</span>: {}
+           },
+           <span class="hljs-string">&quot;overrides&quot;</span>: []
+         },
+         <span class="hljs-string">&quot;fill&quot;</span>: <span class="hljs-number">1</span>,
+         <span class="hljs-string">&quot;fillGradient&quot;</span>: <span class="hljs-number">0</span>,
+         <span class="hljs-string">&quot;gridPos&quot;</span>: {
+           <span class="hljs-string">&quot;h&quot;</span>: <span class="hljs-number">8</span>,
+           <span class="hljs-string">&quot;w&quot;</span>: <span class="hljs-number">12</span>,
+           <span class="hljs-string">&quot;x&quot;</span>: <span class="hljs-number">0</span>,
+           <span class="hljs-string">&quot;y&quot;</span>: <span class="hljs-number">0</span>
+         },
+         <span class="hljs-string">&quot;hiddenSeries&quot;</span>: <span class="hljs-literal">false</span>,
+         <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-number">12</span>,
+         <span class="hljs-string">&quot;legend&quot;</span>: {
+           <span class="hljs-string">&quot;avg&quot;</span>: <span class="hljs-literal">false</span>,
+           <span class="hljs-string">&quot;current&quot;</span>: <span class="hljs-literal">false</span>,
+           <span class="hljs-string">&quot;max&quot;</span>: <span class="hljs-literal">false</span>,
+           <span class="hljs-string">&quot;min&quot;</span>: <span class="hljs-literal">false</span>,
+           <span class="hljs-string">&quot;show&quot;</span>: <span class="hljs-literal">true</span>,
+           <span class="hljs-string">&quot;total&quot;</span>: <span class="hljs-literal">false</span>,
+           <span class="hljs-string">&quot;values&quot;</span>: <span class="hljs-literal">false</span>
+         },
+         <span class="hljs-string">&quot;lines&quot;</span>: <span class="hljs-literal">true</span>,
+         <span class="hljs-string">&quot;linewidth&quot;</span>: <span class="hljs-number">1</span>,
+         <span class="hljs-string">&quot;nullPointMode&quot;</span>: <span class="hljs-string">&quot;null&quot;</span>,
+         <span class="hljs-string">&quot;options&quot;</span>: {
+           <span class="hljs-string">&quot;alertThreshold&quot;</span>: <span class="hljs-literal">true</span>
+         },
+         <span class="hljs-string">&quot;percentage&quot;</span>: <span class="hljs-literal">false</span>,
+         <span class="hljs-string">&quot;pluginVersion&quot;</span>: <span class="hljs-string">&quot;7.2.1&quot;</span>,
+         <span class="hljs-string">&quot;pointradius&quot;</span>: <span class="hljs-number">2</span>,
+         <span class="hljs-string">&quot;points&quot;</span>: <span class="hljs-literal">false</span>,
+         <span class="hljs-string">&quot;renderer&quot;</span>: <span class="hljs-string">&quot;flot&quot;</span>,
+         <span class="hljs-string">&quot;seriesOverrides&quot;</span>: [],
+         <span class="hljs-string">&quot;spaceLength&quot;</span>: <span class="hljs-number">10</span>,
+         <span class="hljs-string">&quot;stack&quot;</span>: <span class="hljs-literal">false</span>,
+         <span class="hljs-string">&quot;steppedLine&quot;</span>: <span class="hljs-literal">false</span>,
+         <span class="hljs-string">&quot;targets&quot;</span>: [
+           {
+             <span class="hljs-string">&quot;expr&quot;</span>: <span class="hljs-string">&quot;sum(rate(envoy_dubbo_outbound_20880__org_apache_dubbo_samples_basic_api_demoservice_request[5m]))&quot;</span>,
+             <span class="hljs-string">&quot;interval&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+             <span class="hljs-string">&quot;legendFormat&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+             <span class="hljs-string">&quot;refId&quot;</span>: <span class="hljs-string">&quot;A&quot;</span>
+           }
+         ],
+         <span class="hljs-string">&quot;thresholds&quot;</span>: [],
+         <span class="hljs-string">&quot;timeFrom&quot;</span>: <span class="hljs-literal">null</span>,
+         <span class="hljs-string">&quot;timeRegions&quot;</span>: [],
+         <span class="hljs-string">&quot;timeShift&quot;</span>: <span class="hljs-literal">null</span>,
+         <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Dubbo Request Per Second&quot;</span>,
+         <span class="hljs-string">&quot;tooltip&quot;</span>: {
+           <span class="hljs-string">&quot;shared&quot;</span>: <span class="hljs-literal">true</span>,
+           <span class="hljs-string">&quot;sort&quot;</span>: <span class="hljs-number">0</span>,
+           <span class="hljs-string">&quot;value_type&quot;</span>: <span class="hljs-string">&quot;individual&quot;</span>
+         },
+         <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;graph&quot;</span>,
+         <span class="hljs-string">&quot;xaxis&quot;</span>: {
+           <span class="hljs-string">&quot;buckets&quot;</span>: <span class="hljs-literal">null</span>,
+           <span class="hljs-string">&quot;mode&quot;</span>: <span class="hljs-string">&quot;time&quot;</span>,
+           <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-literal">null</span>,
+           <span class="hljs-string">&quot;show&quot;</span>: <span class="hljs-literal">true</span>,
+           <span class="hljs-string">&quot;values&quot;</span>: []
+         },
+         <span class="hljs-string">&quot;yaxes&quot;</span>: [
+           {
+             <span class="hljs-string">&quot;format&quot;</span>: <span class="hljs-string">&quot;short&quot;</span>,
+             <span class="hljs-string">&quot;label&quot;</span>: <span class="hljs-literal">null</span>,
+             <span class="hljs-string">&quot;logBase&quot;</span>: <span class="hljs-number">1</span>,
+             <span class="hljs-string">&quot;max&quot;</span>: <span class="hljs-literal">null</span>,
+             <span class="hljs-string">&quot;min&quot;</span>: <span class="hljs-literal">null</span>,
+             <span class="hljs-string">&quot;show&quot;</span>: <span class="hljs-literal">true</span>
+           },
+           {
+             <span class="hljs-string">&quot;format&quot;</span>: <span class="hljs-string">&quot;short&quot;</span>,
+             <span class="hljs-string">&quot;label&quot;</span>: <span class="hljs-literal">null</span>,
+             <span class="hljs-string">&quot;logBase&quot;</span>: <span class="hljs-number">1</span>,
+             <span class="hljs-string">&quot;max&quot;</span>: <span class="hljs-literal">null</span>,
+             <span class="hljs-string">&quot;min&quot;</span>: <span class="hljs-literal">null</span>,
+             <span class="hljs-string">&quot;show&quot;</span>: <span class="hljs-literal">true</span>
+           }
+         ],
+         <span class="hljs-string">&quot;yaxis&quot;</span>: {
+           <span class="hljs-string">&quot;align&quot;</span>: <span class="hljs-literal">false</span>,
+           <span class="hljs-string">&quot;alignLevel&quot;</span>: <span class="hljs-literal">null</span>
+         }
+       },
+       {
+         <span class="hljs-string">&quot;aliasColors&quot;</span>: {},
+         <span class="hljs-string">&quot;bars&quot;</span>: <span class="hljs-literal">false</span>,
+         <span class="hljs-string">&quot;dashLength&quot;</span>: <span class="hljs-number">10</span>,
+         <span class="hljs-string">&quot;dashes&quot;</span>: <span class="hljs-literal">false</span>,
+         <span class="hljs-string">&quot;datasource&quot;</span>: <span class="hljs-string">&quot;${DS_PROMETHEUS}&quot;</span>,
+         <span class="hljs-string">&quot;fieldConfig&quot;</span>: {
+           <span class="hljs-string">&quot;defaults&quot;</span>: {
+             <span class="hljs-string">&quot;custom&quot;</span>: {},
+             <span class="hljs-string">&quot;unit&quot;</span>: <span class="hljs-string">&quot;ms&quot;</span>
+           },
+           <span class="hljs-string">&quot;overrides&quot;</span>: []
+         },
+         <span class="hljs-string">&quot;fill&quot;</span>: <span class="hljs-number">1</span>,
+         <span class="hljs-string">&quot;fillGradient&quot;</span>: <span class="hljs-number">0</span>,
+         <span class="hljs-string">&quot;gridPos&quot;</span>: {
+           <span class="hljs-string">&quot;h&quot;</span>: <span class="hljs-number">8</span>,
+           <span class="hljs-string">&quot;w&quot;</span>: <span class="hljs-number">12</span>,
+           <span class="hljs-string">&quot;x&quot;</span>: <span class="hljs-number">12</span>,
+           <span class="hljs-string">&quot;y&quot;</span>: <span class="hljs-number">0</span>
+         },
+         <span class="hljs-string">&quot;hiddenSeries&quot;</span>: <span class="hljs-literal">false</span>,
+         <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-number">2</span>,
+         <span class="hljs-string">&quot;legend&quot;</span>: {
+           <span class="hljs-string">&quot;avg&quot;</span>: <span class="hljs-literal">false</span>,
+           <span class="hljs-string">&quot;current&quot;</span>: <span class="hljs-literal">false</span>,
+           <span class="hljs-string">&quot;max&quot;</span>: <span class="hljs-literal">false</span>,
+           <span class="hljs-string">&quot;min&quot;</span>: <span class="hljs-literal">false</span>,
+           <span class="hljs-string">&quot;show&quot;</span>: <span class="hljs-literal">true</span>,
+           <span class="hljs-string">&quot;total&quot;</span>: <span class="hljs-literal">false</span>,
+           <span class="hljs-string">&quot;values&quot;</span>: <span class="hljs-literal">false</span>
+         },
+         <span class="hljs-string">&quot;lines&quot;</span>: <span class="hljs-literal">true</span>,
+         <span class="hljs-string">&quot;linewidth&quot;</span>: <span class="hljs-number">1</span>,
+         <span class="hljs-string">&quot;nullPointMode&quot;</span>: <span class="hljs-string">&quot;null&quot;</span>,
+         <span class="hljs-string">&quot;options&quot;</span>: {
+           <span class="hljs-string">&quot;alertThreshold&quot;</span>: <span class="hljs-literal">true</span>
+         },
+         <span class="hljs-string">&quot;percentage&quot;</span>: <span class="hljs-literal">false</span>,
+         <span class="hljs-string">&quot;pluginVersion&quot;</span>: <span class="hljs-string">&quot;7.2.1&quot;</span>,
+         <span class="hljs-string">&quot;pointradius&quot;</span>: <span class="hljs-number">2</span>,
+         <span class="hljs-string">&quot;points&quot;</span>: <span class="hljs-literal">false</span>,
+         <span class="hljs-string">&quot;renderer&quot;</span>: <span class="hljs-string">&quot;flot&quot;</span>,
+         <span class="hljs-string">&quot;seriesOverrides&quot;</span>: [],
+         <span class="hljs-string">&quot;spaceLength&quot;</span>: <span class="hljs-number">10</span>,
+         <span class="hljs-string">&quot;stack&quot;</span>: <span class="hljs-literal">false</span>,
+         <span class="hljs-string">&quot;steppedLine&quot;</span>: <span class="hljs-literal">false</span>,
+         <span class="hljs-string">&quot;targets&quot;</span>: [
+           {
+             <span class="hljs-string">&quot;expr&quot;</span>: <span class="hljs-string">&quot;histogram_quantile(0.95, sum(rate(envoy_dubbo_outbound_20880__org_apache_dubbo_samples_basic_api_demoservice_request_time_ms_bucket[5m])) by (le))&quot;</span>,
+             <span class="hljs-string">&quot;interval&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+             <span class="hljs-string">&quot;legendFormat&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+             <span class="hljs-string">&quot;refId&quot;</span>: <span class="hljs-string">&quot;A&quot;</span>
+           }
+         ],
+         <span class="hljs-string">&quot;thresholds&quot;</span>: [],
+         <span class="hljs-string">&quot;timeFrom&quot;</span>: <span class="hljs-literal">null</span>,
+         <span class="hljs-string">&quot;timeRegions&quot;</span>: [],
+         <span class="hljs-string">&quot;timeShift&quot;</span>: <span class="hljs-literal">null</span>,
+         <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Dubbo Request Latency&quot;</span>,
+         <span class="hljs-string">&quot;tooltip&quot;</span>: {
+           <span class="hljs-string">&quot;shared&quot;</span>: <span class="hljs-literal">true</span>,
+           <span class="hljs-string">&quot;sort&quot;</span>: <span class="hljs-number">0</span>,
+           <span class="hljs-string">&quot;value_type&quot;</span>: <span class="hljs-string">&quot;individual&quot;</span>
+         },
+         <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;graph&quot;</span>,
+         <span class="hljs-string">&quot;xaxis&quot;</span>: {
+           <span class="hljs-string">&quot;buckets&quot;</span>: <span class="hljs-literal">null</span>,
+           <span class="hljs-string">&quot;mode&quot;</span>: <span class="hljs-string">&quot;time&quot;</span>,
+           <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-literal">null</span>,
+           <span class="hljs-string">&quot;show&quot;</span>: <span class="hljs-literal">true</span>,
+           <span class="hljs-string">&quot;values&quot;</span>: []
+         },
+         <span class="hljs-string">&quot;yaxes&quot;</span>: [
+           {
+             <span class="hljs-string">&quot;format&quot;</span>: <span class="hljs-string">&quot;ms&quot;</span>,
+             <span class="hljs-string">&quot;label&quot;</span>: <span class="hljs-literal">null</span>,
+             <span class="hljs-string">&quot;logBase&quot;</span>: <span class="hljs-number">1</span>,
+             <span class="hljs-string">&quot;max&quot;</span>: <span class="hljs-literal">null</span>,
+             <span class="hljs-string">&quot;min&quot;</span>: <span class="hljs-literal">null</span>,
+             <span class="hljs-string">&quot;show&quot;</span>: <span class="hljs-literal">true</span>
+           },
+           {
+             <span class="hljs-string">&quot;format&quot;</span>: <span class="hljs-string">&quot;short&quot;</span>,
+             <span class="hljs-string">&quot;label&quot;</span>: <span class="hljs-literal">null</span>,
+             <span class="hljs-string">&quot;logBase&quot;</span>: <span class="hljs-number">1</span>,
+             <span class="hljs-string">&quot;max&quot;</span>: <span class="hljs-literal">null</span>,
+             <span class="hljs-string">&quot;min&quot;</span>: <span class="hljs-literal">null</span>,
+             <span class="hljs-string">&quot;show&quot;</span>: <span class="hljs-literal">true</span>
+           }
+         ],
+         <span class="hljs-string">&quot;yaxis&quot;</span>: {
+           <span class="hljs-string">&quot;align&quot;</span>: <span class="hljs-literal">false</span>,
+           <span class="hljs-string">&quot;alignLevel&quot;</span>: <span class="hljs-literal">null</span>
+         }
+       },
+       {
+         <span class="hljs-string">&quot;datasource&quot;</span>: <span class="hljs-string">&quot;${DS_PROMETHEUS}&quot;</span>,
+         <span class="hljs-string">&quot;fieldConfig&quot;</span>: {
+           <span class="hljs-string">&quot;defaults&quot;</span>: {
+             <span class="hljs-string">&quot;custom&quot;</span>: {
+               <span class="hljs-string">&quot;align&quot;</span>: <span class="hljs-literal">null</span>,
+               <span class="hljs-string">&quot;filterable&quot;</span>: <span class="hljs-literal">false</span>
+             },
+             <span class="hljs-string">&quot;mappings&quot;</span>: [],
+             <span class="hljs-string">&quot;thresholds&quot;</span>: {
+               <span class="hljs-string">&quot;mode&quot;</span>: <span class="hljs-string">&quot;absolute&quot;</span>,
+               <span class="hljs-string">&quot;steps&quot;</span>: [
+                 {
+                   <span class="hljs-string">&quot;color&quot;</span>: <span class="hljs-string">&quot;red&quot;</span>,
+                   <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-literal">null</span>
+                 },
+                 {
+                   <span class="hljs-string">&quot;color&quot;</span>: <span class="hljs-string">&quot;green&quot;</span>,
+                   <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">80</span>
+                 }
+               ]
+             },
+             <span class="hljs-string">&quot;unit&quot;</span>: <span class="hljs-string">&quot;percent&quot;</span>
+           },
+           <span class="hljs-string">&quot;overrides&quot;</span>: []
+         },
+         <span class="hljs-string">&quot;gridPos&quot;</span>: {
+           <span class="hljs-string">&quot;h&quot;</span>: <span class="hljs-number">9</span>,
+           <span class="hljs-string">&quot;w&quot;</span>: <span class="hljs-number">12</span>,
+           <span class="hljs-string">&quot;x&quot;</span>: <span class="hljs-number">0</span>,
+           <span class="hljs-string">&quot;y&quot;</span>: <span class="hljs-number">8</span>
+         },
+         <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-number">4</span>,
+         <span class="hljs-string">&quot;options&quot;</span>: {
+           <span class="hljs-string">&quot;displayMode&quot;</span>: <span class="hljs-string">&quot;gradient&quot;</span>,
+           <span class="hljs-string">&quot;orientation&quot;</span>: <span class="hljs-string">&quot;auto&quot;</span>,
+           <span class="hljs-string">&quot;reduceOptions&quot;</span>: {
+             <span class="hljs-string">&quot;calcs&quot;</span>: [
+               <span class="hljs-string">&quot;mean&quot;</span>
+             ],
+             <span class="hljs-string">&quot;fields&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+             <span class="hljs-string">&quot;values&quot;</span>: <span class="hljs-literal">false</span>
+           },
+           <span class="hljs-string">&quot;showUnfilled&quot;</span>: <span class="hljs-literal">true</span>
+         },
+         <span class="hljs-string">&quot;pluginVersion&quot;</span>: <span class="hljs-string">&quot;7.2.1&quot;</span>,
+         <span class="hljs-string">&quot;targets&quot;</span>: [
+           {
+             <span class="hljs-string">&quot;expr&quot;</span>: <span class="hljs-string">&quot;envoy_dubbo_outbound_20880__org_apache_dubbo_samples_basic_api_demoservice_request_time_ms_bucket{le=\&quot;10\&quot;,app=\&quot;dubbo-sample-consumer\&quot;}/ignoring (le) envoy_dubbo_outbound_20880__org_apache_dubbo_samples_basic_api_demoservice_request_time_ms_count *100&quot;</span>,
+             <span class="hljs-string">&quot;interval&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+             <span class="hljs-string">&quot;legendFormat&quot;</span>: <span class="hljs-string">&quot;Less than 10 ms&quot;</span>,
+             <span class="hljs-string">&quot;refId&quot;</span>: <span class="hljs-string">&quot;A&quot;</span>
+           },
+           {
+             <span class="hljs-string">&quot;expr&quot;</span>: <span class="hljs-string">&quot;envoy_dubbo_outbound_20880__org_apache_dubbo_samples_basic_api_demoservice_request_time_ms_bucket{le=\&quot;100\&quot;,app=\&quot;dubbo-sample-consumer\&quot;}/ignoring (le) envoy_dubbo_outbound_20880__org_apache_dubbo_samples_basic_api_demoservice_request_time_ms_count *100&quot;</span>,
+             <span class="hljs-string">&quot;interval&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+             <span class="hljs-string">&quot;legendFormat&quot;</span>: <span class="hljs-string">&quot;Less than 100 ms&quot;</span>,
+             <span class="hljs-string">&quot;refId&quot;</span>: <span class="hljs-string">&quot;B&quot;</span>
+           },
+           {
+             <span class="hljs-string">&quot;expr&quot;</span>: <span class="hljs-string">&quot;envoy_dubbo_outbound_20880__org_apache_dubbo_samples_basic_api_demoservice_request_time_ms_bucket{le=\&quot;1000\&quot;,app=\&quot;dubbo-sample-consumer\&quot;}/ignoring (le) envoy_dubbo_outbound_20880__org_apache_dubbo_samples_basic_api_demoservice_request_time_ms_count *100&quot;</span>,
+             <span class="hljs-string">&quot;interval&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+             <span class="hljs-string">&quot;legendFormat&quot;</span>: <span class="hljs-string">&quot;Less than 1 s&quot;</span>,
+             <span class="hljs-string">&quot;refId&quot;</span>: <span class="hljs-string">&quot;C&quot;</span>
+           },
+           {
+             <span class="hljs-string">&quot;expr&quot;</span>: <span class="hljs-string">&quot;envoy_dubbo_outbound_20880__org_apache_dubbo_samples_basic_api_demoservice_request_time_ms_bucket{le=\&quot;10000\&quot;,app=\&quot;dubbo-sample-consumer\&quot;}/ignoring (le) envoy_dubbo_outbound_20880__org_apache_dubbo_samples_basic_api_demoservice_request_time_ms_count *100&quot;</span>,
+             <span class="hljs-string">&quot;interval&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+             <span class="hljs-string">&quot;legendFormat&quot;</span>: <span class="hljs-string">&quot;Less than 10 s&quot;</span>,
+             <span class="hljs-string">&quot;refId&quot;</span>: <span class="hljs-string">&quot;D&quot;</span>
+           }
+         ],
+         <span class="hljs-string">&quot;timeFrom&quot;</span>: <span class="hljs-literal">null</span>,
+         <span class="hljs-string">&quot;timeShift&quot;</span>: <span class="hljs-literal">null</span>,
+         <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Dubbo Request Distribution&quot;</span>,
+         <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;bargauge&quot;</span>
+       },
+       {
+         <span class="hljs-string">&quot;datasource&quot;</span>: <span class="hljs-string">&quot;${DS_PROMETHEUS}&quot;</span>,
+         <span class="hljs-string">&quot;fieldConfig&quot;</span>: {
+           <span class="hljs-string">&quot;defaults&quot;</span>: {
+             <span class="hljs-string">&quot;custom&quot;</span>: {},
+             <span class="hljs-string">&quot;mappings&quot;</span>: [],
+             <span class="hljs-string">&quot;thresholds&quot;</span>: {
+               <span class="hljs-string">&quot;mode&quot;</span>: <span class="hljs-string">&quot;absolute&quot;</span>,
+               <span class="hljs-string">&quot;steps&quot;</span>: [
+                 {
+                   <span class="hljs-string">&quot;color&quot;</span>: <span class="hljs-string">&quot;green&quot;</span>,
+                   <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-literal">null</span>
+                 },
+                 {
+                   <span class="hljs-string">&quot;color&quot;</span>: <span class="hljs-string">&quot;red&quot;</span>,
+                   <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">80</span>
+                 }
+               ]
+             },
+             <span class="hljs-string">&quot;unit&quot;</span>: <span class="hljs-string">&quot;percent&quot;</span>
+           },
+           <span class="hljs-string">&quot;overrides&quot;</span>: []
+         },
+         <span class="hljs-string">&quot;gridPos&quot;</span>: {
+           <span class="hljs-string">&quot;h&quot;</span>: <span class="hljs-number">9</span>,
+           <span class="hljs-string">&quot;w&quot;</span>: <span class="hljs-number">12</span>,
+           <span class="hljs-string">&quot;x&quot;</span>: <span class="hljs-number">12</span>,
+           <span class="hljs-string">&quot;y&quot;</span>: <span class="hljs-number">8</span>
+         },
+         <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-number">8</span>,
+         <span class="hljs-string">&quot;options&quot;</span>: {
+           <span class="hljs-string">&quot;reduceOptions&quot;</span>: {
+             <span class="hljs-string">&quot;calcs&quot;</span>: [
+               <span class="hljs-string">&quot;mean&quot;</span>
+             ],
+             <span class="hljs-string">&quot;fields&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+             <span class="hljs-string">&quot;values&quot;</span>: <span class="hljs-literal">false</span>
+           },
+           <span class="hljs-string">&quot;showThresholdLabels&quot;</span>: <span class="hljs-literal">false</span>,
+           <span class="hljs-string">&quot;showThresholdMarkers&quot;</span>: <span class="hljs-literal">true</span>
+         },
+         <span class="hljs-string">&quot;pluginVersion&quot;</span>: <span class="hljs-string">&quot;7.2.1&quot;</span>,
+         <span class="hljs-string">&quot;targets&quot;</span>: [
+           {
+             <span class="hljs-string">&quot;expr&quot;</span>: <span class="hljs-string">&quot;sum(rate(envoy_dubbo_outbound_20880__org_apache_dubbo_samples_basic_api_demoservice_response_success[5m]))/sum(rate(envoy_dubbo_outbound_20880__org_apache_dubbo_samples_basic_api_demoservice_request[5m]))*100&quot;</span>,
+             <span class="hljs-string">&quot;interval&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+             <span class="hljs-string">&quot;legendFormat&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+             <span class="hljs-string">&quot;refId&quot;</span>: <span class="hljs-string">&quot;A&quot;</span>
+           }
+         ],
+         <span class="hljs-string">&quot;timeFrom&quot;</span>: <span class="hljs-literal">null</span>,
+         <span class="hljs-string">&quot;timeShift&quot;</span>: <span class="hljs-literal">null</span>,
+         <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Dubbo Call Success Rate&quot;</span>,
+         <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;gauge&quot;</span>
+       }
+     ],
+     <span class="hljs-string">&quot;refresh&quot;</span>: <span class="hljs-string">&quot;10s&quot;</span>,
+     <span class="hljs-string">&quot;schemaVersion&quot;</span>: <span class="hljs-number">26</span>,
+     <span class="hljs-string">&quot;style&quot;</span>: <span class="hljs-string">&quot;dark&quot;</span>,
+     <span class="hljs-string">&quot;tags&quot;</span>: [],
+     <span class="hljs-string">&quot;templating&quot;</span>: {
+       <span class="hljs-string">&quot;list&quot;</span>: []
+     },
+     <span class="hljs-string">&quot;time&quot;</span>: {
+       <span class="hljs-string">&quot;from&quot;</span>: <span class="hljs-string">&quot;now-6h&quot;</span>,
+       <span class="hljs-string">&quot;to&quot;</span>: <span class="hljs-string">&quot;now&quot;</span>
+     },
+     <span class="hljs-string">&quot;timepicker&quot;</span>: {},
+     <span class="hljs-string">&quot;timezone&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+     <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Aeraki Demo&quot;</span>,
+     <span class="hljs-string">&quot;uid&quot;</span>: <span class="hljs-string">&quot;pgz7wp-Gz&quot;</span>,
+     <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-number">23</span>
+   }
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="design.html" class="navigation navigation-prev " aria-label="Previous page: Aeraki Code Design & Aeraki设计">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../kiali/kiali.html" class="navigation navigation-next " aria-label="Next page: Istio可视化工具——Kiali">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Aeraki Case Sample & Aeraki应用示例","level":"1.5.1.3","depth":3,"next":{"title":"Istio可视化工具——Kiali","level":"1.5.2","depth":2,"path":"istio-ecology/kiali/kiali.md","ref":"./istio-ecology/kiali/kiali.md","articles":[]},"previous":{"title":"Aeraki Code Design & Aeraki设计","level":"1.5.1.2","depth":3,"path":"istio-ecology/aeraki/design.md","ref":"./istio-ecology/aeraki/design.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","page-toc-button","pageview-count","hide-element","splitter","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/shuxnhs/Mastering-ServiceMesh"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{},"pageview-count":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"github":{"url":"https://github.com/shuxnhs/Mastering-ServiceMesh"},"theme":"default","author":"hexiaohong","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Mastering-ServiceMesh","gitbook":"*","description":"深入浅出服务网格"},"file":{"path":"istio-ecology/aeraki/case.md","mtime":"2021-05-13T15:14:32.103Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-13T15:15:20.955Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
